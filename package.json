@@ -1,0 +1,40 @@
+{
+  "name": "allenmcao.github.io",
+  "version": "1.0.0",
+  "description": "Personal Website",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm build && node dist/app.js",
+    "dev-start": "node dist/app.js",
+    "build": "webpack --config ./webpack.deployment.config.js --progress --colors"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allenmcao/allenmcao.github.io.git"
+  },
+  "keywords": [],
+  "author": "Allen Cao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/allenmcao/allenmcao.github.io/issues"
+  },
+  "homepage": "https://github.com/allenmcao/allenmcao.github.io#readme",
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.2",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "redux": "^3.6.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "react-hot-loader": "^1.3.1",
+    "webpack": "^1.14.0",
+    "webpack-dev-middleware": "^1.9.0",
+    "webpack-hot-middleware": "^2.15.0"
+  }
+}
