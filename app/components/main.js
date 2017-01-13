@@ -8,7 +8,7 @@ export default class Main extends React.Component {
     return (
         <div>
             <Header />
-            <p>Allen Cao</p>
+            <p>ALLEN CAO</p>
             <AboutMe />
         </div>        
         );
