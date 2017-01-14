@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom'
 
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group' 
 import { styles } from './styles/home.scss'
@@ -23,6 +24,8 @@ export default class Home extends React.Component {
         //     elem.style.transition = "width 2500ms ease-in";
         //     // and set the opacity to 1
         // });
+        var myEl = ReactDOM.findDOMNode(this.refs.namee);
+        myEl.className = "name-load";
     }
     render () {
     let horizs = null;
@@ -37,24 +40,8 @@ export default class Home extends React.Component {
     }
     return (
         <div className='home'>
-            <ReactCSSTransitionGroup
-                    transitionName="rctg-name"
-                    transitionAppear={true}
-                    transitionAppearTimeout={1000}
-                    transitionEnterTimeout={1000}
-                    transitionLeaveTimeout={1000}
-                    >
-                {this.state.mounted ? null : <h2 className='name' key="blah">ALLEN CAO</h2> }
-            </ReactCSSTransitionGroup>
-            <ReactCSSTransitionGroup
-                transitionName="hrs"
-                transitionAppear={true}
-                transitionAppearTimeout={1000}
-                transitionEnterTimeout={1000}
-                transitionLeaveTimeout={1000}
-                >
-                {horizs}
-            </ReactCSSTransitionGroup>
+            <h2 ref="namee" className='name' key="blah">ALLEN CAO</h2>
+            {horizs}
             <p>University of California, Berkeley</p>
         </div>
     );

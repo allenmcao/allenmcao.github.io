@@ -7,7 +7,16 @@
 		top: -70px;
 		font-family: 'Nordic';
 		font-size: 13vw;
-		color: $offblack;
+		color: blue;
+	}
+	.name-load {
+		position: relative;
+		left: -15px;
+		top: -70px;
+		font-family: 'Nordic';
+		font-size: 13vw;
+		color: white;
+		transition: color 2s;
 	}
 
 
