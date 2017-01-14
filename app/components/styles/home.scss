@@ -7,17 +7,9 @@
 		top: -70px;
 		font-family: 'Nordic';
 		font-size: 13vw;
-		color: white;
+		color: $offblack;
 	}
-	ReactCssTransitionGroup {
-	    color: black;
-	    -webkit-transition: color 1000ms linear;
-	    -moz-transition: color 1000ms linear;
-	    -o-transition: color 1000ms linear;
-	    -ms-transition: color 1000ms linear;
-	    transition: color 1000ms linear;
-	    
-	}
+
 
 	hr {
 		float: left;
@@ -55,5 +47,27 @@
 
 
 .hrs-appear{
-	transition: width 2s;
+	color:blue;
+	opacity: 0.01;
+}
+
+.hrs-appear.hrs-appear-active {
+	opacity: 1;
+  	transition: opacity .5s ease-in;
+}
+
+.rctg-name-appear{
+	color:blue;
+}
+
+.rctg-name-appear{
+  	transition: color 2s;
+}
+
+.home:hover {
+	-webkit-transition: width 1000ms ;
+    -moz-transition: width 1000ms ;
+    -o-transition: width 1000ms ;
+    -ms-transition: width 1000ms ;
+    transition: width 1000ms ;
 }

@@ -15,17 +15,18 @@ export default class Home extends React.Component {
 
     componentDidMount() {
         this.setState({ mounted: true });
-        var elem = this.getDOMNode();
-        // Set the opacity of the element to 0
-        elem.style.opacity = 0;
-        window.requestAnimationFrame(function() {
-            // Now set a transition on the opacity
-            elem.style.transition = "width 2500ms ease-in";
-            // and set the opacity to 1
-        });
+        // var elem = this.getDOMNode();
+        // // Set the opacity of the element to 0
+        // elem.style.opacity = 0;
+        // window.requestAnimationFrame(function() {
+        //     // Now set a transition on the opacity
+        //     elem.style.transition = "width 2500ms ease-in";
+        //     // and set the opacity to 1
+        // });
     }
     render () {
     let horizs = null;
+    let blah = null
     if (this.state.mounted) {
         horizs = (
         <div>
@@ -36,7 +37,15 @@ export default class Home extends React.Component {
     }
     return (
         <div className='home'>
-            <h2 className='name'>ALLEN CAO</h2>
+            <ReactCSSTransitionGroup
+                    transitionName="rctg-name"
+                    transitionAppear={true}
+                    transitionAppearTimeout={1000}
+                    transitionEnterTimeout={1000}
+                    transitionLeaveTimeout={1000}
+                    >
+                {this.state.mounted ? null : <h2 className='name' key="blah">ALLEN CAO</h2> }
+            </ReactCSSTransitionGroup>
             <ReactCSSTransitionGroup
                 transitionName="hrs"
                 transitionAppear={true}

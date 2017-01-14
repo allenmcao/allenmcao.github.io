@@ -21518,7 +21518,7 @@
 
 	var _home2 = _interopRequireDefault(_home);
 
-	var _not_found = __webpack_require__(267);
+	var _not_found = __webpack_require__(269);
 
 	var _not_found2 = _interopRequireDefault(_not_found);
 
@@ -26607,7 +26607,7 @@
 
 	var _home2 = _interopRequireDefault(_home);
 
-	var _main = __webpack_require__(265);
+	var _main = __webpack_require__(267);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27239,7 +27239,7 @@
 
 	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
 
-	var _home = __webpack_require__(263);
+	var _home = __webpack_require__(265);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27270,19 +27270,20 @@
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
 	            this.setState({ mounted: true });
-	            var elem = this.getDOMNode();
-	            // Set the opacity of the element to 0
-	            elem.style.opacity = 0;
-	            window.requestAnimationFrame(function () {
-	                // Now set a transition on the opacity
-	                elem.style.transition = "width 2500ms ease-in";
-	                // and set the opacity to 1
-	            });
+	            // var elem = this.getDOMNode();
+	            // // Set the opacity of the element to 0
+	            // elem.style.opacity = 0;
+	            // window.requestAnimationFrame(function() {
+	            //     // Now set a transition on the opacity
+	            //     elem.style.transition = "width 2500ms ease-in";
+	            //     // and set the opacity to 1
+	            // });
 	        }
 	    }, {
 	        key: 'render',
 	        value: function render() {
 	            var horizs = null;
+	            var blah = null;
 	            if (this.state.mounted) {
 	                horizs = _react2.default.createElement(
 	                    'div',
@@ -27296,9 +27297,19 @@
 	                'div',
 	                { className: 'home' },
 	                _react2.default.createElement(
-	                    'h2',
-	                    { className: 'name' },
-	                    'ALLEN CAO'
+	                    _reactAddonsCssTransitionGroup2.default,
+	                    {
+	                        transitionName: 'rctg-name',
+	                        transitionAppear: true,
+	                        transitionAppearTimeout: 1000,
+	                        transitionEnterTimeout: 1000,
+	                        transitionLeaveTimeout: 1000
+	                    },
+	                    this.state.mounted ? null : _react2.default.createElement(
+	                        'h2',
+	                        { className: 'name', key: 'blah' },
+	                        'ALLEN CAO'
+	                    )
 	                ),
 	                _react2.default.createElement(
 	                    _reactAddonsCssTransitionGroup2.default,
@@ -29439,13 +29450,15 @@
 	module.exports = ReactTransitionEvents;
 
 /***/ },
-/* 263 */
+/* 263 */,
+/* 264 */,
+/* 265 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(264);
+	var content = __webpack_require__(266);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(247)(content, {});
@@ -29465,7 +29478,7 @@
 	}
 
 /***/ },
-/* 264 */
+/* 266 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(238)();
@@ -29473,19 +29486,19 @@
 
 
 	// module
-	exports.push([module.id, "@font-face {\n  font-family: 'Ailerons';\n  src: local(\"Ailerons\"), local(\"Aileron-Regular\"), url(" + __webpack_require__(239) + ") format(\"woff2\"), url(" + __webpack_require__(240) + ") format(\"woff\"), url(" + __webpack_require__(241) + ") format(\"truetype\"), url(" + __webpack_require__(242) + ") format(\"opentype\"); }\n\n@font-face {\n  font-family: 'nordic';\n  src: url(" + __webpack_require__(243) + ");\n  src: url(" + __webpack_require__(243) + "?#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(244) + ") format(\"woff2\"), url(" + __webpack_require__(245) + ") format(\"woff\"), url(" + __webpack_require__(246) + ") format(\"truetype\");\n  font-weight: normal;\n  font-style: normal; }\n\n.home .name {\n  position: relative;\n  left: -15px;\n  top: -70px;\n  font-family: 'Nordic';\n  font-size: 13vw;\n  color: white; }\n\n.home ReactCssTransitionGroup {\n  color: black;\n  -webkit-transition: color 1000ms linear;\n  -moz-transition: color 1000ms linear;\n  -o-transition: color 1000ms linear;\n  -ms-transition: color 1000ms linear;\n  transition: color 1000ms linear; }\n\n.home hr {\n  float: left;\n  padding: 0;\n  border: none;\n  color: white;\n  text-align: center;\n  position: relative; }\n\n.home .hr1 {\n  border-top: medium double white;\n  border-bottom: medium double white;\n  width: 86%;\n  top: -15em; }\n\n.home .hr2 {\n  border-top: medium double white;\n  width: 72%;\n  top: -12em; }\n\n.home .hr3 {\n  border: 1px solid;\n  width: 58%;\n  top: -9em; }\n\n.home p {\n  position: relative;\n  margin-right: 1em;\n  font-size: 1.5em;\n  float: right; }\n\n.hrs-appear {\n  transition: width 2s; }\n", "", {"version":3,"sources":["/./app/components/styles/app/components/styles/_variables.scss","/./app/components/styles/app/components/styles/home.scss"],"names":[],"mappings":"AACA;EACE,wBAAuB;EACvB,kPAK8D,EAAA;;AAIhE;EACI,sBAAqB;EACrB,mCAAiE;EACjE,8MAGoF;EACpF,oBAAmB;EACnB,mBAAkB,EAAA;;AClBtB;EAEE,mBAAkB;EAClB,YAAW;EACX,WAAU;EACV,sBAAqB;EACrB,gBAAe;EACf,aAAY,EACZ;;AARF;EAUK,aAAY;EACZ,wCAAuC;EACvC,qCAAoC;EACpC,mCAAkC;EAClC,oCAAmC;EACnC,gCAA+B,EAElC;;AAjBF;EAoBE,YAAW;EACX,WAAU;EACP,aAAY;EACf,aAAY;EACZ,mBAAkB;EAClB,mBAAkB,EAClB;;AA1BF;EA4BK,gCAA+B;EAC/B,mCAAkC;EACrC,WAAU;EACV,WAAU,EACV;;AAhCF;EAkCK,gCAA+B;EAClC,WAAU;EACV,WAAU,EACV;;AArCF;EAuCE,kBAAiB;EACjB,WAAU;EACV,UAAS,EACT;;AA1CF;EA6CE,mBAAkB;EAClB,kBAAiB;EACjB,iBAAgB;EAChB,aAAW,EACX;;AAKF;EACC,qBAAoB,EACpB","file":"home.scss","sourcesContent":["// FONTS\r\n@font-face {\r\n  font-family: 'Ailerons';\r\n  src: local('Ailerons'), \r\n  local('Aileron-Regular'), \r\n  url(./fonts/Ailerons/ailerons-typeface-webfont.woff2) format('woff2'),\r\n  url(./fonts/Ailerons/ailerons-typeface-webfont.woff) format('woff'),\r\n  url(./fonts/Ailerons/ailerons-typeface-webfont.ttf) format('truetype'),\r\n  url(./fonts/Ailerons/Ailerons-Typeface.otf) format('opentype');\r\n}\r\n\r\n\r\n@font-face {\r\n    font-family: 'nordic';\r\n    src: url('./fonts/Nordic/nordic_alternative_regular-webfont.eot');\r\n    src: url('./fonts/Nordic/nordic_alternative_regular-webfont.eot?#iefix') format('embedded-opentype'),\r\n         url('./fonts/Nordic/nordic_alternative_regular-webfont.woff2') format('woff2'),\r\n         url('./fonts/Nordic/nordic_alternative_regular-webfont.woff') format('woff'),\r\n         url('./fonts/Nordic/nordic_alternative_regular-webfont.ttf') format('truetype');\r\n    font-weight: normal;\r\n    font-style: normal;\r\n\r\n}\r\n\r\n// COLORS\r\n$offblack\t: #333;\r\n$offwhite\t: #ededed;","@import 'app/components/styles/_variables.scss';\r\n\r\n.home {\r\n\t.name {\r\n\t\tposition: relative;\r\n\t\tleft: -15px;\r\n\t\ttop: -70px;\r\n\t\tfont-family: 'Nordic';\r\n\t\tfont-size: 13vw;\r\n\t\tcolor: white;\r\n\t}\r\n\tReactCssTransitionGroup {\r\n\t    color: black;\r\n\t    -webkit-transition: color 1000ms linear;\r\n\t    -moz-transition: color 1000ms linear;\r\n\t    -o-transition: color 1000ms linear;\r\n\t    -ms-transition: color 1000ms linear;\r\n\t    transition: color 1000ms linear;\r\n\t    \r\n\t}\r\n\r\n\thr {\r\n\t\tfloat: left;\r\n\t\tpadding: 0;\r\n\t    border: none;\r\n\t\tcolor: white;\r\n\t\ttext-align: center;\r\n\t\tposition: relative;\r\n\t}\r\n\t.hr1{\r\n\t    border-top: medium double white;\r\n\t    border-bottom: medium double white;\r\n\t\twidth: 86%;\r\n\t\ttop: -15em;\t\r\n\t}\r\n\t.hr2{\r\n\t    border-top: medium double white;\r\n\t\twidth: 72%;\r\n\t\ttop: -12em;\r\n\t}\r\n\t.hr3{\r\n\t\tborder: 1px solid;\r\n\t\twidth: 58%;\r\n\t\ttop: -9em;\r\n\t}\r\n\r\n\tp {\r\n\t\tposition: relative;\r\n\t\tmargin-right: 1em;\r\n\t\tfont-size: 1.5em;\r\n\t\tfloat:right;\r\n\t}\r\n}\r\n\r\n\r\n\r\n.hrs-appear{\r\n\ttransition: width 2s;\r\n}\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "@font-face {\n  font-family: 'Ailerons';\n  src: local(\"Ailerons\"), local(\"Aileron-Regular\"), url(" + __webpack_require__(239) + ") format(\"woff2\"), url(" + __webpack_require__(240) + ") format(\"woff\"), url(" + __webpack_require__(241) + ") format(\"truetype\"), url(" + __webpack_require__(242) + ") format(\"opentype\"); }\n\n@font-face {\n  font-family: 'nordic';\n  src: url(" + __webpack_require__(243) + ");\n  src: url(" + __webpack_require__(243) + "?#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(244) + ") format(\"woff2\"), url(" + __webpack_require__(245) + ") format(\"woff\"), url(" + __webpack_require__(246) + ") format(\"truetype\");\n  font-weight: normal;\n  font-style: normal; }\n\n.home .name {\n  position: relative;\n  left: -15px;\n  top: -70px;\n  font-family: 'Nordic';\n  font-size: 13vw;\n  color: #333; }\n\n.home hr {\n  float: left;\n  padding: 0;\n  border: none;\n  color: white;\n  text-align: center;\n  position: relative; }\n\n.home .hr1 {\n  border-top: medium double white;\n  border-bottom: medium double white;\n  width: 86%;\n  top: -15em; }\n\n.home .hr2 {\n  border-top: medium double white;\n  width: 72%;\n  top: -12em; }\n\n.home .hr3 {\n  border: 1px solid;\n  width: 58%;\n  top: -9em; }\n\n.home p {\n  position: relative;\n  margin-right: 1em;\n  font-size: 1.5em;\n  float: right; }\n\n.hrs-appear {\n  color: blue;\n  opacity: 0.01; }\n\n.hrs-appear.hrs-appear-active {\n  opacity: 1;\n  transition: opacity .5s ease-in; }\n\n.rctg-name-appear {\n  color: blue; }\n\n.rctg-name-appear {\n  transition: color 2s; }\n\n.home:hover {\n  -webkit-transition: width 1000ms;\n  -moz-transition: width 1000ms;\n  -o-transition: width 1000ms;\n  -ms-transition: width 1000ms;\n  transition: width 1000ms; }\n", "", {"version":3,"sources":["/./app/components/styles/app/components/styles/_variables.scss","/./app/components/styles/app/components/styles/home.scss"],"names":[],"mappings":"AACA;EACE,wBAAuB;EACvB,kPAK8D,EAAA;;AAIhE;EACI,sBAAqB;EACrB,mCAAiE;EACjE,8MAGoF;EACpF,oBAAmB;EACnB,mBAAkB,EAAA;;AClBtB;EAEE,mBAAkB;EAClB,YAAW;EACX,WAAU;EACV,sBAAqB;EACrB,gBAAe;EACf,YDgBc,ECfd;;AARF;EAYE,YAAW;EACX,WAAU;EACP,aAAY;EACf,aAAY;EACZ,mBAAkB;EAClB,mBAAkB,EAClB;;AAlBF;EAoBK,gCAA+B;EAC/B,mCAAkC;EACrC,WAAU;EACV,WAAU,EACV;;AAxBF;EA0BK,gCAA+B;EAClC,WAAU;EACV,WAAU,EACV;;AA7BF;EA+BE,kBAAiB;EACjB,WAAU;EACV,UAAS,EACT;;AAlCF;EAqCE,mBAAkB;EAClB,kBAAiB;EACjB,iBAAgB;EAChB,aAAW,EACX;;AAKF;EACC,YAAU;EACV,cAAa,EACb;;AAED;EACC,WAAU;EACR,gCAA+B,EACjC;;AAED;EACC,YAAU,EACV;;AAED;EACG,qBAAoB,EACtB;;AAED;EACC,iCAAiC;EAC9B,8BAA8B;EAC9B,4BAA4B;EAC5B,6BAA6B;EAC7B,yBAAyB,EAC5B","file":"home.scss","sourcesContent":["// FONTS\r\n@font-face {\r\n  font-family: 'Ailerons';\r\n  src: local('Ailerons'), \r\n  local('Aileron-Regular'), \r\n  url(./fonts/Ailerons/ailerons-typeface-webfont.woff2) format('woff2'),\r\n  url(./fonts/Ailerons/ailerons-typeface-webfont.woff) format('woff'),\r\n  url(./fonts/Ailerons/ailerons-typeface-webfont.ttf) format('truetype'),\r\n  url(./fonts/Ailerons/Ailerons-Typeface.otf) format('opentype');\r\n}\r\n\r\n\r\n@font-face {\r\n    font-family: 'nordic';\r\n    src: url('./fonts/Nordic/nordic_alternative_regular-webfont.eot');\r\n    src: url('./fonts/Nordic/nordic_alternative_regular-webfont.eot?#iefix') format('embedded-opentype'),\r\n         url('./fonts/Nordic/nordic_alternative_regular-webfont.woff2') format('woff2'),\r\n         url('./fonts/Nordic/nordic_alternative_regular-webfont.woff') format('woff'),\r\n         url('./fonts/Nordic/nordic_alternative_regular-webfont.ttf') format('truetype');\r\n    font-weight: normal;\r\n    font-style: normal;\r\n\r\n}\r\n\r\n// COLORS\r\n$offblack\t: #333;\r\n$offwhite\t: #ededed;","@import 'app/components/styles/_variables.scss';\r\n\r\n.home {\r\n\t.name {\r\n\t\tposition: relative;\r\n\t\tleft: -15px;\r\n\t\ttop: -70px;\r\n\t\tfont-family: 'Nordic';\r\n\t\tfont-size: 13vw;\r\n\t\tcolor: $offblack;\r\n\t}\r\n\r\n\r\n\thr {\r\n\t\tfloat: left;\r\n\t\tpadding: 0;\r\n\t    border: none;\r\n\t\tcolor: white;\r\n\t\ttext-align: center;\r\n\t\tposition: relative;\r\n\t}\r\n\t.hr1{\r\n\t    border-top: medium double white;\r\n\t    border-bottom: medium double white;\r\n\t\twidth: 86%;\r\n\t\ttop: -15em;\t\r\n\t}\r\n\t.hr2{\r\n\t    border-top: medium double white;\r\n\t\twidth: 72%;\r\n\t\ttop: -12em;\r\n\t}\r\n\t.hr3{\r\n\t\tborder: 1px solid;\r\n\t\twidth: 58%;\r\n\t\ttop: -9em;\r\n\t}\r\n\r\n\tp {\r\n\t\tposition: relative;\r\n\t\tmargin-right: 1em;\r\n\t\tfont-size: 1.5em;\r\n\t\tfloat:right;\r\n\t}\r\n}\r\n\r\n\r\n\r\n.hrs-appear{\r\n\tcolor:blue;\r\n\topacity: 0.01;\r\n}\r\n\r\n.hrs-appear.hrs-appear-active {\r\n\topacity: 1;\r\n  \ttransition: opacity .5s ease-in;\r\n}\r\n\r\n.rctg-name-appear{\r\n\tcolor:blue;\r\n}\r\n\r\n.rctg-name-appear{\r\n  \ttransition: color 2s;\r\n}\r\n\r\n.home:hover {\r\n\t-webkit-transition: width 1000ms ;\r\n    -moz-transition: width 1000ms ;\r\n    -o-transition: width 1000ms ;\r\n    -ms-transition: width 1000ms ;\r\n    transition: width 1000ms ;\r\n}"],"sourceRoot":"webpack://"}]);
 
 	// exports
 
 
 /***/ },
-/* 265 */
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(266);
+	var content = __webpack_require__(268);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(247)(content, {});
@@ -29505,7 +29518,7 @@
 	}
 
 /***/ },
-/* 266 */
+/* 268 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(238)();
@@ -29519,7 +29532,7 @@
 
 
 /***/ },
-/* 267 */
+/* 269 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
