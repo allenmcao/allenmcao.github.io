@@ -17,14 +17,17 @@ nav{
             li {
                 list-style: none;
                 transition: 1s;
-                border-left: 1px solid white;
+                border-top: 1px solid white;
                 border-bottom: 1px solid white;
+                Link:visited {
+                    text-decoration: none;
+                }
             }
             li:hover {
                 color: $offblack;
-                border-left: 1px solid $offblack;
+                border-top: 1px solid $offblack;
                 border-bottom: 1px solid $offblack;
-                transform: translate(1em, 0);
+                transform: translate(0.8em, 0);
             }
         }
     }

@@ -12,7 +12,7 @@ export default class Main extends React.Component {
         <div className='main'>
             <Navigation />
             <div className='content'>
-                <Home />
+                {this.props.children}
             </div>
         </div>        
         );

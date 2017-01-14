@@ -4,9 +4,7 @@
 	0% {
 		color: black
 	}
-	50% {
-		color: $offwhite;
-	}
+	
 	to {
 		color: white
 	}
@@ -16,16 +14,22 @@
 	0% {
 		color: black
 	}
-	to {
+	55% {
+		color: black
+	}
+	100% {
 		color: white
 	}
 }
 
 @keyframes widenIn {
-	from {
+	0% {
 		width: 0%
 	}
-	to {
+	55% {
+		width: 0%
+	}
+	100% {
 		width: 100%
 	}
 }
@@ -35,42 +39,43 @@
 .home {
 	overflow: hidden;
 	.name {
-		top: -0.5em;
-		left: -15px;
+		top: -0.6em;
+		left: -17px;
 		position:relative;
 		font-family: 'Nordic';
 		font-size: 13vw;
 		color: white;
 		animation: fadeInSlow;
 		animation-timing-function: ease-in;
-		animation-duration: 3s;
+		animation-duration: 10s;
 	}
 
 	.hrDiv {
 		animation: widenIn;
-		animation-timing-function: ease-in-out;
-		animation-duration: 2s;
+		animation-timing-function: cubic-bezier(0.64, 0.00, .50, 1);
+		animation-duration: 12s;
 	}
 	hr {
 		float: left;
 		padding: 0;
-	    border: none;
+		left: -2px;
 		color: white;
 		text-align: center;
 		position: relative;
 	}
 	.hr1{
-	    border-top: medium double white;
-	    border-bottom: medium double white;
-		width: 86%;
+		border-top: medium double white;
+		width: 72%;
 		top: -15em;	
 	}
 	.hr2{
-	    border-top: medium double white;
-		width: 72%;
+	    border-top: 3px double white;
+	    border-bottom: medium double white;
+		width: 86%;
 		top: -12em;
 	}
 	.hr3{
+		
 		border: 1px solid;
 		width: 58%;
 		top: -9em;
@@ -82,8 +87,7 @@
 		font-size: 1.5em;
 		float:right;
 		animation: fadeIn;
-		animation-timing-function: ease-in-out;
-		animation-duration: 5s;
+		animation-duration: 15s;
 	}
 }
 
