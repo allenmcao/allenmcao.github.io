@@ -1,5 +1,10 @@
 @import 'app/components/styles/_variables.scss';
 
+@keyframes nameAnim {
+	from {color:$offblack};
+	to {color: white};
+}
+
 .home {
 	.name {
 		position: relative;
@@ -7,7 +12,6 @@
 		top: -70px;
 		font-family: 'Nordic';
 		font-size: 13vw;
-		color: blue;
 	}
 	.name-load {
 		position: relative;
@@ -15,8 +19,8 @@
 		top: -70px;
 		font-family: 'Nordic';
 		font-size: 13vw;
-		color: white;
-		transition: color 2s;
+		animation-name: nameAnim;
+		animation-duration: 4s;
 	}
 
 

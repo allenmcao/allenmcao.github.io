@@ -25,7 +25,7 @@ export default class Home extends React.Component {
         //     // and set the opacity to 1
         // });
         var myEl = ReactDOM.findDOMNode(this.refs.namee);
-        myEl.className = "name-load";
+        // myEl.className = "name-load";
     }
     render () {
     let horizs = null;
