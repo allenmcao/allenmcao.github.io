@@ -9,6 +9,7 @@ import React from 'react';
 import Main from './components/main'
 import Home from './components/home'
 import AboutMe from './components/aboutme'
+import Work from './components/work'
 import NotFound from './components/not_found'
 import { hashHistory, IndexRedirect, Router, Route, Link } from 'react-router'
 
@@ -18,6 +19,7 @@ export default (
             <IndexRedirect from='/' to="/home" />
             <Route path='home' component={Home}/>
             <Route path='aboutme' component={AboutMe}/>
+            <Route path='work' component={Work}/>
             <Route path='*' component={NotFound}/>
         </Route>
     </Router>
