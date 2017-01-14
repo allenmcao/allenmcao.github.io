@@ -34,7 +34,7 @@ export default class Home extends React.Component {
     let blah = null
     if (this.state.mounted) {
         horizs = (
-        <div className='hrs' key="base">
+        <div className='hrDiv' key="base">
             <hr className='hr1' key="one"/>
             <hr className='hr2' key="two"/>
             <hr className='hr3' key="three"/>
