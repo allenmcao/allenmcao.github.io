@@ -1,6 +1,7 @@
 @import 'app/components/styles/_variables.scss';
 
 nav{
+    position: relative;
     float: left;
     width: 15%;
     height: 100%;
@@ -15,7 +16,17 @@ nav{
             font-size: 1.2em;
             li {
                 list-style: none;
+                transition: 1s;
+                border-left: 1px solid white;
+                border-bottom: 1px solid white;
+            }
+            li:hover {
+                color: $offblack;
+                border-left: 1px solid $offblack;
+                border-bottom: 1px solid $offblack;
+                transform: translate(1em, 0);
             }
         }
-    }    
+    }
+    z-index: 9999;
 }

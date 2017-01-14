@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group' 
 import { styles } from './styles/home.scss'
 
+import { Link } from 'react-router'
+
 export default class Home extends React.Component {
     constructor(props) {
         super(props);
@@ -25,14 +27,14 @@ export default class Home extends React.Component {
         //     // and set the opacity to 1
         // });
         var myEl = ReactDOM.findDOMNode(this.refs.namee);
-        myEl.className = "name-load";
+        // myEl.className = "name-load";
     }
     render () {
     let horizs = null;
     let blah = null
     if (this.state.mounted) {
         horizs = (
-        <div>
+        <div className='hrs' key="base">
             <hr className='hr1' key="one"/>
             <hr className='hr2' key="two"/>
             <hr className='hr3' key="three"/>
@@ -40,10 +42,12 @@ export default class Home extends React.Component {
     }
     return (
         <div className='home'>
-            <h2 ref="namee" className='name' key="blah">ALLEN CAO</h2>
+            
+            <h2 ref="namee" className='name'>ALLEN CAO</h2>
             {horizs}
             <p>University of California, Berkeley</p>
         </div>
     );
     }
 }
+// <Link to='/aboutme' className='navWrapper'>PODSFJPSDOF</Link>

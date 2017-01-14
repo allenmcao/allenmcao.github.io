@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var BUILD_DIR = path.resolve(__dirname, 'public');
 
@@ -22,8 +23,12 @@ module.exports = {
         }
       },
       {
+        test: /\.css$/,
+        loaders: ['style', 'css']
+      },
+      {
         test: /\.scss$/,
-        loaders: [ 'style', 'css?sourceMap', 'sass?sourceMap' ]
+        loader: ExtractTextPlugin.extract('css!sass') 
       },
       { test: /\.woff(\?.*)?$/,  loader: 'url?prefix=fonts/&name=[path][name].[ext]&limit=10000&mimetype=application/font-woff' },
       { test: /\.woff2(\?.*)?$/, loader: 'url?prefix=fonts/&name=[path][name].[ext]&limit=10000&mimetype=application/font-woff2' },
@@ -34,4 +39,8 @@ module.exports = {
       { test: /\.(png|jpg)$/,    loader: 'url?limit=8192' }
     ]
   },
+  plugins: [
+      // Output extracted CSS to a file
+      new ExtractTextPlugin('style.css')
+  ]
 };
