@@ -1,0 +1,21 @@
+@import 'app/components/styles/_variables.scss';
+
+nav{
+    float: left;
+    width: 15%;
+    height: 100%;
+    line-height: 100%;   
+    .navWrapper {
+        right: 2em;
+        text-align: right;
+        position: relative;
+        top: 35%;
+        ul {
+            line-height: 2em;
+            font-size: 1.2em;
+            li {
+                list-style: none;
+            }
+        }
+    }    
+}

@@ -34,7 +34,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/app/assets/";
+/******/ 	__webpack_require__.p = "/build/";
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -21514,26 +21514,31 @@
 
 	var _main2 = _interopRequireDefault(_main);
 
-	var _not_found = __webpack_require__(237);
+	var _home = __webpack_require__(249);
+
+	var _home2 = _interopRequireDefault(_home);
+
+	var _not_found = __webpack_require__(267);
 
 	var _not_found2 = _interopRequireDefault(_not_found);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// const ReactRouter = require('react-router');
+	// const config = require('./config');
+
+	// const Main = require('./components/main');
 	exports.default = _react2.default.createElement(
 	    _reactRouter.Router,
 	    { history: _reactRouter.browserHistory },
 	    _react2.default.createElement(
 	        _reactRouter.Route,
 	        { path: '/', component: _main2.default },
+	        _react2.default.createElement(_reactRouter.IndexRedirect, { to: '/home' }),
+	        _react2.default.createElement(_reactRouter.Route, { path: 'home', component: _home2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '*', component: _not_found2.default })
 	    )
 	);
-
-	// const config = require('./config');
-
-	// const Main = require('./components/main');
+	// const ReactRouter = require('react-router');
 
 /***/ },
 /* 178 */
@@ -26590,13 +26595,19 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _header = __webpack_require__(235);
+	var _navigation = __webpack_require__(235);
 
-	var _header2 = _interopRequireDefault(_header);
+	var _navigation2 = _interopRequireDefault(_navigation);
 
-	var _aboutme = __webpack_require__(236);
+	var _aboutme = __webpack_require__(248);
 
 	var _aboutme2 = _interopRequireDefault(_aboutme);
+
+	var _home = __webpack_require__(249);
+
+	var _home2 = _interopRequireDefault(_home);
+
+	var _main = __webpack_require__(265);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -26620,14 +26631,13 @@
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
-	                null,
-	                _react2.default.createElement(_header2.default, null),
+	                { className: 'main' },
+	                _react2.default.createElement(_navigation2.default, null),
 	                _react2.default.createElement(
-	                    'p',
-	                    null,
-	                    'Allen Cao'
-	                ),
-	                _react2.default.createElement(_aboutme2.default, null)
+	                    'div',
+	                    { className: 'content' },
+	                    _react2.default.createElement(_home2.default, null)
+	                )
 	            );
 	        }
 	    }]);
@@ -26644,7 +26654,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -26652,6 +26662,8 @@
 	var _react = __webpack_require__(178);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _navigation = __webpack_require__(236);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -26661,33 +26673,471 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Header = function (_React$Component) {
-	  _inherits(Header, _React$Component);
+	var Navigation = function (_React$Component) {
+	    _inherits(Navigation, _React$Component);
 
-	  function Header() {
-	    _classCallCheck(this, Header);
+	    function Navigation() {
+	        _classCallCheck(this, Navigation);
 
-	    return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
-	  }
-
-	  _createClass(Header, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'header',
-	        null,
-	        'Home About Work Education Skills Projects References'
-	      );
+	        return _possibleConstructorReturn(this, (Navigation.__proto__ || Object.getPrototypeOf(Navigation)).apply(this, arguments));
 	    }
-	  }]);
 
-	  return Header;
+	    _createClass(Navigation, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'nav',
+	                null,
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'navWrapper' },
+	                    _react2.default.createElement(
+	                        'ul',
+	                        null,
+	                        _react2.default.createElement(
+	                            'li',
+	                            null,
+	                            'Home'
+	                        ),
+	                        _react2.default.createElement(
+	                            'li',
+	                            null,
+	                            'About'
+	                        ),
+	                        _react2.default.createElement(
+	                            'li',
+	                            null,
+	                            'Work'
+	                        ),
+	                        _react2.default.createElement(
+	                            'li',
+	                            null,
+	                            'Education'
+	                        ),
+	                        _react2.default.createElement(
+	                            'li',
+	                            null,
+	                            'Skills'
+	                        ),
+	                        _react2.default.createElement(
+	                            'li',
+	                            null,
+	                            'Projects'
+	                        ),
+	                        _react2.default.createElement(
+	                            'li',
+	                            null,
+	                            'References'
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Navigation;
 	}(_react2.default.Component);
 
-	exports.default = Header;
+	exports.default = Navigation;
 
 /***/ },
 /* 236 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(237);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(247)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/sass-loader/index.js?sourceMap!./navigation.scss", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/sass-loader/index.js?sourceMap!./navigation.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 237 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(238)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "@font-face {\n  font-family: 'Ailerons';\n  src: local(\"Ailerons\"), local(\"Aileron-Regular\"), url(" + __webpack_require__(239) + ") format(\"woff2\"), url(" + __webpack_require__(240) + ") format(\"woff\"), url(" + __webpack_require__(241) + ") format(\"truetype\"), url(" + __webpack_require__(242) + ") format(\"opentype\"); }\n\n@font-face {\n  font-family: 'nordic';\n  src: url(" + __webpack_require__(243) + ");\n  src: url(" + __webpack_require__(243) + "?#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(244) + ") format(\"woff2\"), url(" + __webpack_require__(245) + ") format(\"woff\"), url(" + __webpack_require__(246) + ") format(\"truetype\");\n  font-weight: normal;\n  font-style: normal; }\n\nnav {\n  float: left;\n  width: 15%;\n  height: 100%;\n  line-height: 100%; }\n  nav .navWrapper {\n    right: 2em;\n    text-align: right;\n    position: relative;\n    top: 35%; }\n    nav .navWrapper ul {\n      line-height: 2em;\n      font-size: 1.2em; }\n      nav .navWrapper ul li {\n        list-style: none; }\n", "", {"version":3,"sources":["/./app/components/styles/app/components/styles/_variables.scss","/./app/components/styles/app/components/styles/navigation.scss"],"names":[],"mappings":"AACA;EACE,wBAAuB;EACvB,kPAK8D,EAAA;;AAIhE;EACI,sBAAqB;EACrB,mCAAiE;EACjE,8MAGoF;EACpF,oBAAmB;EACnB,mBAAkB,EAAA;;AClBtB;EACI,YAAW;EACX,WAAU;EACV,aAAY;EACZ,kBAAiB,EAcpB;EAlBD;IAMQ,WAAU;IACV,kBAAiB;IACjB,mBAAkB;IAClB,SAAQ,EAQX;IAjBL;MAWY,iBAAgB;MAChB,iBAAgB,EAInB;MAhBT;QAcgB,iBAAgB,EACnB","file":"navigation.scss","sourcesContent":["// FONTS\r\n@font-face {\r\n  font-family: 'Ailerons';\r\n  src: local('Ailerons'), \r\n  local('Aileron-Regular'), \r\n  url(./fonts/Ailerons/ailerons-typeface-webfont.woff2) format('woff2'),\r\n  url(./fonts/Ailerons/ailerons-typeface-webfont.woff) format('woff'),\r\n  url(./fonts/Ailerons/ailerons-typeface-webfont.ttf) format('truetype'),\r\n  url(./fonts/Ailerons/Ailerons-Typeface.otf) format('opentype');\r\n}\r\n\r\n\r\n@font-face {\r\n    font-family: 'nordic';\r\n    src: url('./fonts/Nordic/nordic_alternative_regular-webfont.eot');\r\n    src: url('./fonts/Nordic/nordic_alternative_regular-webfont.eot?#iefix') format('embedded-opentype'),\r\n         url('./fonts/Nordic/nordic_alternative_regular-webfont.woff2') format('woff2'),\r\n         url('./fonts/Nordic/nordic_alternative_regular-webfont.woff') format('woff'),\r\n         url('./fonts/Nordic/nordic_alternative_regular-webfont.ttf') format('truetype');\r\n    font-weight: normal;\r\n    font-style: normal;\r\n\r\n}\r\n\r\n// COLORS\r\n$offblack\t: #333;\r\n$offwhite\t: #ededed;","@import 'app/components/styles/_variables.scss';\r\n\r\nnav{\r\n    float: left;\r\n    width: 15%;\r\n    height: 100%;\r\n    line-height: 100%;   \r\n    .navWrapper {\r\n        right: 2em;\r\n        text-align: right;\r\n        position: relative;\r\n        top: 35%;\r\n        ul {\r\n            line-height: 2em;\r\n            font-size: 1.2em;\r\n            li {\r\n                list-style: none;\r\n            }\r\n        }\r\n    }    \r\n}\r\n"],"sourceRoot":"webpack://"}]);
+
+	// exports
+
+
+/***/ },
+/* 238 */
+/***/ function(module, exports) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	// css base code, injected by the css-loader
+	module.exports = function() {
+		var list = [];
+
+		// return the list of modules as css string
+		list.toString = function toString() {
+			var result = [];
+			for(var i = 0; i < this.length; i++) {
+				var item = this[i];
+				if(item[2]) {
+					result.push("@media " + item[2] + "{" + item[1] + "}");
+				} else {
+					result.push(item[1]);
+				}
+			}
+			return result.join("");
+		};
+
+		// import a list of modules into the list
+		list.i = function(modules, mediaQuery) {
+			if(typeof modules === "string")
+				modules = [[null, modules, ""]];
+			var alreadyImportedModules = {};
+			for(var i = 0; i < this.length; i++) {
+				var id = this[i][0];
+				if(typeof id === "number")
+					alreadyImportedModules[id] = true;
+			}
+			for(i = 0; i < modules.length; i++) {
+				var item = modules[i];
+				// skip already imported module
+				// this implementation is not 100% perfect for weird media query combinations
+				//  when a module is imported multiple times with different media queries.
+				//  I hope this will never occur (Hey this way we have smaller bundles)
+				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+					if(mediaQuery && !item[2]) {
+						item[2] = mediaQuery;
+					} else if(mediaQuery) {
+						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+					}
+					list.push(item);
+				}
+			}
+		};
+		return list;
+	};
+
+
+/***/ },
+/* 239 */
+/***/ function(module, exports) {
+
+	module.exports = "data:application/font-woff2;base64,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"
+
+/***/ },
+/* 240 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "app/components/styles/fonts/Ailerons/ailerons-typeface-webfont.woff";
+
+/***/ },
+/* 241 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "app/components/styles/fonts/Ailerons/ailerons-typeface-webfont.ttf";
+
+/***/ },
+/* 242 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "app/components/styles/fonts/Ailerons/Ailerons-Typeface.otf";
+
+/***/ },
+/* 243 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "app/components/styles/fonts/Nordic/nordic_alternative_regular-webfont.eot";
+
+/***/ },
+/* 244 */
+/***/ function(module, exports) {
+
+	module.exports = "data:application/font-woff2;base64,d09GMgABAAAAACacABMAAAAAaQQAACYtAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP0ZGVE0cGh4biUocIAZgAIN6CC4JhGURCAqBqFyBi0gBNgIkA4NIC4FmAAQgBYYmB4MwDII7P3dlYmYGGzlYJWybRr3bAco1b20QUT1qyP7/84EcY8TQG1hp3wuBmKSIjvKKK7riCqy+KypbvaKi1fLsrbVTBk5GkDHnUrSYxtA1yhEPnnj9/FhWQ/DdQUlZ7LZzE6U47eEdzrB1IYWDj7SXg4RZ/306HnFBgu0E2+iX3IoUU6r1L6SL6S8jN6dlKOUP/Nx67y/oFGmLDAMZtFQPpOKPFEe0VM8ALKIFa5SR0HoYhVWoZ56RHB7Z5QTyvIgYhw3uP3LRpBarpAWrOtNySieiEWpEFKsJMSO3+8//NHOSvReSbWmxLwc56pyOnKoUa9pUtHQl7+kWKOtPqBg6eJ7v3rxv5hfdlONVYx2XUqoFMLThgDfAUkkT4BBunS/vLdM66cLvvj7u6VYnf+0jlLn+XqPCEQpj8FE5APzS9rtDxIJsJuA5PqWobVCrxXsmXfX4VFBp61JV9D94feGf6T7hrgqtQ4i0/k0FeJGqDGOGYe5uw9gG8O//7/+71+W1O7Pdx2MsEiHHHKpjXXCJbX8KWBQ9HmXGWINufp80SIAASfCWmvLupRdqnLj1m8r0fZluG8SGhe1D//2Nf6cJqJkwkTjVb/qBd0/XqAIM5Pnvr1L/sckmEAyAvc5+s9m2YtfQtzRGMIZdQ4NTEY5q/m+pSeevLWeutKLUwtNxCEwA08yuy8xKtndXdm61bpLsF6+urnRtrUuxfaVVllKKyjWdLsXWlVJYagUsAewCeHBQAoODWMIqYIEsAPBArTXW8s8BmNPw/36tfxdrH6s5apS2GaEioOIKWj37a34FAAgAcHNL+wMAuHH06tdavCytQwAQBABpAATgv2WKAqDOjuOs5gclSgVk2BYH5aE3YEieEqI2rq/AugUq/ZIXkOpJ9W+02oQj58Z8jmR8sT6/yxbClygv/VWymlR/SjxlqH5oZpuUg+582unwJsj+ZTlW5xotOb3ATZHeEx71mkBLbnqFDmhP2AG/Lt4hUt8/KH80nRH3hqB5WiqrgXd1gRKjNOFaHalfd6WUOf2HWZOPs7Acxcq5J8pD1H8m7ONbZEo7zrrOwywiQJyGpNWR+v5BS3/kTKd9QM3bQVyID1Z2OYYTUrny8ifWKyw5ZvET/R4ECUmr8FhkHJYYs2yujxm2+YH+G6QCtUZL9m+0X0HHaETN2jgu9EHOeA6MW9Ji/wzX2SC7CBqpXKXRkv0J/V0HB++UesxH/9OQAhv5LxY/iSEl6CIhfdjcFW6J/JTCyOpszrU68lApYDcbM+YHURSteQgKFhYMO01BszFjfigba80DFCwsGHb6UkGO9mBv/txEezCcH0Nx2HwkX2Yr5nH1vA4kX+4oPTbnPRUUZ/+tdpixibjdt1BalPnQixZMPP9KfGyhk30eF8UHCyu7HMmEWCpXHjYsJ9vJrX/75aSTfjnZTg7hROGkk8XXByUv7SGffzKD2DguxIcszrMKtxNL5crcxEAeCbIKpLCyI6Tyvz65UegAGBo5Q0wXtsA1xj0urL3Z2vkixH6kKqpGb2zEQkPF+f0NgrTbOoV6MPVoQKW1tIYAFfB6KddEF3FAAA3gugWg5xrAyXF0OEdl4FWjMaVHL0cDukZa1pgCsSEAUIHWAkBZIQBQHLeiIQ7CV5RjPEXFsADAAP47+uJqQJWMg4vHhCmzDhx5dMigY06tscqr8AdqEMEA/mssSR8pBMokFPRZvhvO3x6DA/gFiyrH3b3btmXThrSUBIpo57AZauL+knXlHZLGvp+8k3NXqdMgUoleGU7q3x2owGqk/lA7ncHAyFvEdlxqbHxmc6tcqaraqq/G1Wp3ur3+YDgaT6YzlyrX84MQE8o4MANT1sPVerPd7Q+b/YFgKByJxuKJZCqdyfbDAGvGvtDL+4YbvIPo25VVlqx8/AhgO2n72g4sBRCLWMY5U6P2iq3OhNxeh+t2aw5+BtAAiffQ3c/o3DJw1KU0aCVcY+xdOzT0DJhYmuYBavoEKfFQ0V2D3KKMtBhIr6UR9vSzrJDxoOhocaSSe/wjboygScv/4o8RSkItYbRumZsuJ6xqVR3NnDgWTR93sJyzlcpvTAqAJIK6Pu5dnlefGOuEeKrweTA0HabArlGzCCivQxGU/E44/WyX7BwdIsuFlEbYs+xBmprblMwfJ+Iks6Cl6TErBYRt8EEvmWSiNtU6t05Mi/PRKQ23uZJpUrIte9s6p2yrspsWVwkrqJ+TvNELH+qXTgi97HCx17ymSSno1RYBiTDckQBG5JLlI8Ndreg15biKuGtISEAzZjMzaoeyXWV7tHjYw9Kc7n0eaBkA50x4epgeB273BWpPM5sLOlU8rQyold8XWdzORWV1QHeuFuehaX2tE1DvHvyNbvUTBxGORx9ULzLEOcdqngDUVTFFkCg9xZ5B9jukGAuNfpdcGBsUgfSoTD56oIUQXQEI3ATaoADwr0fYyaneVl4AuAkkdgDI/gAw0aCotFd6nB7+eqjgIRyZQiEBo/4WUwAaJnkSSaZaUigjMD1Kc4k8BeJ4gP9CELBrUGrJclPCa6nUiYi38bxVY9Y2inGxujbuls/Pq5lz973qg7JmH9k43oiLxV5cSEdrw1ZsttauD4qt9KW4XSn7YrexfXwpneGZSj5PgkbUzbVM3KhVzGT9s9eIotRoLHrvN6OdjnNdWywyCaQ14rh0l0NRfDiizzxcVaQcrpJygg9UOIRFwq0H0LaoS1YioCFdfJtyVaHIZV7K9zBSLrEJW00aJJ1736b/AXch0QU7UFixV389CvSSDjXR3OUfL/FbPiMVLgpkqDwUZPDwSNxvBICmqxBAUpUgyuGG354OVbEfIhmuvEqAaDzcp9A9t0B0NTeR8U2SIiAqNUjnQUdFiCoUTNdj90R1oNLLbW/X6a5ao9mgiBGQ/mBlM5BATM+IdsFoYioc9O+99LAznqeYoN3eUGqpZRoJmTBzAXm4AUr5ye/3BaRlZaXAcbr+SsX6eTjtOe3UdkKs7GEIAcFPBMg5YRhQRhfzmvCwctCleEAye+RuBDUOhp2UGKEO9YBPxW+Z2RdMkpFaYpXS7iwkeiQi2l76r8dCTc/gckR8hYccC3B4WyT6eLX7W2QVF73LO+fUIB+0cimjiLm8IrrbVn+9zC+50uuLESIDO2UoV0U1vf5wmlLQBJqirfQzLQX/Uc2zYUFhmkIsuMqKNphk2SS7M8AGGj0LfaKTFpFW9/VMddHib0ZlcnXZWe2k7/g8bsX721Y6jyS94pQrf8ysmY9apchsE+HKca2aY+ydfI+ywJCU3KbSkFmCuBevwIHhGkSZpppeBks4n5KT9nps1tk0uqNW8FiYIYmBiAjkVCJbbi9Mhfa8fzaIYhUUDjuZiEWhRHjKN7VZu5NbJUCyBa1bw1UqsqpGLeEVJ7qvnYYKxIt0qaLFcLt/bc0tur6ztzvnaD51Qt32KN9ejp7WvxzIVtgEAWOgYHlqGiInHfmjRtVIQgMoyncGuiq1tuqqdZEXNBTRIz0NPTFgoqA7zOh6G2mwgzZyv14rm/oy8IawsYpZ2NiIlCTqsBTouH6SglkAykxKx/eicx2KsWaP1SNCd4Yg/S+kHQgRFi0vyWUvpm1O8VM5fowak6miO1vV5RKu1iWerKNKgZnmOJ3N2WNvUoEc6QDvBVdKvK8QUlhWwrsJrTOwuicikoTbW+16db+lVRfhOkz/IqHPchv1lrrr3fNugPQmkzAFRavcVg3VARUTjVT4awOhpJ1Z/61zXM3aax8jFubaTmOdX+2L1UVNwKaBtHNrPnoKaUe1jMiD3VlJ9DTMh9mHwwCjEyxTwbEgDcGFaKstAxrQ/dJejWeYtWu3LoC1ULIuG8+Pt0VLW84dDcV44ZZ2d7M02wcqsNXOXPuyC/mFkLokqQcqghZWhLspMVRxxuywRDCgul8rN1a36io90x8I6ZJqkbDjpqrCKxCBiDoqpuhrPMeAjBYHVsGXorL2A6UAZmEmGEtSiVKTSgoL0mpPo2mHjxT8AkLBpUwdmt8UWI0Wg8elbblwNNYbKrQwQUhzKJP36hG2slARh0LE3lmP0uf5JaCvXFb7cRUYCRJaHH1hUmMvFl9lnWrXw73TmBX4vuxd3P2xS/L5KdszAEDVUQ6CuV27lU5UIgI5ckUuUzSxwCIc7kR7q6ZetfrNRo9rgI6NS5+2WzkiZAFRnav+o4qjECmWVADnDI/THhWs/W6HZb14qhhTaSkfykNys3Ctcht+rGjwQaEdBS5YWRdn8k0bOhPMN1fxfpe/wJz5ZeHSS0XLCv4d+DMtHtSTnKuNp4eLveGV3tVfvJq47zzU3BPzxQVaP45520U/T62yc3821Ck7geOv2xef2/sMe6T3JA3LAjLjNwVEiFx8v7uVVa7Yv0uYnX/Wcj+Q/pJmdgLjlNMc5E5njtQyWgcRXTj8bb+H0l8SOkwN1QjRS41Ua+g6RRKWDkf+5fY8aJGAih0po6kSPbty0B2MLkZ7l5j0XgW+1I6F7BOy6XKKl7NLbMDS2pINNPRTNp+0ZK+VyzgiHK3FiOkp7TpDB9LSMD1ymJQ/l/Gv0ZFR0Px42EZF/UJ6oKWJDNejssForwLIAOfpDyGG0lvTk1x3Q82Lm1LVsebkhhUTeq7Rd7RudOajL471kN71d1Z7m8aixBoVeFhnIbIgu8oT9YaMIZt8bMVZOu0WkJVYcvkEFwROSh5mcI7klkN1TWG2SXsS1UaS0+ywzIODycFmWxS7gBFNxaVQmDWbZlXIGdH9lbihWLvMY2rww4sILBE1owtMJ8ZG/DAHdZWf5Hx1oOYAaZkghTd+X0uY0jeBB/phnd0MYxX/DB/7Dyq/J61Hn/thTbfC8idQ2uUZ4Ch88rNgsCkEYSlkxXmgwAs2uDj4eZphGeNqcIzv9M/0kVH+uppFsvSCVYuOoyh3y5E65Jg/F/kAePOriLQvDbxadueThCvdgpHUKwJeRnu6rALbdSX3hal7COnI43/YIYOVBj8M/nRnj5bbKsUxisjwJ+2n0aJX761v2vAzjHtVVzCER+GZ7Ap7c3fLq0c9WYKs6qpUKsNPRbMCpFtT3SJo5L111j9e2nE1uzzA1DJlJ839sfar67dvCok2kbxzOYuBPnpeRmVilIM76j/3sm6Gfe9nr/mvCZaorb3LExFEeikpGtoorjAynFZAM1SieWuSf/xR8uKv/tPuh/4zHzc77yTtZHbuukaUe//piz+lzVNuCedyzuu/UJIe/YwhffxIPL8sxMnx5VPhl4uX8+wxTzwipYlEPCb+QxxDmSGbWdw1K5000uUAw7QQDln4h3aJZzLuSAWXficluGgN895iNi+2MpKPx42lq2/9Y8kU8m0nj2fopAXM7hlONsXVivPe5IR9+a5eC1xpdXbHw/PEuwMMM4xZOW599EaTzfdStX1Ja9K3840E91R3aefUfz4WP84/0su85rWFDEvXTRMtLNqw6Nv5IPqrJziVt1DOpXasj+1vk5ys4vR4Rc0v3vzbUbF07OoeRueTNkuChNhENyLQ+jL1tus2gPwyHsHXb5RnWs4Juh4yYNRvD49yKSyN9hGOs/IOpiCSNIqvdoB9CWejvzqTrzrLrbYkN3cgb0Mog3Vml3BnJ4qVlgeFyCMmIDLdjL2GC3PgpXtaBe4IjI5L2vcHH/381tudRDx9GZrqpxjlZRgYsqbPc/OggpPnUPJuaV+ta3+FjP8KnxB0y0UKP02w+SN0r9774HgrYjxia07MTABzehJ6T5pvLmf/pUugteMednvzQX23Y8/Jqmzr7DXLG5IyeCqd8kKaeqz8Vwakk45+bKzHqpVO2ir5+YoOLkTWlqgDBlsHfXSZ31TnGzdISXpRuXc8zyhu1rNdW7W9PtElfZv9vwOSi5Pyvke9ZAgXXK7xn3a3DpQ7KAZ6NMArTYVMhSY7bdescp69QWVyVPbCCz2G+y/6kA+BCgkJeh1PXZqqFH2LyeYKn5Rr79MWdEx/qbGQEE//cS85IPGd3w/buOwcl+izp5aefr7XHCNGO7k3JQWbD08ZBfgBbuXMmLjnzG+kNKDNVAhiIqDW6yix1h8HvzjMGR8RVlMleMqc2QI5ZQqLjxH+sB8cMXHxp7vq2OVeEnYUm5KXd7PTfVPu4BrLcvYWO7nSPN/r/Bv3p6uDw3j2McvXzscoXt8rwb376lsQgfLsNAv9A1b6V2XvPzJMIBMjTcOXLjwRdNoQKj2jjgQgJQrRW41nbmvFVuteMm9WlxksFGbKZMSxtTJMIpQvRASbxduuy7QwLSnZuJjhRFBwVgE/x63SVrgXo0NheExu4mfquRqrle5U0xxpUv/CkFVKnMmogl+B35BDS56B/uWM1umEFcBNiYeWXp1iZCamjgtGlefZydNXwNb3zwgxVpS5I3NAINc+7lz29pMxyWk5Ax2flrLSU0iGqftWgYKIwIiAaqIyzC/MP5dH7SKHf/0iYYJD1mk6Yacb53giXuyJTR1lIzcZBH6T/3QUgW6YOiJxnJxoNA08VVS90gApgeP1Z4olWcKPps1aLAm0x/sXiiY5HNaToE0ItDbErG0xdiF/7aYsQ5LlXTHaWW6/yr5QHSlegS0FdTy5NinepY3mbiu8nJAkLzjc8c/UofOLRiRUc0LYTpx0ZpPWA9l2o91BwQ5uGl4CrCWvo1U6YgXadl7+Rk77K/j1cq3+zMoQmiayomqsi9Jqt7WkNbfll17jGwrszrjzMtL1odxqjVRewH8Oak41dB20jrUMCR9knc/S3Ta8uWx6sj79AzOk8GZE2DWTrL7z/tyGVbeOBXa6drNUv+3W5Iial+RqP5n0U/wqwhwSPPqTR3zPW1ar/a0jQXvX17m1nW4jaUKn1+bb+P1G5AaoCMdP6/pj6osq63afw3yH2729jFCd4rVL/FzAQtl41Kg4RiucX4we//ey5jbvyMPn+Xrc9hb0WlSUtOrYHQo/9QZlqhCXpexyNEYYn49AXkIfe747L7T8vKcxY21igmiWcY77W90vlxUCPPHa9LWsV+31cWcH1QYM1dU3L5BA65iqz3XPqCj1gU88QN3YhqLoQNFWRnAS7gnPedqbn9Lrq0MPaWdtaOvck9e/2etiWC1heedV04x8XPvKG6jNjx9MvqAqT6+XVs07Lk5XKNWTKT3jS1LSeAbsgOfYzx77+hLHMBJQKAP3BS/ZvTRVHqrPPN+ZiMG8q0+DvziI2AvKoi8d55pnT+cOQX8AhLG3gIGPQRGZn6q7zdi2rmMsvVJmlWtj4fvjoeGa3KMxpEp4SJ/1wtgyZv28fug9bDP9FD5NUQIZDObZUllutIrz/viU8YYXqun9r+8UC1nhygCX7qgNez/9fna23aufb6gn0MZnS61b65mOpOd6gy5dIrdc0AhxlKu/ec+GyROaxg3Pt0QiNp7gQmpBS/dqnGmcahdf3UrWCsVHonXOzQ0tt6LNLBoctG8a26s8MhUejAkWaDdrh3WgXa0dQTuGP/RHJYGQi4woGb+4e+Sfvjn+17mP97qYxhucFewE/b11B1PZDZuCWbHxiew9LCDernTPWqd+8kCWZxVvQ7Hb3jDrQeUgu+u/ZA9No1j5+efxQNieHPd2TT/tWStxA61Zj6zGPd3C7wh2OGrhDY/3IxsvRm9aQ44iGQ7rXHT157cxxPZocq2veYZY5EZaz+sFv+v8pnFn0O4wBFqLnIfKBeNbu0+J5vY1M5Qx4DyEJHUZdaKf4+Er6YBSpqOIwl1eTPsEBZ3OBUnsDTSMC8SZvcquqxoWTsH2ZOiN83i/WCzc0+PX+fSK8Oqx3o0luDqkiECpL59ta9h/+WBn7B2PFQ4jaESe2cHp9tbD2rWTpZ5PKmkG9WXIEXLU15rxMYu0CbK8CCHRJkqNydZZUwasb0fs/tHRlv//ZlgY8DJ7SeqGCDfWNvbZR9Jyp22otsD94qbSmgQd+6xSeoZl0v+Nz23qS6aczyEmIKnl3J6WLMlvuZVVFZRybedRYQ9NP7vWYkLFXI2vyrooSWho8orVP0VYQ/Ac3zCzJ7vYsdlzyO/HY1+5B1OSjtl/F78e5hn8f+JY/HyR33PtLDL/VGKb+0D6RpO/vDhCOcj71UNJh2oVzRO5Wm79pNNZzTiW1TUs41OwE5FkC01k+98wKa7kGw3pEzBwR3Dche2Oc01/zSWze5bN22yLQCeNTeFG74u4ppIX7uienSOWmRptGwwf28KfK9rbCsZYhr8aNJwRrFNQwg9U3pLyPQz7T7KK7Mj9mcuYfkOAkublNt++zsY9zMrtyswW8xDewEVKLTvbFNI2/MXDkRxqvaNipEyUg6LCuY+LD555xLGlkxwjjqgM28i7KgWs2RES6O2bFO7gupzrsNbNINLb6t+vRg4e2JDfLoQBs2X4srW8M4/O/gUda8qlyls6KgnOchYiRfOF6Wd/q0pZSzCspDjMQh5xpdpyN/kART+z5jIP2zfsA3zvjWMWd9KUSt3k1FxMU7zxpWnKCeMt3M+IhxE9lODlDtU9PWqIi23IUh6KHlKOct8LZIwl4gBiZJt/3UYZTavJZ7Xe+3hGDsbQZi5daNsY1EQOjGU0OnQ1TKda5HDy/JIN7Lg+mTu/3myPUL2tKKMZXi8Bp8kV0vvxIh5P5HS6oVOdJqmw1hS4yTjKpnNESZQ8UzxeH0hBg+qVp4oCTScaj5MEonqv28Qiv4791kGsJ5xJTtH9C2iPRIulmbFBpm0wDiRONaxSdp3Zi53zQ9wbiJK5EHSaRGaXFwrjaML8hzHh1U+vdPb49RQLv19kB9vWfPkshUTR6hAUTRMmur05Z3YYkTiywsEj9k6nHtAGsEa1pOu/tXGiByZRbPzzxi2XlzyiSrHptHNz4UFJz2zR0q6aQfwY91qRUY3vVRPLwOuH6X/21bxilEJ0gdb9r0fk/P91R2sHiSeI0YiPifnM5zIbS68FRclvn3F6v2zIiOMHJtuhSOvY/jF8+aPOnkn4l/0tVPLWZsvOiWlrxYt7e9EZS4g39tYqlPsde4659U/Gh99yRh+n49WE38M7eNl4qEXQTN+LivBNaWkI93r0SxwAgNIrTRCBtu+BXBxD0+DfwYsTG5fNqtwa/vGnhY/I6wL/+MPIs0aR18lykacvpq2jtTh5y7nFh5OGkpg866yImliPxjMuj6Y3fqPRUfEpNmbfKE1j7BtdNfrxfTH8fboOv6Gc1Ndr/3vz2wC7phAC8QRdCf7caurjp6ji+xbRLUGNqq6F/6sLp3sdakA5mSFFEGRBU4DcBUhDLupUcKoWdNQJs2CFImLTphvF/oHSaAmAu2IuYEoKHWNK1JYVwU8FwTVZl8qAM+rnH8NTtd2R20i5ob0nAAIjJ9RLNBkAzGfLPSAqlwUIfAwjQ8MRFVXqWk6JKoNFwrGV8wViIUzUQtKVJhymIMKlM1oggvbaGlwAnGqR5B2M4GUUmaLj8R8SjuFzCNsV0TWC19cpEyIklGvouJuIb+BmrBNjvwV2e7z7MLe8ULTPnQ+odcb772lS4EluG7diDSKB4G7W0pJSMYaONDAWdpG6AGCOO1CRHlTayTWmNbvGDoHqXSMxUARk6JhKxwrC49PNcCd0JJGxQRFHC0+iSOfGUhkvJHGFC0WUHKuu9tgAyTTdg1rJsYkk5ALmXQdUqMlgDtbY1JkhkpxBp+giZjEo0GRgSUEguW1wJf2A5MyWMpg5ARKorFEoSBRVvSd3BUMuVPLsIqwQq09DjZXYbHELMbhSxKL1MOd1zc2KLNgOysJ8Is38Bc5aCbkDOvqZsVSVnII5OhYFMENuhX3okoUrMlhwCbxH/83GQnQfCx2p8WHZwgl0Ap6BrfARfuZEROL0hpcaE/zmpQqkRQlJLm0cZbi5eDWJYLUJwd4msiPnZSTvtRtv3g3KPlShyvwjdd83W3sVzr+hl//lDCfRSWDoU5NPKX+3WNtHbXgFTRX/w8rvh/XrIta1Wx8/Xdwy2gz9QvGbLWaXRr/w5XrYH/G32z9kXRihLWrZAr1s41WZHLgyMQAHbnQXPOmoC08OmriX9562ePmKsPLBFe0nREcw7kTCwIcnJxrpvsRhV0RNHpCzuogCRomlBx0xYDZ3UHTZEKGgu0SxIxFyGLdQYFhTlzaVqsdNZWgsJcddB3VpgmGbXNikMS003dIVVnpdHrVewWSTYHD4Zqto0Ry3djiYyWnltLSSLTJYps6BlBx3VrRIEd81scUldIqxVdQ1TmN82MGha7GPpGiieLFye+zb319l+/xWzgI7uNX1pyOuWxKeF5r1kXW/RJ/y0tK25sKa8oSFCUUEpihVfeGSVIUVy0JxX/+w3mnB646xgZxYLzIAz6TzKJZaFZBh5xovsN++kIovQqdoHWX2O49bg9njMamFHkjH2NeL43zjiyND41KJoQGWZOgZCUm1ixlR8TJWJTAraGsUdrKlak4eNRF8UVoSpIm7/aejYcxomLIJA9xEADJQR+WcOjBSJcdTpozF/WZZuGSH1DgnML1rQqXJVBacrIeIOt7rX9iNj3I4D7tJRCPTPr/SDpwqFpoWhJKbv+5Y41uslgJYqInCRHHNe3pE6oVcwMssgUgjbFD2bEGnWOPGIkkQbpb5NFKv6AbmlVOvDUnEK0jCqwsUq74WCb/ydG3gwix8wzjFUC1g8dCan5QWNA3sHKvtlZgmcjCCnUpHbZxSNHSdYnJMbEraF/aZ5C7oyNOkO+jbzm1Isdc0dok8d7ZSPRMzH6Irg7dEzuZIZGLhSVxyQW125+6jhVZlGhuDfhxHeg590U8PqNmEtztUWUeFlCgCJGd3WlOV3NIthSn2sOxVEPYiNXRT4o0WLC8srFNXKkwhbMik6ZAKpx2xG1EGwirYncznR626pCw+pWh3gxMC2+6q7JWecyqaB6XHnFJAR/vwDZgoXuOwHSehU9RXxv6w/OnhlcZbt9UgUMQlKHWUFyM5EU7j5HmkJQec1zJeTQRzmgSkAGK04sVEiJLFutgR3gcN6v0wjZVgQY21+HETxaqPjwf+MnC+hLicfm5M5K2liwLCubZuUvc+DJyy05+b6JLSbw4H5oAo0GGwCow5jYmNY2/4ErqdKY8f0xOLkIquaMpgs2PcaECszXb5fGbQi/aloDbkEoSt4EJB2bfezHVL90OnONtlLPpt0uIISZcT0TWCdRKQulMtaO4j4hML5VJqrEaz/enxyU1BWyxHQzx7b3oeAQwM0hxLW1h0HHVGhEd+/4CIOpJLj5CKrdBmRddYtqLFAi5Ds1BUd4wFU3hFlfWc/JVGgdmqGqaJo4NaD9Z2fPBcmuTb/Vf2S47fRpRzduDzsw0/+8csApPi4xRXKnwP8BcJ7i80KVp5WbWN0JNE/IlAB/Jg/+zgKLv4428t0AsePIvlyRq45Iob1LTSkUkaWmTCzplehFoyhKl8OKxFwJAaPWFwRIOpRKRN6tCve0+XPKrBfZmkGocITKuuUPEptTes0WbQcXtun2C7KWF3pYEoXnoEl5Qb7xe+0j2XTKzcvRdb6IjPdl6SgVabShOBOoXtgRVbnTESzfGbs6mHt6FSWGl7aHafNtci5k7iN0e7UK22rUkqbidSWDAUHNFi2B6+xF5jOAFTchlA4XqqhPQtZCx1p7T+pgQR9syagFhZe8sgFY71oRLoVuy7YOLNxfNyizYoQhzuEuHyUP9/k59DAACePiRLMjuFRDOKTu5TiA+O0KWTPlJ7M6qoXAEsl2jj4QNIa2OzE3NrIsabJ8tmEkaypxBBGj8OtGfz+QjY/Y0z7z8o5xS1mJQeCus+qsMATUvclsB9Ph5KzYIrccYc5KtMlO1LqIqiKuAkrP3vHK3d8//C9CxXDLv6X/nbECw/93F0DQC8f5ASDwHoGvNowOtPQOOGv/A0MLW8Y+PFJcdGaPsojdqwiw7fLWGLyrjn+ktrQJta22c1he0yIMwA9TEa8AvQgiCSzSE44F4MqJUfL/47mR0VgHYQ0B0B9rEOGL4L0NkwYQOgPgT0IIdKrdD6AZbNUkAvsdgQgABs1bsBuw48vNqgB0xjDMj3qzCwyMsL31UXoNtCST4D9buBQKGIQ4UGwGMQggBY8dUs4iSECYAWAPxAnHqAu5GemdRG1SdWCUF1aq3ebqPPOJSNl3akmqsh1fUXz3L/JkeWvuVpgdcTgnYUQCofAJAg0BHU5xI4CRCGeicFNrp3UsHIv5MG/hF10kE1sU5+yEulc4Z04XXO0itKzjnChCtcymbu9t2q5Es8DNmXR6HNW0RBr5RJjduMcy6K/Cgb+gFiUyu5jBrS09Ix/9N9Vn+TowEEg7Vl02YUptRsx7MuScvZQOXEIr28RaA8jC2EglqvPGPbqnkbM8Nu5JptWnoONzd11LS/kxxzeshtotjQuCxvyySP99ezUuafBkMJDmEpz5PZBuirqBnNfz05JmImD33FbOgmRPNlW3N5N6aBFhlROqpCA21L14HDeMKURQEy5SJjpchaRmxjztbAE60YUyUpd6RyMLVDCfcfRVngKuVZDufWQPGGQENkg3dJMzsTfZFNBeUWS41I3s6dJ69GmZI1T0Y7GrRuGwFJPbl/LPWQS4fndqOlAiTwb6n2kwb8IACCIAwiIKpBoybNWrRq0+67dnutRy/EJyQiJiElI6egpKKmkTQzPQMjEzMLKxs7B+d3/ky/oJD94Y2IiolLSEpJy8jqN2DQkGEjRo0ZN2HSlGmzoUJfaMDRHzryIC/yIT8KoCAKoTCKoGjEIh4Jb7hGjJowZNikQ5GMVKS7GHI/z+p40hOJ1t0xbnPUE8+Z/mYucmAHcVAHc3DHzDF3LBzL7GMbHK4X30THMdsb1NL8Jmu3Jqmbg+ttHuPH/TtscH8Fx4HPXCGEv129feh7c1bQq13wzx327gtTh5a9YgXUugGUXYfeunEGkH4dBLhzQeuqa4bUcr92fwFKG7Uu41htoxUz7rTBG4LZ1YhyblldzJVeuQvCW3A7kAj4iQ69N0dOpd+9fwp2O6fuprTXW3G2vQ3dyoxv27ENwZM531xg/t22npnAwM+Ufvbh/XMAAAA="
+
+/***/ },
+/* 245 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "app/components/styles/fonts/Nordic/nordic_alternative_regular-webfont.woff";
+
+/***/ },
+/* 246 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "app/components/styles/fonts/Nordic/nordic_alternative_regular-webfont.ttf";
+
+/***/ },
+/* 247 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	var stylesInDom = {},
+		memoize = function(fn) {
+			var memo;
+			return function () {
+				if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+				return memo;
+			};
+		},
+		isOldIE = memoize(function() {
+			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
+		}),
+		getHeadElement = memoize(function () {
+			return document.head || document.getElementsByTagName("head")[0];
+		}),
+		singletonElement = null,
+		singletonCounter = 0,
+		styleElementsInsertedAtTop = [];
+
+	module.exports = function(list, options) {
+		if(false) {
+			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+		}
+
+		options = options || {};
+		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+		// tags it will allow on a page
+		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
+
+		// By default, add <style> tags to the bottom of <head>.
+		if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
+
+		var styles = listToStyles(list);
+		addStylesToDom(styles, options);
+
+		return function update(newList) {
+			var mayRemove = [];
+			for(var i = 0; i < styles.length; i++) {
+				var item = styles[i];
+				var domStyle = stylesInDom[item.id];
+				domStyle.refs--;
+				mayRemove.push(domStyle);
+			}
+			if(newList) {
+				var newStyles = listToStyles(newList);
+				addStylesToDom(newStyles, options);
+			}
+			for(var i = 0; i < mayRemove.length; i++) {
+				var domStyle = mayRemove[i];
+				if(domStyle.refs === 0) {
+					for(var j = 0; j < domStyle.parts.length; j++)
+						domStyle.parts[j]();
+					delete stylesInDom[domStyle.id];
+				}
+			}
+		};
+	}
+
+	function addStylesToDom(styles, options) {
+		for(var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+			if(domStyle) {
+				domStyle.refs++;
+				for(var j = 0; j < domStyle.parts.length; j++) {
+					domStyle.parts[j](item.parts[j]);
+				}
+				for(; j < item.parts.length; j++) {
+					domStyle.parts.push(addStyle(item.parts[j], options));
+				}
+			} else {
+				var parts = [];
+				for(var j = 0; j < item.parts.length; j++) {
+					parts.push(addStyle(item.parts[j], options));
+				}
+				stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+			}
+		}
+	}
+
+	function listToStyles(list) {
+		var styles = [];
+		var newStyles = {};
+		for(var i = 0; i < list.length; i++) {
+			var item = list[i];
+			var id = item[0];
+			var css = item[1];
+			var media = item[2];
+			var sourceMap = item[3];
+			var part = {css: css, media: media, sourceMap: sourceMap};
+			if(!newStyles[id])
+				styles.push(newStyles[id] = {id: id, parts: [part]});
+			else
+				newStyles[id].parts.push(part);
+		}
+		return styles;
+	}
+
+	function insertStyleElement(options, styleElement) {
+		var head = getHeadElement();
+		var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
+		if (options.insertAt === "top") {
+			if(!lastStyleElementInsertedAtTop) {
+				head.insertBefore(styleElement, head.firstChild);
+			} else if(lastStyleElementInsertedAtTop.nextSibling) {
+				head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
+			} else {
+				head.appendChild(styleElement);
+			}
+			styleElementsInsertedAtTop.push(styleElement);
+		} else if (options.insertAt === "bottom") {
+			head.appendChild(styleElement);
+		} else {
+			throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
+		}
+	}
+
+	function removeStyleElement(styleElement) {
+		styleElement.parentNode.removeChild(styleElement);
+		var idx = styleElementsInsertedAtTop.indexOf(styleElement);
+		if(idx >= 0) {
+			styleElementsInsertedAtTop.splice(idx, 1);
+		}
+	}
+
+	function createStyleElement(options) {
+		var styleElement = document.createElement("style");
+		styleElement.type = "text/css";
+		insertStyleElement(options, styleElement);
+		return styleElement;
+	}
+
+	function createLinkElement(options) {
+		var linkElement = document.createElement("link");
+		linkElement.rel = "stylesheet";
+		insertStyleElement(options, linkElement);
+		return linkElement;
+	}
+
+	function addStyle(obj, options) {
+		var styleElement, update, remove;
+
+		if (options.singleton) {
+			var styleIndex = singletonCounter++;
+			styleElement = singletonElement || (singletonElement = createStyleElement(options));
+			update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
+			remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
+		} else if(obj.sourceMap &&
+			typeof URL === "function" &&
+			typeof URL.createObjectURL === "function" &&
+			typeof URL.revokeObjectURL === "function" &&
+			typeof Blob === "function" &&
+			typeof btoa === "function") {
+			styleElement = createLinkElement(options);
+			update = updateLink.bind(null, styleElement);
+			remove = function() {
+				removeStyleElement(styleElement);
+				if(styleElement.href)
+					URL.revokeObjectURL(styleElement.href);
+			};
+		} else {
+			styleElement = createStyleElement(options);
+			update = applyToTag.bind(null, styleElement);
+			remove = function() {
+				removeStyleElement(styleElement);
+			};
+		}
+
+		update(obj);
+
+		return function updateStyle(newObj) {
+			if(newObj) {
+				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
+					return;
+				update(obj = newObj);
+			} else {
+				remove();
+			}
+		};
+	}
+
+	var replaceText = (function () {
+		var textStore = [];
+
+		return function (index, replacement) {
+			textStore[index] = replacement;
+			return textStore.filter(Boolean).join('\n');
+		};
+	})();
+
+	function applyToSingletonTag(styleElement, index, remove, obj) {
+		var css = remove ? "" : obj.css;
+
+		if (styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = replaceText(index, css);
+		} else {
+			var cssNode = document.createTextNode(css);
+			var childNodes = styleElement.childNodes;
+			if (childNodes[index]) styleElement.removeChild(childNodes[index]);
+			if (childNodes.length) {
+				styleElement.insertBefore(cssNode, childNodes[index]);
+			} else {
+				styleElement.appendChild(cssNode);
+			}
+		}
+	}
+
+	function applyToTag(styleElement, obj) {
+		var css = obj.css;
+		var media = obj.media;
+
+		if(media) {
+			styleElement.setAttribute("media", media)
+		}
+
+		if(styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = css;
+		} else {
+			while(styleElement.firstChild) {
+				styleElement.removeChild(styleElement.firstChild);
+			}
+			styleElement.appendChild(document.createTextNode(css));
+		}
+	}
+
+	function updateLink(linkElement, obj) {
+		var css = obj.css;
+		var sourceMap = obj.sourceMap;
+
+		if(sourceMap) {
+			// http://stackoverflow.com/a/26603875
+			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+		}
+
+		var blob = new Blob([css], { type: "text/css" });
+
+		var oldSrc = linkElement.href;
+
+		linkElement.href = URL.createObjectURL(blob);
+
+		if(oldSrc)
+			URL.revokeObjectURL(oldSrc);
+	}
+
+
+/***/ },
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26770,7 +27220,2306 @@
 	exports.default = Header;
 
 /***/ },
-/* 237 */
+/* 249 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(178);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactAddonsCssTransitionGroup = __webpack_require__(250);
+
+	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
+
+	var _home = __webpack_require__(263);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Home = function (_React$Component) {
+	    _inherits(Home, _React$Component);
+
+	    function Home(props) {
+	        _classCallCheck(this, Home);
+
+	        var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
+
+	        _this.state = { mounted: false };
+	        return _this;
+	    }
+
+	    _createClass(Home, [{
+	        key: 'getInitialState',
+	        value: function getInitialState() {
+	            return { mounted: false };
+	        }
+	    }, {
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            this.setState({ mounted: true });
+	            var elem = this.getDOMNode();
+	            // Set the opacity of the element to 0
+	            elem.style.opacity = 0;
+	            window.requestAnimationFrame(function () {
+	                // Now set a transition on the opacity
+	                elem.style.transition = "width 2500ms ease-in";
+	                // and set the opacity to 1
+	            });
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var horizs = null;
+	            if (this.state.mounted) {
+	                horizs = _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    _react2.default.createElement('hr', { className: 'hr1', key: 'one' }),
+	                    _react2.default.createElement('hr', { className: 'hr2', key: 'two' }),
+	                    _react2.default.createElement('hr', { className: 'hr3', key: 'three' })
+	                );
+	            }
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'home' },
+	                _react2.default.createElement(
+	                    'h2',
+	                    { className: 'name' },
+	                    'ALLEN CAO'
+	                ),
+	                _react2.default.createElement(
+	                    _reactAddonsCssTransitionGroup2.default,
+	                    {
+	                        transitionName: 'hrs',
+	                        transitionAppear: true,
+	                        transitionAppearTimeout: 1000,
+	                        transitionEnterTimeout: 1000,
+	                        transitionLeaveTimeout: 1000
+	                    },
+	                    horizs
+	                ),
+	                _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    'University of California, Berkeley'
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Home;
+	}(_react2.default.Component);
+
+	exports.default = Home;
+
+/***/ },
+/* 250 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(251);
+
+/***/ },
+/* 251 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-present, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 */
+
+	'use strict';
+
+	var _assign = __webpack_require__(23);
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var React = __webpack_require__(87);
+
+	var ReactTransitionGroup = __webpack_require__(252);
+	var ReactCSSTransitionGroupChild = __webpack_require__(255);
+
+	function createTransitionTimeoutPropValidator(transitionType) {
+	  var timeoutPropName = 'transition' + transitionType + 'Timeout';
+	  var enabledPropName = 'transition' + transitionType;
+
+	  return function (props) {
+	    // If the transition is enabled
+	    if (props[enabledPropName]) {
+	      // If no timeout duration is provided
+	      if (props[timeoutPropName] == null) {
+	        return new Error(timeoutPropName + ' wasn\'t supplied to ReactCSSTransitionGroup: ' + 'this can cause unreliable animations and won\'t be supported in ' + 'a future version of React. See ' + 'https://fb.me/react-animation-transition-group-timeout for more ' + 'information.');
+
+	        // If the duration isn't a number
+	      } else if (typeof props[timeoutPropName] !== 'number') {
+	        return new Error(timeoutPropName + ' must be a number (in milliseconds)');
+	      }
+	    }
+	  };
+	}
+
+	/**
+	 * An easy way to perform CSS transitions and animations when a React component
+	 * enters or leaves the DOM.
+	 * See https://facebook.github.io/react/docs/animation.html#high-level-api-reactcsstransitiongroup
+	 */
+
+	var ReactCSSTransitionGroup = function (_React$Component) {
+	  _inherits(ReactCSSTransitionGroup, _React$Component);
+
+	  function ReactCSSTransitionGroup() {
+	    var _temp, _this, _ret;
+
+	    _classCallCheck(this, ReactCSSTransitionGroup);
+
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, _React$Component.call.apply(_React$Component, [this].concat(args))), _this), _this._wrapChild = function (child) {
+	      // We need to provide this childFactory so that
+	      // ReactCSSTransitionGroupChild can receive updates to name, enter, and
+	      // leave while it is leaving.
+	      return React.createElement(ReactCSSTransitionGroupChild, {
+	        name: _this.props.transitionName,
+	        appear: _this.props.transitionAppear,
+	        enter: _this.props.transitionEnter,
+	        leave: _this.props.transitionLeave,
+	        appearTimeout: _this.props.transitionAppearTimeout,
+	        enterTimeout: _this.props.transitionEnterTimeout,
+	        leaveTimeout: _this.props.transitionLeaveTimeout
+	      }, child);
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
+	  }
+
+	  ReactCSSTransitionGroup.prototype.render = function render() {
+	    return React.createElement(ReactTransitionGroup, _assign({}, this.props, { childFactory: this._wrapChild }));
+	  };
+
+	  return ReactCSSTransitionGroup;
+	}(React.Component);
+
+	ReactCSSTransitionGroup.displayName = 'ReactCSSTransitionGroup';
+	ReactCSSTransitionGroup.propTypes = {
+	  transitionName: ReactCSSTransitionGroupChild.propTypes.name,
+
+	  transitionAppear: React.PropTypes.bool,
+	  transitionEnter: React.PropTypes.bool,
+	  transitionLeave: React.PropTypes.bool,
+	  transitionAppearTimeout: createTransitionTimeoutPropValidator('Appear'),
+	  transitionEnterTimeout: createTransitionTimeoutPropValidator('Enter'),
+	  transitionLeaveTimeout: createTransitionTimeoutPropValidator('Leave')
+	};
+	ReactCSSTransitionGroup.defaultProps = {
+	  transitionAppear: false,
+	  transitionEnter: true,
+	  transitionLeave: true
+	};
+
+
+	module.exports = ReactCSSTransitionGroup;
+
+/***/ },
+/* 252 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-present, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 */
+
+	'use strict';
+
+	var _assign = __webpack_require__(23);
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var React = __webpack_require__(87);
+	var ReactTransitionChildMapping = __webpack_require__(253);
+
+	var emptyFunction = __webpack_require__(18);
+
+	/**
+	 * A basis for animations. When children are declaratively added or removed,
+	 * special lifecycle hooks are called.
+	 * See https://facebook.github.io/react/docs/animation.html#low-level-api-reacttransitiongroup
+	 */
+
+	var ReactTransitionGroup = function (_React$Component) {
+	  _inherits(ReactTransitionGroup, _React$Component);
+
+	  function ReactTransitionGroup() {
+	    var _temp, _this, _ret;
+
+	    _classCallCheck(this, ReactTransitionGroup);
+
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, _React$Component.call.apply(_React$Component, [this].concat(args))), _this), _this.state = {
+	      // TODO: can we get useful debug information to show at this point?
+	      children: ReactTransitionChildMapping.getChildMapping(_this.props.children)
+	    }, _this.performAppear = function (key) {
+	      _this.currentlyTransitioningKeys[key] = true;
+
+	      var component = _this.refs[key];
+
+	      if (component.componentWillAppear) {
+	        component.componentWillAppear(_this._handleDoneAppearing.bind(_this, key));
+	      } else {
+	        _this._handleDoneAppearing(key);
+	      }
+	    }, _this._handleDoneAppearing = function (key) {
+	      var component = _this.refs[key];
+	      if (component.componentDidAppear) {
+	        component.componentDidAppear();
+	      }
+
+	      delete _this.currentlyTransitioningKeys[key];
+
+	      var currentChildMapping = ReactTransitionChildMapping.getChildMapping(_this.props.children);
+
+	      if (!currentChildMapping || !currentChildMapping.hasOwnProperty(key)) {
+	        // This was removed before it had fully appeared. Remove it.
+	        _this.performLeave(key);
+	      }
+	    }, _this.performEnter = function (key) {
+	      _this.currentlyTransitioningKeys[key] = true;
+
+	      var component = _this.refs[key];
+
+	      if (component.componentWillEnter) {
+	        component.componentWillEnter(_this._handleDoneEntering.bind(_this, key));
+	      } else {
+	        _this._handleDoneEntering(key);
+	      }
+	    }, _this._handleDoneEntering = function (key) {
+	      var component = _this.refs[key];
+	      if (component.componentDidEnter) {
+	        component.componentDidEnter();
+	      }
+
+	      delete _this.currentlyTransitioningKeys[key];
+
+	      var currentChildMapping = ReactTransitionChildMapping.getChildMapping(_this.props.children);
+
+	      if (!currentChildMapping || !currentChildMapping.hasOwnProperty(key)) {
+	        // This was removed before it had fully entered. Remove it.
+	        _this.performLeave(key);
+	      }
+	    }, _this.performLeave = function (key) {
+	      _this.currentlyTransitioningKeys[key] = true;
+
+	      var component = _this.refs[key];
+	      if (component.componentWillLeave) {
+	        component.componentWillLeave(_this._handleDoneLeaving.bind(_this, key));
+	      } else {
+	        // Note that this is somewhat dangerous b/c it calls setState()
+	        // again, effectively mutating the component before all the work
+	        // is done.
+	        _this._handleDoneLeaving(key);
+	      }
+	    }, _this._handleDoneLeaving = function (key) {
+	      var component = _this.refs[key];
+
+	      if (component.componentDidLeave) {
+	        component.componentDidLeave();
+	      }
+
+	      delete _this.currentlyTransitioningKeys[key];
+
+	      var currentChildMapping = ReactTransitionChildMapping.getChildMapping(_this.props.children);
+
+	      if (currentChildMapping && currentChildMapping.hasOwnProperty(key)) {
+	        // This entered again before it fully left. Add it again.
+	        _this.performEnter(key);
+	      } else {
+	        _this.setState(function (state) {
+	          var newChildren = _assign({}, state.children);
+	          delete newChildren[key];
+	          return { children: newChildren };
+	        });
+	      }
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
+	  }
+
+	  ReactTransitionGroup.prototype.componentWillMount = function componentWillMount() {
+	    this.currentlyTransitioningKeys = {};
+	    this.keysToEnter = [];
+	    this.keysToLeave = [];
+	  };
+
+	  ReactTransitionGroup.prototype.componentDidMount = function componentDidMount() {
+	    var initialChildMapping = this.state.children;
+	    for (var key in initialChildMapping) {
+	      if (initialChildMapping[key]) {
+	        this.performAppear(key);
+	      }
+	    }
+	  };
+
+	  ReactTransitionGroup.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+	    var nextChildMapping = ReactTransitionChildMapping.getChildMapping(nextProps.children);
+	    var prevChildMapping = this.state.children;
+
+	    this.setState({
+	      children: ReactTransitionChildMapping.mergeChildMappings(prevChildMapping, nextChildMapping)
+	    });
+
+	    var key;
+
+	    for (key in nextChildMapping) {
+	      var hasPrev = prevChildMapping && prevChildMapping.hasOwnProperty(key);
+	      if (nextChildMapping[key] && !hasPrev && !this.currentlyTransitioningKeys[key]) {
+	        this.keysToEnter.push(key);
+	      }
+	    }
+
+	    for (key in prevChildMapping) {
+	      var hasNext = nextChildMapping && nextChildMapping.hasOwnProperty(key);
+	      if (prevChildMapping[key] && !hasNext && !this.currentlyTransitioningKeys[key]) {
+	        this.keysToLeave.push(key);
+	      }
+	    }
+
+	    // If we want to someday check for reordering, we could do it here.
+	  };
+
+	  ReactTransitionGroup.prototype.componentDidUpdate = function componentDidUpdate() {
+	    var keysToEnter = this.keysToEnter;
+	    this.keysToEnter = [];
+	    keysToEnter.forEach(this.performEnter);
+
+	    var keysToLeave = this.keysToLeave;
+	    this.keysToLeave = [];
+	    keysToLeave.forEach(this.performLeave);
+	  };
+
+	  ReactTransitionGroup.prototype.render = function render() {
+	    // TODO: we could get rid of the need for the wrapper node
+	    // by cloning a single child
+	    var childrenToRender = [];
+	    for (var key in this.state.children) {
+	      var child = this.state.children[key];
+	      if (child) {
+	        // You may need to apply reactive updates to a child as it is leaving.
+	        // The normal React way to do it won't work since the child will have
+	        // already been removed. In case you need this behavior you can provide
+	        // a childFactory function to wrap every child, even the ones that are
+	        // leaving.
+	        childrenToRender.push(React.cloneElement(this.props.childFactory(child), { ref: key, key: key }));
+	      }
+	    }
+
+	    // Do not forward ReactTransitionGroup props to primitive DOM nodes
+	    var props = _assign({}, this.props);
+	    delete props.transitionLeave;
+	    delete props.transitionName;
+	    delete props.transitionAppear;
+	    delete props.transitionEnter;
+	    delete props.childFactory;
+	    delete props.transitionLeaveTimeout;
+	    delete props.transitionEnterTimeout;
+	    delete props.transitionAppearTimeout;
+	    delete props.component;
+
+	    return React.createElement(this.props.component, props, childrenToRender);
+	  };
+
+	  return ReactTransitionGroup;
+	}(React.Component);
+
+	ReactTransitionGroup.displayName = 'ReactTransitionGroup';
+	ReactTransitionGroup.propTypes = {
+	  component: React.PropTypes.any,
+	  childFactory: React.PropTypes.func
+	};
+	ReactTransitionGroup.defaultProps = {
+	  component: 'span',
+	  childFactory: emptyFunction.thatReturnsArgument
+	};
+
+
+	module.exports = ReactTransitionGroup;
+
+/***/ },
+/* 253 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-present, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 */
+
+	'use strict';
+
+	var flattenChildren = __webpack_require__(254);
+
+	var ReactTransitionChildMapping = {
+	  /**
+	   * Given `this.props.children`, return an object mapping key to child. Just
+	   * simple syntactic sugar around flattenChildren().
+	   *
+	   * @param {*} children `this.props.children`
+	   * @param {number=} selfDebugID Optional debugID of the current internal instance.
+	   * @return {object} Mapping of key to child
+	   */
+	  getChildMapping: function (children, selfDebugID) {
+	    if (!children) {
+	      return children;
+	    }
+
+	    if (process.env.NODE_ENV !== 'production') {
+	      return flattenChildren(children, selfDebugID);
+	    }
+
+	    return flattenChildren(children);
+	  },
+
+	  /**
+	   * When you're adding or removing children some may be added or removed in the
+	   * same render pass. We want to show *both* since we want to simultaneously
+	   * animate elements in and out. This function takes a previous set of keys
+	   * and a new set of keys and merges them with its best guess of the correct
+	   * ordering. In the future we may expose some of the utilities in
+	   * ReactMultiChild to make this easy, but for now React itself does not
+	   * directly have this concept of the union of prevChildren and nextChildren
+	   * so we implement it here.
+	   *
+	   * @param {object} prev prev children as returned from
+	   * `ReactTransitionChildMapping.getChildMapping()`.
+	   * @param {object} next next children as returned from
+	   * `ReactTransitionChildMapping.getChildMapping()`.
+	   * @return {object} a key set that contains all keys in `prev` and all keys
+	   * in `next` in a reasonable order.
+	   */
+	  mergeChildMappings: function (prev, next) {
+	    prev = prev || {};
+	    next = next || {};
+
+	    function getValueForKey(key) {
+	      if (next.hasOwnProperty(key)) {
+	        return next[key];
+	      } else {
+	        return prev[key];
+	      }
+	    }
+
+	    // For each key of `next`, the list of keys to insert before that key in
+	    // the combined list
+	    var nextKeysPending = {};
+
+	    var pendingKeys = [];
+	    for (var prevKey in prev) {
+	      if (next.hasOwnProperty(prevKey)) {
+	        if (pendingKeys.length) {
+	          nextKeysPending[prevKey] = pendingKeys;
+	          pendingKeys = [];
+	        }
+	      } else {
+	        pendingKeys.push(prevKey);
+	      }
+	    }
+
+	    var i;
+	    var childMapping = {};
+	    for (var nextKey in next) {
+	      if (nextKeysPending.hasOwnProperty(nextKey)) {
+	        for (i = 0; i < nextKeysPending[nextKey].length; i++) {
+	          var pendingNextKey = nextKeysPending[nextKey][i];
+	          childMapping[nextKeysPending[nextKey][i]] = getValueForKey(pendingNextKey);
+	        }
+	      }
+	      childMapping[nextKey] = getValueForKey(nextKey);
+	    }
+
+	    // Finally, add the keys which didn't appear before any key in `next`
+	    for (i = 0; i < pendingKeys.length; i++) {
+	      childMapping[pendingKeys[i]] = getValueForKey(pendingKeys[i]);
+	    }
+
+	    return childMapping;
+	  }
+	};
+
+	module.exports = ReactTransitionChildMapping;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 254 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-present, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * 
+	 */
+
+	'use strict';
+
+	var KeyEscapeUtils = __webpack_require__(95);
+	var traverseAllChildren = __webpack_require__(93);
+	var warning = __webpack_require__(17);
+
+	var ReactComponentTreeHook;
+
+	if (typeof process !== 'undefined' && process.env && process.env.NODE_ENV === 'test') {
+	  // Temporary hack.
+	  // Inline requires don't work well with Jest:
+	  // https://github.com/facebook/react/issues/7240
+	  // Remove the inline requires when we don't need them anymore:
+	  // https://github.com/facebook/react/pull/7178
+	  ReactComponentTreeHook = __webpack_require__(40);
+	}
+
+	/**
+	 * @param {function} traverseContext Context passed through traversal.
+	 * @param {?ReactComponent} child React child component.
+	 * @param {!string} name String name of key path to child.
+	 * @param {number=} selfDebugID Optional debugID of the current internal instance.
+	 */
+	function flattenSingleChildIntoContext(traverseContext, child, name, selfDebugID) {
+	  // We found a component instance.
+	  if (traverseContext && typeof traverseContext === 'object') {
+	    var result = traverseContext;
+	    var keyUnique = result[name] === undefined;
+	    if (process.env.NODE_ENV !== 'production') {
+	      if (!ReactComponentTreeHook) {
+	        ReactComponentTreeHook = __webpack_require__(40);
+	      }
+	      if (!keyUnique) {
+	        process.env.NODE_ENV !== 'production' ? warning(false, 'flattenChildren(...): Encountered two children with the same key, ' + '`%s`. Child keys must be unique; when two children share a key, only ' + 'the first child will be used.%s', KeyEscapeUtils.unescape(name), ReactComponentTreeHook.getStackAddendumByID(selfDebugID)) : void 0;
+	      }
+	    }
+	    if (keyUnique && child != null) {
+	      result[name] = child;
+	    }
+	  }
+	}
+
+	/**
+	 * Flattens children that are typically specified as `props.children`. Any null
+	 * children will not be included in the resulting object.
+	 * @return {!object} flattened children keyed by name.
+	 */
+	function flattenChildren(children, selfDebugID) {
+	  if (children == null) {
+	    return children;
+	  }
+	  var result = {};
+
+	  if (process.env.NODE_ENV !== 'production') {
+	    traverseAllChildren(children, function (traverseContext, child, name) {
+	      return flattenSingleChildIntoContext(traverseContext, child, name, selfDebugID);
+	    }, result);
+	  } else {
+	    traverseAllChildren(children, flattenSingleChildIntoContext, result);
+	  }
+	  return result;
+	}
+
+	module.exports = flattenChildren;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 255 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-present, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 */
+
+	'use strict';
+
+	var React = __webpack_require__(87);
+	var ReactAddonsDOMDependencies = __webpack_require__(256);
+
+	var CSSCore = __webpack_require__(261);
+	var ReactTransitionEvents = __webpack_require__(262);
+
+	var onlyChild = __webpack_require__(108);
+
+	var TICK = 17;
+
+	var ReactCSSTransitionGroupChild = React.createClass({
+	  displayName: 'ReactCSSTransitionGroupChild',
+
+	  propTypes: {
+	    name: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.shape({
+	      enter: React.PropTypes.string,
+	      leave: React.PropTypes.string,
+	      active: React.PropTypes.string
+	    }), React.PropTypes.shape({
+	      enter: React.PropTypes.string,
+	      enterActive: React.PropTypes.string,
+	      leave: React.PropTypes.string,
+	      leaveActive: React.PropTypes.string,
+	      appear: React.PropTypes.string,
+	      appearActive: React.PropTypes.string
+	    })]).isRequired,
+
+	    // Once we require timeouts to be specified, we can remove the
+	    // boolean flags (appear etc.) and just accept a number
+	    // or a bool for the timeout flags (appearTimeout etc.)
+	    appear: React.PropTypes.bool,
+	    enter: React.PropTypes.bool,
+	    leave: React.PropTypes.bool,
+	    appearTimeout: React.PropTypes.number,
+	    enterTimeout: React.PropTypes.number,
+	    leaveTimeout: React.PropTypes.number
+	  },
+
+	  transition: function (animationType, finishCallback, userSpecifiedDelay) {
+	    var node = ReactAddonsDOMDependencies.getReactDOM().findDOMNode(this);
+
+	    if (!node) {
+	      if (finishCallback) {
+	        finishCallback();
+	      }
+	      return;
+	    }
+
+	    var className = this.props.name[animationType] || this.props.name + '-' + animationType;
+	    var activeClassName = this.props.name[animationType + 'Active'] || className + '-active';
+	    var timeout = null;
+
+	    var endListener = function (e) {
+	      if (e && e.target !== node) {
+	        return;
+	      }
+
+	      clearTimeout(timeout);
+
+	      CSSCore.removeClass(node, className);
+	      CSSCore.removeClass(node, activeClassName);
+
+	      ReactTransitionEvents.removeEndEventListener(node, endListener);
+
+	      // Usually this optional callback is used for informing an owner of
+	      // a leave animation and telling it to remove the child.
+	      if (finishCallback) {
+	        finishCallback();
+	      }
+	    };
+
+	    CSSCore.addClass(node, className);
+
+	    // Need to do this to actually trigger a transition.
+	    this.queueClassAndNode(activeClassName, node);
+
+	    // If the user specified a timeout delay.
+	    if (userSpecifiedDelay) {
+	      // Clean-up the animation after the specified delay
+	      timeout = setTimeout(endListener, userSpecifiedDelay);
+	      this.transitionTimeouts.push(timeout);
+	    } else {
+	      // DEPRECATED: this listener will be removed in a future version of react
+	      ReactTransitionEvents.addEndEventListener(node, endListener);
+	    }
+	  },
+
+	  queueClassAndNode: function (className, node) {
+	    this.classNameAndNodeQueue.push({
+	      className: className,
+	      node: node
+	    });
+
+	    if (!this.timeout) {
+	      this.timeout = setTimeout(this.flushClassNameAndNodeQueue, TICK);
+	    }
+	  },
+
+	  flushClassNameAndNodeQueue: function () {
+	    if (this.isMounted()) {
+	      this.classNameAndNodeQueue.forEach(function (obj) {
+	        CSSCore.addClass(obj.node, obj.className);
+	      });
+	    }
+	    this.classNameAndNodeQueue.length = 0;
+	    this.timeout = null;
+	  },
+
+	  componentWillMount: function () {
+	    this.classNameAndNodeQueue = [];
+	    this.transitionTimeouts = [];
+	  },
+
+	  componentWillUnmount: function () {
+	    if (this.timeout) {
+	      clearTimeout(this.timeout);
+	    }
+	    this.transitionTimeouts.forEach(function (timeout) {
+	      clearTimeout(timeout);
+	    });
+
+	    this.classNameAndNodeQueue.length = 0;
+	  },
+
+	  componentWillAppear: function (done) {
+	    if (this.props.appear) {
+	      this.transition('appear', done, this.props.appearTimeout);
+	    } else {
+	      done();
+	    }
+	  },
+
+	  componentWillEnter: function (done) {
+	    if (this.props.enter) {
+	      this.transition('enter', done, this.props.enterTimeout);
+	    } else {
+	      done();
+	    }
+	  },
+
+	  componentWillLeave: function (done) {
+	    if (this.props.leave) {
+	      this.transition('leave', done, this.props.leaveTimeout);
+	    } else {
+	      done();
+	    }
+	  },
+
+	  render: function () {
+	    return onlyChild(this.props.children);
+	  }
+	});
+
+	module.exports = ReactCSSTransitionGroupChild;
+
+/***/ },
+/* 256 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-present, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 */
+
+	'use strict';
+
+	var ReactDOM = __webpack_require__(2);
+
+	exports.getReactDOM = function () {
+	  return ReactDOM;
+	};
+
+	if (process.env.NODE_ENV !== 'production') {
+	  var ReactPerf;
+	  var ReactTestUtils;
+
+	  exports.getReactPerf = function () {
+	    if (!ReactPerf) {
+	      ReactPerf = __webpack_require__(257);
+	    }
+	    return ReactPerf;
+	  };
+
+	  exports.getReactTestUtils = function () {
+	    if (!ReactTestUtils) {
+	      ReactTestUtils = __webpack_require__(258);
+	    }
+	    return ReactTestUtils;
+	  };
+	}
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 257 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2016-present, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * 
+	 */
+
+	'use strict';
+
+	var _assign = __webpack_require__(23);
+
+	var _extends = _assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var ReactDebugTool = __webpack_require__(37);
+	var warning = __webpack_require__(17);
+	var alreadyWarned = false;
+
+	function roundFloat(val) {
+	  var base = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2;
+
+	  var n = Math.pow(10, base);
+	  return Math.floor(val * n) / n;
+	}
+
+	// Flow type definition of console.table is too strict right now, see
+	// https://github.com/facebook/flow/pull/2353 for updates
+	function consoleTable(table) {
+	  console.table(table);
+	}
+
+	function warnInProduction() {
+	  if (alreadyWarned) {
+	    return;
+	  }
+	  alreadyWarned = true;
+	  if (typeof console !== 'undefined') {
+	    console.error('ReactPerf is not supported in the production builds of React. ' + 'To collect measurements, please use the development build of React instead.');
+	  }
+	}
+
+	function getLastMeasurements() {
+	  if (!(process.env.NODE_ENV !== 'production')) {
+	    warnInProduction();
+	    return [];
+	  }
+
+	  return ReactDebugTool.getFlushHistory();
+	}
+
+	function getExclusive() {
+	  var flushHistory = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : getLastMeasurements();
+
+	  if (!(process.env.NODE_ENV !== 'production')) {
+	    warnInProduction();
+	    return [];
+	  }
+
+	  var aggregatedStats = {};
+	  var affectedIDs = {};
+
+	  function updateAggregatedStats(treeSnapshot, instanceID, timerType, applyUpdate) {
+	    var displayName = treeSnapshot[instanceID].displayName;
+
+	    var key = displayName;
+	    var stats = aggregatedStats[key];
+	    if (!stats) {
+	      affectedIDs[key] = {};
+	      stats = aggregatedStats[key] = {
+	        key: key,
+	        instanceCount: 0,
+	        counts: {},
+	        durations: {},
+	        totalDuration: 0
+	      };
+	    }
+	    if (!stats.durations[timerType]) {
+	      stats.durations[timerType] = 0;
+	    }
+	    if (!stats.counts[timerType]) {
+	      stats.counts[timerType] = 0;
+	    }
+	    affectedIDs[key][instanceID] = true;
+	    applyUpdate(stats);
+	  }
+
+	  flushHistory.forEach(function (flush) {
+	    var measurements = flush.measurements,
+	        treeSnapshot = flush.treeSnapshot;
+
+	    measurements.forEach(function (measurement) {
+	      var duration = measurement.duration,
+	          instanceID = measurement.instanceID,
+	          timerType = measurement.timerType;
+
+	      updateAggregatedStats(treeSnapshot, instanceID, timerType, function (stats) {
+	        stats.totalDuration += duration;
+	        stats.durations[timerType] += duration;
+	        stats.counts[timerType]++;
+	      });
+	    });
+	  });
+
+	  return Object.keys(aggregatedStats).map(function (key) {
+	    return _extends({}, aggregatedStats[key], {
+	      instanceCount: Object.keys(affectedIDs[key]).length
+	    });
+	  }).sort(function (a, b) {
+	    return b.totalDuration - a.totalDuration;
+	  });
+	}
+
+	function getInclusive() {
+	  var flushHistory = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : getLastMeasurements();
+
+	  if (!(process.env.NODE_ENV !== 'production')) {
+	    warnInProduction();
+	    return [];
+	  }
+
+	  var aggregatedStats = {};
+	  var affectedIDs = {};
+
+	  function updateAggregatedStats(treeSnapshot, instanceID, applyUpdate) {
+	    var _treeSnapshot$instanc = treeSnapshot[instanceID],
+	        displayName = _treeSnapshot$instanc.displayName,
+	        ownerID = _treeSnapshot$instanc.ownerID;
+
+	    var owner = treeSnapshot[ownerID];
+	    var key = (owner ? owner.displayName + ' > ' : '') + displayName;
+	    var stats = aggregatedStats[key];
+	    if (!stats) {
+	      affectedIDs[key] = {};
+	      stats = aggregatedStats[key] = {
+	        key: key,
+	        instanceCount: 0,
+	        inclusiveRenderDuration: 0,
+	        renderCount: 0
+	      };
+	    }
+	    affectedIDs[key][instanceID] = true;
+	    applyUpdate(stats);
+	  }
+
+	  var isCompositeByID = {};
+	  flushHistory.forEach(function (flush) {
+	    var measurements = flush.measurements;
+
+	    measurements.forEach(function (measurement) {
+	      var instanceID = measurement.instanceID,
+	          timerType = measurement.timerType;
+
+	      if (timerType !== 'render') {
+	        return;
+	      }
+	      isCompositeByID[instanceID] = true;
+	    });
+	  });
+
+	  flushHistory.forEach(function (flush) {
+	    var measurements = flush.measurements,
+	        treeSnapshot = flush.treeSnapshot;
+
+	    measurements.forEach(function (measurement) {
+	      var duration = measurement.duration,
+	          instanceID = measurement.instanceID,
+	          timerType = measurement.timerType;
+
+	      if (timerType !== 'render') {
+	        return;
+	      }
+	      updateAggregatedStats(treeSnapshot, instanceID, function (stats) {
+	        stats.renderCount++;
+	      });
+	      var nextParentID = instanceID;
+	      while (nextParentID) {
+	        // As we traverse parents, only count inclusive time towards composites.
+	        // We know something is a composite if its render() was called.
+	        if (isCompositeByID[nextParentID]) {
+	          updateAggregatedStats(treeSnapshot, nextParentID, function (stats) {
+	            stats.inclusiveRenderDuration += duration;
+	          });
+	        }
+	        nextParentID = treeSnapshot[nextParentID].parentID;
+	      }
+	    });
+	  });
+
+	  return Object.keys(aggregatedStats).map(function (key) {
+	    return _extends({}, aggregatedStats[key], {
+	      instanceCount: Object.keys(affectedIDs[key]).length
+	    });
+	  }).sort(function (a, b) {
+	    return b.inclusiveRenderDuration - a.inclusiveRenderDuration;
+	  });
+	}
+
+	function getWasted() {
+	  var flushHistory = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : getLastMeasurements();
+
+	  if (!(process.env.NODE_ENV !== 'production')) {
+	    warnInProduction();
+	    return [];
+	  }
+
+	  var aggregatedStats = {};
+	  var affectedIDs = {};
+
+	  function updateAggregatedStats(treeSnapshot, instanceID, applyUpdate) {
+	    var _treeSnapshot$instanc2 = treeSnapshot[instanceID],
+	        displayName = _treeSnapshot$instanc2.displayName,
+	        ownerID = _treeSnapshot$instanc2.ownerID;
+
+	    var owner = treeSnapshot[ownerID];
+	    var key = (owner ? owner.displayName + ' > ' : '') + displayName;
+	    var stats = aggregatedStats[key];
+	    if (!stats) {
+	      affectedIDs[key] = {};
+	      stats = aggregatedStats[key] = {
+	        key: key,
+	        instanceCount: 0,
+	        inclusiveRenderDuration: 0,
+	        renderCount: 0
+	      };
+	    }
+	    affectedIDs[key][instanceID] = true;
+	    applyUpdate(stats);
+	  }
+
+	  flushHistory.forEach(function (flush) {
+	    var measurements = flush.measurements,
+	        treeSnapshot = flush.treeSnapshot,
+	        operations = flush.operations;
+
+	    var isDefinitelyNotWastedByID = {};
+
+	    // Find host components associated with an operation in this batch.
+	    // Mark all components in their parent tree as definitely not wasted.
+	    operations.forEach(function (operation) {
+	      var instanceID = operation.instanceID;
+
+	      var nextParentID = instanceID;
+	      while (nextParentID) {
+	        isDefinitelyNotWastedByID[nextParentID] = true;
+	        nextParentID = treeSnapshot[nextParentID].parentID;
+	      }
+	    });
+
+	    // Find composite components that rendered in this batch.
+	    // These are potential candidates for being wasted renders.
+	    var renderedCompositeIDs = {};
+	    measurements.forEach(function (measurement) {
+	      var instanceID = measurement.instanceID,
+	          timerType = measurement.timerType;
+
+	      if (timerType !== 'render') {
+	        return;
+	      }
+	      renderedCompositeIDs[instanceID] = true;
+	    });
+
+	    measurements.forEach(function (measurement) {
+	      var duration = measurement.duration,
+	          instanceID = measurement.instanceID,
+	          timerType = measurement.timerType;
+
+	      if (timerType !== 'render') {
+	        return;
+	      }
+
+	      // If there was a DOM update below this component, or it has just been
+	      // mounted, its render() is not considered wasted.
+	      var updateCount = treeSnapshot[instanceID].updateCount;
+
+	      if (isDefinitelyNotWastedByID[instanceID] || updateCount === 0) {
+	        return;
+	      }
+
+	      // We consider this render() wasted.
+	      updateAggregatedStats(treeSnapshot, instanceID, function (stats) {
+	        stats.renderCount++;
+	      });
+
+	      var nextParentID = instanceID;
+	      while (nextParentID) {
+	        // Any parents rendered during this batch are considered wasted
+	        // unless we previously marked them as dirty.
+	        var isWasted = renderedCompositeIDs[nextParentID] && !isDefinitelyNotWastedByID[nextParentID];
+	        if (isWasted) {
+	          updateAggregatedStats(treeSnapshot, nextParentID, function (stats) {
+	            stats.inclusiveRenderDuration += duration;
+	          });
+	        }
+	        nextParentID = treeSnapshot[nextParentID].parentID;
+	      }
+	    });
+	  });
+
+	  return Object.keys(aggregatedStats).map(function (key) {
+	    return _extends({}, aggregatedStats[key], {
+	      instanceCount: Object.keys(affectedIDs[key]).length
+	    });
+	  }).sort(function (a, b) {
+	    return b.inclusiveRenderDuration - a.inclusiveRenderDuration;
+	  });
+	}
+
+	function getOperations() {
+	  var flushHistory = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : getLastMeasurements();
+
+	  if (!(process.env.NODE_ENV !== 'production')) {
+	    warnInProduction();
+	    return [];
+	  }
+
+	  var stats = [];
+	  flushHistory.forEach(function (flush, flushIndex) {
+	    var operations = flush.operations,
+	        treeSnapshot = flush.treeSnapshot;
+
+	    operations.forEach(function (operation) {
+	      var instanceID = operation.instanceID,
+	          type = operation.type,
+	          payload = operation.payload;
+	      var _treeSnapshot$instanc3 = treeSnapshot[instanceID],
+	          displayName = _treeSnapshot$instanc3.displayName,
+	          ownerID = _treeSnapshot$instanc3.ownerID;
+
+	      var owner = treeSnapshot[ownerID];
+	      var key = (owner ? owner.displayName + ' > ' : '') + displayName;
+
+	      stats.push({
+	        flushIndex: flushIndex,
+	        instanceID: instanceID,
+	        key: key,
+	        type: type,
+	        ownerID: ownerID,
+	        payload: payload
+	      });
+	    });
+	  });
+	  return stats;
+	}
+
+	function printExclusive(flushHistory) {
+	  if (!(process.env.NODE_ENV !== 'production')) {
+	    warnInProduction();
+	    return;
+	  }
+
+	  var stats = getExclusive(flushHistory);
+	  var table = stats.map(function (item) {
+	    var key = item.key,
+	        instanceCount = item.instanceCount,
+	        totalDuration = item.totalDuration;
+
+	    var renderCount = item.counts.render || 0;
+	    var renderDuration = item.durations.render || 0;
+	    return {
+	      'Component': key,
+	      'Total time (ms)': roundFloat(totalDuration),
+	      'Instance count': instanceCount,
+	      'Total render time (ms)': roundFloat(renderDuration),
+	      'Average render time (ms)': renderCount ? roundFloat(renderDuration / renderCount) : undefined,
+	      'Render count': renderCount,
+	      'Total lifecycle time (ms)': roundFloat(totalDuration - renderDuration)
+	    };
+	  });
+	  consoleTable(table);
+	}
+
+	function printInclusive(flushHistory) {
+	  if (!(process.env.NODE_ENV !== 'production')) {
+	    warnInProduction();
+	    return;
+	  }
+
+	  var stats = getInclusive(flushHistory);
+	  var table = stats.map(function (item) {
+	    var key = item.key,
+	        instanceCount = item.instanceCount,
+	        inclusiveRenderDuration = item.inclusiveRenderDuration,
+	        renderCount = item.renderCount;
+
+	    return {
+	      'Owner > Component': key,
+	      'Inclusive render time (ms)': roundFloat(inclusiveRenderDuration),
+	      'Instance count': instanceCount,
+	      'Render count': renderCount
+	    };
+	  });
+	  consoleTable(table);
+	}
+
+	function printWasted(flushHistory) {
+	  if (!(process.env.NODE_ENV !== 'production')) {
+	    warnInProduction();
+	    return;
+	  }
+
+	  var stats = getWasted(flushHistory);
+	  var table = stats.map(function (item) {
+	    var key = item.key,
+	        instanceCount = item.instanceCount,
+	        inclusiveRenderDuration = item.inclusiveRenderDuration,
+	        renderCount = item.renderCount;
+
+	    return {
+	      'Owner > Component': key,
+	      'Inclusive wasted time (ms)': roundFloat(inclusiveRenderDuration),
+	      'Instance count': instanceCount,
+	      'Render count': renderCount
+	    };
+	  });
+	  consoleTable(table);
+	}
+
+	function printOperations(flushHistory) {
+	  if (!(process.env.NODE_ENV !== 'production')) {
+	    warnInProduction();
+	    return;
+	  }
+
+	  var stats = getOperations(flushHistory);
+	  var table = stats.map(function (stat) {
+	    return {
+	      'Owner > Node': stat.key,
+	      'Operation': stat.type,
+	      'Payload': typeof stat.payload === 'object' ? JSON.stringify(stat.payload) : stat.payload,
+	      'Flush index': stat.flushIndex,
+	      'Owner Component ID': stat.ownerID,
+	      'DOM Component ID': stat.instanceID
+	    };
+	  });
+	  consoleTable(table);
+	}
+
+	var warnedAboutPrintDOM = false;
+	function printDOM(measurements) {
+	  process.env.NODE_ENV !== 'production' ? warning(warnedAboutPrintDOM, '`ReactPerf.printDOM(...)` is deprecated. Use ' + '`ReactPerf.printOperations(...)` instead.') : void 0;
+	  warnedAboutPrintDOM = true;
+	  return printOperations(measurements);
+	}
+
+	var warnedAboutGetMeasurementsSummaryMap = false;
+	function getMeasurementsSummaryMap(measurements) {
+	  process.env.NODE_ENV !== 'production' ? warning(warnedAboutGetMeasurementsSummaryMap, '`ReactPerf.getMeasurementsSummaryMap(...)` is deprecated. Use ' + '`ReactPerf.getWasted(...)` instead.') : void 0;
+	  warnedAboutGetMeasurementsSummaryMap = true;
+	  return getWasted(measurements);
+	}
+
+	function start() {
+	  if (!(process.env.NODE_ENV !== 'production')) {
+	    warnInProduction();
+	    return;
+	  }
+
+	  ReactDebugTool.beginProfiling();
+	}
+
+	function stop() {
+	  if (!(process.env.NODE_ENV !== 'production')) {
+	    warnInProduction();
+	    return;
+	  }
+
+	  ReactDebugTool.endProfiling();
+	}
+
+	function isRunning() {
+	  if (!(process.env.NODE_ENV !== 'production')) {
+	    warnInProduction();
+	    return false;
+	  }
+
+	  return ReactDebugTool.isProfiling();
+	}
+
+	var ReactPerfAnalysis = {
+	  getLastMeasurements: getLastMeasurements,
+	  getExclusive: getExclusive,
+	  getInclusive: getInclusive,
+	  getWasted: getWasted,
+	  getOperations: getOperations,
+	  printExclusive: printExclusive,
+	  printInclusive: printInclusive,
+	  printWasted: printWasted,
+	  printOperations: printOperations,
+	  start: start,
+	  stop: stop,
+	  isRunning: isRunning,
+	  // Deprecated:
+	  printDOM: printDOM,
+	  getMeasurementsSummaryMap: getMeasurementsSummaryMap
+	};
+
+	module.exports = ReactPerfAnalysis;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 258 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-present, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 */
+
+	'use strict';
+
+	var _prodInvariant = __webpack_require__(5),
+	    _assign = __webpack_require__(23);
+
+	var EventConstants = __webpack_require__(259);
+	var EventPluginHub = __webpack_require__(13);
+	var EventPluginRegistry = __webpack_require__(14);
+	var EventPropagators = __webpack_require__(12);
+	var React = __webpack_require__(87);
+	var ReactDOM = __webpack_require__(2);
+	var ReactDOMComponentTree = __webpack_require__(4);
+	var ReactBrowserEventEmitter = __webpack_require__(82);
+	var ReactInstanceMap = __webpack_require__(115);
+	var ReactUpdates = __webpack_require__(30);
+	var SyntheticEvent = __webpack_require__(27);
+	var ReactShallowRenderer = __webpack_require__(260);
+
+	var findDOMNode = __webpack_require__(171);
+	var invariant = __webpack_require__(7);
+
+	var topLevelTypes = EventConstants.topLevelTypes;
+
+	function Event(suffix) {}
+
+	/**
+	 * @class ReactTestUtils
+	 */
+
+	function findAllInRenderedTreeInternal(inst, test) {
+	  if (!inst || !inst.getPublicInstance) {
+	    return [];
+	  }
+	  var publicInst = inst.getPublicInstance();
+	  var ret = test(publicInst) ? [publicInst] : [];
+	  var currentElement = inst._currentElement;
+	  if (ReactTestUtils.isDOMComponent(publicInst)) {
+	    var renderedChildren = inst._renderedChildren;
+	    var key;
+	    for (key in renderedChildren) {
+	      if (!renderedChildren.hasOwnProperty(key)) {
+	        continue;
+	      }
+	      ret = ret.concat(findAllInRenderedTreeInternal(renderedChildren[key], test));
+	    }
+	  } else if (React.isValidElement(currentElement) && typeof currentElement.type === 'function') {
+	    ret = ret.concat(findAllInRenderedTreeInternal(inst._renderedComponent, test));
+	  }
+	  return ret;
+	}
+
+	/**
+	 * Utilities for making it easy to test React components.
+	 *
+	 * See https://facebook.github.io/react/docs/test-utils.html
+	 *
+	 * Todo: Support the entire DOM.scry query syntax. For now, these simple
+	 * utilities will suffice for testing purposes.
+	 * @lends ReactTestUtils
+	 */
+	var ReactTestUtils = {
+	  renderIntoDocument: function (element) {
+	    var div = document.createElement('div');
+	    // None of our tests actually require attaching the container to the
+	    // DOM, and doing so creates a mess that we rely on test isolation to
+	    // clean up, so we're going to stop honoring the name of this method
+	    // (and probably rename it eventually) if no problems arise.
+	    // document.documentElement.appendChild(div);
+	    return ReactDOM.render(element, div);
+	  },
+
+	  isElement: function (element) {
+	    return React.isValidElement(element);
+	  },
+
+	  isElementOfType: function (inst, convenienceConstructor) {
+	    return React.isValidElement(inst) && inst.type === convenienceConstructor;
+	  },
+
+	  isDOMComponent: function (inst) {
+	    return !!(inst && inst.nodeType === 1 && inst.tagName);
+	  },
+
+	  isDOMComponentElement: function (inst) {
+	    return !!(inst && React.isValidElement(inst) && !!inst.tagName);
+	  },
+
+	  isCompositeComponent: function (inst) {
+	    if (ReactTestUtils.isDOMComponent(inst)) {
+	      // Accessing inst.setState warns; just return false as that'll be what
+	      // this returns when we have DOM nodes as refs directly
+	      return false;
+	    }
+	    return inst != null && typeof inst.render === 'function' && typeof inst.setState === 'function';
+	  },
+
+	  isCompositeComponentWithType: function (inst, type) {
+	    if (!ReactTestUtils.isCompositeComponent(inst)) {
+	      return false;
+	    }
+	    var internalInstance = ReactInstanceMap.get(inst);
+	    var constructor = internalInstance._currentElement.type;
+
+	    return constructor === type;
+	  },
+
+	  isCompositeComponentElement: function (inst) {
+	    if (!React.isValidElement(inst)) {
+	      return false;
+	    }
+	    // We check the prototype of the type that will get mounted, not the
+	    // instance itself. This is a future proof way of duck typing.
+	    var prototype = inst.type.prototype;
+	    return typeof prototype.render === 'function' && typeof prototype.setState === 'function';
+	  },
+
+	  isCompositeComponentElementWithType: function (inst, type) {
+	    var internalInstance = ReactInstanceMap.get(inst);
+	    var constructor = internalInstance._currentElement.type;
+
+	    return !!(ReactTestUtils.isCompositeComponentElement(inst) && constructor === type);
+	  },
+
+	  getRenderedChildOfCompositeComponent: function (inst) {
+	    if (!ReactTestUtils.isCompositeComponent(inst)) {
+	      return null;
+	    }
+	    var internalInstance = ReactInstanceMap.get(inst);
+	    return internalInstance._renderedComponent.getPublicInstance();
+	  },
+
+	  findAllInRenderedTree: function (inst, test) {
+	    if (!inst) {
+	      return [];
+	    }
+	    !ReactTestUtils.isCompositeComponent(inst) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'findAllInRenderedTree(...): instance must be a composite component') : _prodInvariant('10') : void 0;
+	    return findAllInRenderedTreeInternal(ReactInstanceMap.get(inst), test);
+	  },
+
+	  /**
+	   * Finds all instance of components in the rendered tree that are DOM
+	   * components with the class name matching `className`.
+	   * @return {array} an array of all the matches.
+	   */
+	  scryRenderedDOMComponentsWithClass: function (root, classNames) {
+	    return ReactTestUtils.findAllInRenderedTree(root, function (inst) {
+	      if (ReactTestUtils.isDOMComponent(inst)) {
+	        var className = inst.className;
+	        if (typeof className !== 'string') {
+	          // SVG, probably.
+	          className = inst.getAttribute('class') || '';
+	        }
+	        var classList = className.split(/\s+/);
+
+	        if (!Array.isArray(classNames)) {
+	          !(classNames !== undefined) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'TestUtils.scryRenderedDOMComponentsWithClass expects a className as a second argument.') : _prodInvariant('11') : void 0;
+	          classNames = classNames.split(/\s+/);
+	        }
+	        return classNames.every(function (name) {
+	          return classList.indexOf(name) !== -1;
+	        });
+	      }
+	      return false;
+	    });
+	  },
+
+	  /**
+	   * Like scryRenderedDOMComponentsWithClass but expects there to be one result,
+	   * and returns that one result, or throws exception if there is any other
+	   * number of matches besides one.
+	   * @return {!ReactDOMComponent} The one match.
+	   */
+	  findRenderedDOMComponentWithClass: function (root, className) {
+	    var all = ReactTestUtils.scryRenderedDOMComponentsWithClass(root, className);
+	    if (all.length !== 1) {
+	      throw new Error('Did not find exactly one match (found: ' + all.length + ') ' + 'for class:' + className);
+	    }
+	    return all[0];
+	  },
+
+	  /**
+	   * Finds all instance of components in the rendered tree that are DOM
+	   * components with the tag name matching `tagName`.
+	   * @return {array} an array of all the matches.
+	   */
+	  scryRenderedDOMComponentsWithTag: function (root, tagName) {
+	    return ReactTestUtils.findAllInRenderedTree(root, function (inst) {
+	      return ReactTestUtils.isDOMComponent(inst) && inst.tagName.toUpperCase() === tagName.toUpperCase();
+	    });
+	  },
+
+	  /**
+	   * Like scryRenderedDOMComponentsWithTag but expects there to be one result,
+	   * and returns that one result, or throws exception if there is any other
+	   * number of matches besides one.
+	   * @return {!ReactDOMComponent} The one match.
+	   */
+	  findRenderedDOMComponentWithTag: function (root, tagName) {
+	    var all = ReactTestUtils.scryRenderedDOMComponentsWithTag(root, tagName);
+	    if (all.length !== 1) {
+	      throw new Error('Did not find exactly one match (found: ' + all.length + ') ' + 'for tag:' + tagName);
+	    }
+	    return all[0];
+	  },
+
+	  /**
+	   * Finds all instances of components with type equal to `componentType`.
+	   * @return {array} an array of all the matches.
+	   */
+	  scryRenderedComponentsWithType: function (root, componentType) {
+	    return ReactTestUtils.findAllInRenderedTree(root, function (inst) {
+	      return ReactTestUtils.isCompositeComponentWithType(inst, componentType);
+	    });
+	  },
+
+	  /**
+	   * Same as `scryRenderedComponentsWithType` but expects there to be one result
+	   * and returns that one result, or throws exception if there is any other
+	   * number of matches besides one.
+	   * @return {!ReactComponent} The one match.
+	   */
+	  findRenderedComponentWithType: function (root, componentType) {
+	    var all = ReactTestUtils.scryRenderedComponentsWithType(root, componentType);
+	    if (all.length !== 1) {
+	      throw new Error('Did not find exactly one match (found: ' + all.length + ') ' + 'for componentType:' + componentType);
+	    }
+	    return all[0];
+	  },
+
+	  /**
+	   * Pass a mocked component module to this method to augment it with
+	   * useful methods that allow it to be used as a dummy React component.
+	   * Instead of rendering as usual, the component will become a simple
+	   * <div> containing any provided children.
+	   *
+	   * @param {object} module the mock function object exported from a
+	   *                        module that defines the component to be mocked
+	   * @param {?string} mockTagName optional dummy root tag name to return
+	   *                              from render method (overrides
+	   *                              module.mockTagName if provided)
+	   * @return {object} the ReactTestUtils object (for chaining)
+	   */
+	  mockComponent: function (module, mockTagName) {
+	    mockTagName = mockTagName || module.mockTagName || 'div';
+
+	    module.prototype.render.mockImplementation(function () {
+	      return React.createElement(mockTagName, null, this.props.children);
+	    });
+
+	    return this;
+	  },
+
+	  /**
+	   * Simulates a top level event being dispatched from a raw event that occurred
+	   * on an `Element` node.
+	   * @param {Object} topLevelType A type from `EventConstants.topLevelTypes`
+	   * @param {!Element} node The dom to simulate an event occurring on.
+	   * @param {?Event} fakeNativeEvent Fake native event to use in SyntheticEvent.
+	   */
+	  simulateNativeEventOnNode: function (topLevelType, node, fakeNativeEvent) {
+	    fakeNativeEvent.target = node;
+	    ReactBrowserEventEmitter.ReactEventListener.dispatchEvent(topLevelType, fakeNativeEvent);
+	  },
+
+	  /**
+	   * Simulates a top level event being dispatched from a raw event that occurred
+	   * on the `ReactDOMComponent` `comp`.
+	   * @param {Object} topLevelType A type from `EventConstants.topLevelTypes`.
+	   * @param {!ReactDOMComponent} comp
+	   * @param {?Event} fakeNativeEvent Fake native event to use in SyntheticEvent.
+	   */
+	  simulateNativeEventOnDOMComponent: function (topLevelType, comp, fakeNativeEvent) {
+	    ReactTestUtils.simulateNativeEventOnNode(topLevelType, findDOMNode(comp), fakeNativeEvent);
+	  },
+
+	  nativeTouchData: function (x, y) {
+	    return {
+	      touches: [{ pageX: x, pageY: y }]
+	    };
+	  },
+
+	  createRenderer: function () {
+	    return new ReactShallowRenderer();
+	  },
+
+	  Simulate: null,
+	  SimulateNative: {}
+	};
+
+	/**
+	 * Exports:
+	 *
+	 * - `ReactTestUtils.Simulate.click(Element/ReactDOMComponent)`
+	 * - `ReactTestUtils.Simulate.mouseMove(Element/ReactDOMComponent)`
+	 * - `ReactTestUtils.Simulate.change(Element/ReactDOMComponent)`
+	 * - ... (All keys from event plugin `eventTypes` objects)
+	 */
+	function makeSimulator(eventType) {
+	  return function (domComponentOrNode, eventData) {
+	    var node;
+	    !!React.isValidElement(domComponentOrNode) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'TestUtils.Simulate expects a component instance and not a ReactElement.TestUtils.Simulate will not work if you are using shallow rendering.') : _prodInvariant('14') : void 0;
+	    if (ReactTestUtils.isDOMComponent(domComponentOrNode)) {
+	      node = findDOMNode(domComponentOrNode);
+	    } else if (domComponentOrNode.tagName) {
+	      node = domComponentOrNode;
+	    }
+
+	    var dispatchConfig = EventPluginRegistry.eventNameDispatchConfigs[eventType];
+
+	    var fakeNativeEvent = new Event();
+	    fakeNativeEvent.target = node;
+	    fakeNativeEvent.type = eventType.toLowerCase();
+
+	    // We don't use SyntheticEvent.getPooled in order to not have to worry about
+	    // properly destroying any properties assigned from `eventData` upon release
+	    var event = new SyntheticEvent(dispatchConfig, ReactDOMComponentTree.getInstanceFromNode(node), fakeNativeEvent, node);
+	    // Since we aren't using pooling, always persist the event. This will make
+	    // sure it's marked and won't warn when setting additional properties.
+	    event.persist();
+	    _assign(event, eventData);
+
+	    if (dispatchConfig.phasedRegistrationNames) {
+	      EventPropagators.accumulateTwoPhaseDispatches(event);
+	    } else {
+	      EventPropagators.accumulateDirectDispatches(event);
+	    }
+
+	    ReactUpdates.batchedUpdates(function () {
+	      EventPluginHub.enqueueEvents(event);
+	      EventPluginHub.processEventQueue(true);
+	    });
+	  };
+	}
+
+	function buildSimulators() {
+	  ReactTestUtils.Simulate = {};
+
+	  var eventType;
+	  for (eventType in EventPluginRegistry.eventNameDispatchConfigs) {
+	    /**
+	     * @param {!Element|ReactDOMComponent} domComponentOrNode
+	     * @param {?object} eventData Fake event data to use in SyntheticEvent.
+	     */
+	    ReactTestUtils.Simulate[eventType] = makeSimulator(eventType);
+	  }
+	}
+
+	// Rebuild ReactTestUtils.Simulate whenever event plugins are injected
+	var oldInjectEventPluginOrder = EventPluginHub.injection.injectEventPluginOrder;
+	EventPluginHub.injection.injectEventPluginOrder = function () {
+	  oldInjectEventPluginOrder.apply(this, arguments);
+	  buildSimulators();
+	};
+	var oldInjectEventPlugins = EventPluginHub.injection.injectEventPluginsByName;
+	EventPluginHub.injection.injectEventPluginsByName = function () {
+	  oldInjectEventPlugins.apply(this, arguments);
+	  buildSimulators();
+	};
+
+	buildSimulators();
+
+	/**
+	 * Exports:
+	 *
+	 * - `ReactTestUtils.SimulateNative.click(Element/ReactDOMComponent)`
+	 * - `ReactTestUtils.SimulateNative.mouseMove(Element/ReactDOMComponent)`
+	 * - `ReactTestUtils.SimulateNative.mouseIn/ReactDOMComponent)`
+	 * - `ReactTestUtils.SimulateNative.mouseOut(Element/ReactDOMComponent)`
+	 * - ... (All keys from `EventConstants.topLevelTypes`)
+	 *
+	 * Note: Top level event types are a subset of the entire set of handler types
+	 * (which include a broader set of "synthetic" events). For example, onDragDone
+	 * is a synthetic event. Except when testing an event plugin or React's event
+	 * handling code specifically, you probably want to use ReactTestUtils.Simulate
+	 * to dispatch synthetic events.
+	 */
+
+	function makeNativeSimulator(eventType) {
+	  return function (domComponentOrNode, nativeEventData) {
+	    var fakeNativeEvent = new Event(eventType);
+	    _assign(fakeNativeEvent, nativeEventData);
+	    if (ReactTestUtils.isDOMComponent(domComponentOrNode)) {
+	      ReactTestUtils.simulateNativeEventOnDOMComponent(eventType, domComponentOrNode, fakeNativeEvent);
+	    } else if (domComponentOrNode.tagName) {
+	      // Will allow on actual dom nodes.
+	      ReactTestUtils.simulateNativeEventOnNode(eventType, domComponentOrNode, fakeNativeEvent);
+	    }
+	  };
+	}
+
+	Object.keys(topLevelTypes).forEach(function (eventType) {
+	  // Event type is stored as 'topClick' - we transform that to 'click'
+	  var convenienceName = eventType.indexOf('top') === 0 ? eventType.charAt(3).toLowerCase() + eventType.substr(4) : eventType;
+	  /**
+	   * @param {!Element|ReactDOMComponent} domComponentOrNode
+	   * @param {?Event} nativeEventData Fake native event to use in SyntheticEvent.
+	   */
+	  ReactTestUtils.SimulateNative[convenienceName] = makeNativeSimulator(eventType);
+	});
+
+	module.exports = ReactTestUtils;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 259 */
+/***/ function(module, exports) {
+
+	/**
+	 * Copyright 2013-present, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 */
+
+	'use strict';
+
+	/**
+	 * Types of raw signals from the browser caught at the top level.
+	 */
+	var topLevelTypes = {
+	  topAbort: null,
+	  topAnimationEnd: null,
+	  topAnimationIteration: null,
+	  topAnimationStart: null,
+	  topBlur: null,
+	  topCanPlay: null,
+	  topCanPlayThrough: null,
+	  topChange: null,
+	  topClick: null,
+	  topCompositionEnd: null,
+	  topCompositionStart: null,
+	  topCompositionUpdate: null,
+	  topContextMenu: null,
+	  topCopy: null,
+	  topCut: null,
+	  topDoubleClick: null,
+	  topDrag: null,
+	  topDragEnd: null,
+	  topDragEnter: null,
+	  topDragExit: null,
+	  topDragLeave: null,
+	  topDragOver: null,
+	  topDragStart: null,
+	  topDrop: null,
+	  topDurationChange: null,
+	  topEmptied: null,
+	  topEncrypted: null,
+	  topEnded: null,
+	  topError: null,
+	  topFocus: null,
+	  topInput: null,
+	  topInvalid: null,
+	  topKeyDown: null,
+	  topKeyPress: null,
+	  topKeyUp: null,
+	  topLoad: null,
+	  topLoadedData: null,
+	  topLoadedMetadata: null,
+	  topLoadStart: null,
+	  topMouseDown: null,
+	  topMouseMove: null,
+	  topMouseOut: null,
+	  topMouseOver: null,
+	  topMouseUp: null,
+	  topPaste: null,
+	  topPause: null,
+	  topPlay: null,
+	  topPlaying: null,
+	  topProgress: null,
+	  topRateChange: null,
+	  topReset: null,
+	  topScroll: null,
+	  topSeeked: null,
+	  topSeeking: null,
+	  topSelectionChange: null,
+	  topStalled: null,
+	  topSubmit: null,
+	  topSuspend: null,
+	  topTextInput: null,
+	  topTimeUpdate: null,
+	  topTouchCancel: null,
+	  topTouchEnd: null,
+	  topTouchMove: null,
+	  topTouchStart: null,
+	  topTransitionEnd: null,
+	  topVolumeChange: null,
+	  topWaiting: null,
+	  topWheel: null
+	};
+
+	var EventConstants = {
+	  topLevelTypes: topLevelTypes
+	};
+
+	module.exports = EventConstants;
+
+/***/ },
+/* 260 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-present, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 */
+
+	'use strict';
+
+	var _prodInvariant = __webpack_require__(5),
+	    _assign = __webpack_require__(23);
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var React = __webpack_require__(87);
+	var ReactDefaultInjection = __webpack_require__(9);
+	var ReactCompositeComponent = __webpack_require__(118);
+	var ReactReconciler = __webpack_require__(33);
+	var ReactUpdates = __webpack_require__(30);
+
+	var emptyObject = __webpack_require__(98);
+	var getNextDebugID = __webpack_require__(126);
+	var invariant = __webpack_require__(7);
+
+	var NoopInternalComponent = function () {
+	  function NoopInternalComponent(element) {
+	    _classCallCheck(this, NoopInternalComponent);
+
+	    this._renderedOutput = element;
+	    this._currentElement = element;
+
+	    if (process.env.NODE_ENV !== 'production') {
+	      this._debugID = getNextDebugID();
+	    }
+	  }
+
+	  NoopInternalComponent.prototype.mountComponent = function mountComponent() {};
+
+	  NoopInternalComponent.prototype.receiveComponent = function receiveComponent(element) {
+	    this._renderedOutput = element;
+	    this._currentElement = element;
+	  };
+
+	  NoopInternalComponent.prototype.unmountComponent = function unmountComponent() {};
+
+	  NoopInternalComponent.prototype.getHostNode = function getHostNode() {
+	    return undefined;
+	  };
+
+	  NoopInternalComponent.prototype.getPublicInstance = function getPublicInstance() {
+	    return null;
+	  };
+
+	  return NoopInternalComponent;
+	}();
+
+	var ShallowComponentWrapper = function (element) {
+	  // TODO: Consolidate with instantiateReactComponent
+	  if (process.env.NODE_ENV !== 'production') {
+	    this._debugID = getNextDebugID();
+	  }
+
+	  this.construct(element);
+	};
+	_assign(ShallowComponentWrapper.prototype, ReactCompositeComponent, {
+	  _constructComponent: ReactCompositeComponent._constructComponentWithoutOwner,
+	  _instantiateReactComponent: function (element) {
+	    return new NoopInternalComponent(element);
+	  },
+	  _replaceNodeWithMarkup: function () {},
+	  _renderValidatedComponent: ReactCompositeComponent._renderValidatedComponentWithoutOwnerOrContext
+	});
+
+	function _batchedRender(renderer, element, context) {
+	  var transaction = ReactUpdates.ReactReconcileTransaction.getPooled(true);
+	  renderer._render(element, transaction, context);
+	  ReactUpdates.ReactReconcileTransaction.release(transaction);
+	}
+
+	var ReactShallowRenderer = function () {
+	  function ReactShallowRenderer() {
+	    _classCallCheck(this, ReactShallowRenderer);
+
+	    this._instance = null;
+	  }
+
+	  ReactShallowRenderer.prototype.getMountedInstance = function getMountedInstance() {
+	    return this._instance ? this._instance._instance : null;
+	  };
+
+	  ReactShallowRenderer.prototype.render = function render(element, context) {
+	    // Ensure we've done the default injections. This might not be true in the
+	    // case of a simple test that only requires React and the TestUtils in
+	    // conjunction with an inline-requires transform.
+	    ReactDefaultInjection.inject();
+
+	    !React.isValidElement(element) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'ReactShallowRenderer render(): Invalid component element.%s', typeof element === 'function' ? ' Instead of passing a component class, make sure to instantiate ' + 'it by passing it to React.createElement.' : '') : _prodInvariant('12', typeof element === 'function' ? ' Instead of passing a component class, make sure to instantiate ' + 'it by passing it to React.createElement.' : '') : void 0;
+	    !(typeof element.type !== 'string') ? process.env.NODE_ENV !== 'production' ? invariant(false, 'ReactShallowRenderer render(): Shallow rendering works only with custom components, not primitives (%s). Instead of calling `.render(el)` and inspecting the rendered output, look at `el.props` directly instead.', element.type) : _prodInvariant('13', element.type) : void 0;
+
+	    if (!context) {
+	      context = emptyObject;
+	    }
+	    ReactUpdates.batchedUpdates(_batchedRender, this, element, context);
+
+	    return this.getRenderOutput();
+	  };
+
+	  ReactShallowRenderer.prototype.getRenderOutput = function getRenderOutput() {
+	    return this._instance && this._instance._renderedComponent && this._instance._renderedComponent._renderedOutput || null;
+	  };
+
+	  ReactShallowRenderer.prototype.unmount = function unmount() {
+	    if (this._instance) {
+	      ReactReconciler.unmountComponent(this._instance, false);
+	    }
+	  };
+
+	  ReactShallowRenderer.prototype._render = function _render(element, transaction, context) {
+	    if (this._instance) {
+	      ReactReconciler.receiveComponent(this._instance, element, transaction, context);
+	    } else {
+	      var instance = new ShallowComponentWrapper(element);
+	      ReactReconciler.mountComponent(instance, transaction, null, null, context, 0);
+	      this._instance = instance;
+	    }
+	  };
+
+	  return ReactShallowRenderer;
+	}();
+
+	module.exports = ReactShallowRenderer;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 261 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	/**
+	 * Copyright (c) 2013-present, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @typechecks
+	 */
+
+	var invariant = __webpack_require__(7);
+
+	/**
+	 * The CSSCore module specifies the API (and implements most of the methods)
+	 * that should be used when dealing with the display of elements (via their
+	 * CSS classes and visibility on screen. It is an API focused on mutating the
+	 * display and not reading it as no logical state should be encoded in the
+	 * display of elements.
+	 */
+
+	/* Slow implementation for browsers that don't natively support .matches() */
+	function matchesSelector_SLOW(element, selector) {
+	  var root = element;
+	  while (root.parentNode) {
+	    root = root.parentNode;
+	  }
+
+	  var all = root.querySelectorAll(selector);
+	  return Array.prototype.indexOf.call(all, element) !== -1;
+	}
+
+	var CSSCore = {
+
+	  /**
+	   * Adds the class passed in to the element if it doesn't already have it.
+	   *
+	   * @param {DOMElement} element the element to set the class on
+	   * @param {string} className the CSS className
+	   * @return {DOMElement} the element passed in
+	   */
+	  addClass: function addClass(element, className) {
+	    !!/\s/.test(className) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'CSSCore.addClass takes only a single class name. "%s" contains ' + 'multiple classes.', className) : invariant(false) : void 0;
+
+	    if (className) {
+	      if (element.classList) {
+	        element.classList.add(className);
+	      } else if (!CSSCore.hasClass(element, className)) {
+	        element.className = element.className + ' ' + className;
+	      }
+	    }
+	    return element;
+	  },
+
+	  /**
+	   * Removes the class passed in from the element
+	   *
+	   * @param {DOMElement} element the element to set the class on
+	   * @param {string} className the CSS className
+	   * @return {DOMElement} the element passed in
+	   */
+	  removeClass: function removeClass(element, className) {
+	    !!/\s/.test(className) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'CSSCore.removeClass takes only a single class name. "%s" contains ' + 'multiple classes.', className) : invariant(false) : void 0;
+
+	    if (className) {
+	      if (element.classList) {
+	        element.classList.remove(className);
+	      } else if (CSSCore.hasClass(element, className)) {
+	        element.className = element.className.replace(new RegExp('(^|\\s)' + className + '(?:\\s|$)', 'g'), '$1').replace(/\s+/g, ' ') // multiple spaces to one
+	        .replace(/^\s*|\s*$/g, ''); // trim the ends
+	      }
+	    }
+	    return element;
+	  },
+
+	  /**
+	   * Helper to add or remove a class from an element based on a condition.
+	   *
+	   * @param {DOMElement} element the element to set the class on
+	   * @param {string} className the CSS className
+	   * @param {*} bool condition to whether to add or remove the class
+	   * @return {DOMElement} the element passed in
+	   */
+	  conditionClass: function conditionClass(element, className, bool) {
+	    return (bool ? CSSCore.addClass : CSSCore.removeClass)(element, className);
+	  },
+
+	  /**
+	   * Tests whether the element has the class specified.
+	   *
+	   * @param {DOMNode|DOMWindow} element the element to check the class on
+	   * @param {string} className the CSS className
+	   * @return {boolean} true if the element has the class, false if not
+	   */
+	  hasClass: function hasClass(element, className) {
+	    !!/\s/.test(className) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'CSS.hasClass takes only a single class name.') : invariant(false) : void 0;
+	    if (element.classList) {
+	      return !!className && element.classList.contains(className);
+	    }
+	    return (' ' + element.className + ' ').indexOf(' ' + className + ' ') > -1;
+	  },
+
+	  /**
+	   * Tests whether the element matches the selector specified
+	   *
+	   * @param {DOMNode|DOMWindow} element the element that we are querying
+	   * @param {string} selector the CSS selector
+	   * @return {boolean} true if the element matches the selector, false if not
+	   */
+	  matchesSelector: function matchesSelector(element, selector) {
+	    var matchesImpl = element.matches || element.webkitMatchesSelector || element.mozMatchesSelector || element.msMatchesSelector || function (s) {
+	      return matchesSelector_SLOW(element, s);
+	    };
+	    return matchesImpl.call(element, selector);
+	  }
+
+	};
+
+	module.exports = CSSCore;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 262 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-present, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 */
+
+	'use strict';
+
+	var ExecutionEnvironment = __webpack_require__(21);
+
+	var getVendorPrefixedEventName = __webpack_require__(84);
+
+	var endEvents = [];
+
+	function detectEvents() {
+	  var animEnd = getVendorPrefixedEventName('animationend');
+	  var transEnd = getVendorPrefixedEventName('transitionend');
+
+	  if (animEnd) {
+	    endEvents.push(animEnd);
+	  }
+
+	  if (transEnd) {
+	    endEvents.push(transEnd);
+	  }
+	}
+
+	if (ExecutionEnvironment.canUseDOM) {
+	  detectEvents();
+	}
+
+	// We use the raw {add|remove}EventListener() call because EventListener
+	// does not know how to remove event listeners and we really should
+	// clean up. Also, these events are not triggered in older browsers
+	// so we should be A-OK here.
+
+	function addEventListener(node, eventName, eventListener) {
+	  node.addEventListener(eventName, eventListener, false);
+	}
+
+	function removeEventListener(node, eventName, eventListener) {
+	  node.removeEventListener(eventName, eventListener, false);
+	}
+
+	var ReactTransitionEvents = {
+	  addEndEventListener: function (node, eventListener) {
+	    if (endEvents.length === 0) {
+	      // If CSS transitions are not supported, trigger an "end animation"
+	      // event immediately.
+	      window.setTimeout(eventListener, 0);
+	      return;
+	    }
+	    endEvents.forEach(function (endEvent) {
+	      addEventListener(node, endEvent, eventListener);
+	    });
+	  },
+
+	  removeEndEventListener: function (node, eventListener) {
+	    if (endEvents.length === 0) {
+	      return;
+	    }
+	    endEvents.forEach(function (endEvent) {
+	      removeEventListener(node, endEvent, eventListener);
+	    });
+	  }
+	};
+
+	module.exports = ReactTransitionEvents;
+
+/***/ },
+/* 263 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(264);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(247)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/sass-loader/index.js?sourceMap!./home.scss", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/sass-loader/index.js?sourceMap!./home.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 264 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(238)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "@font-face {\n  font-family: 'Ailerons';\n  src: local(\"Ailerons\"), local(\"Aileron-Regular\"), url(" + __webpack_require__(239) + ") format(\"woff2\"), url(" + __webpack_require__(240) + ") format(\"woff\"), url(" + __webpack_require__(241) + ") format(\"truetype\"), url(" + __webpack_require__(242) + ") format(\"opentype\"); }\n\n@font-face {\n  font-family: 'nordic';\n  src: url(" + __webpack_require__(243) + ");\n  src: url(" + __webpack_require__(243) + "?#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(244) + ") format(\"woff2\"), url(" + __webpack_require__(245) + ") format(\"woff\"), url(" + __webpack_require__(246) + ") format(\"truetype\");\n  font-weight: normal;\n  font-style: normal; }\n\n.home .name {\n  position: relative;\n  left: -15px;\n  top: -70px;\n  font-family: 'Nordic';\n  font-size: 13vw;\n  color: white; }\n\n.home ReactCssTransitionGroup {\n  color: black;\n  -webkit-transition: color 1000ms linear;\n  -moz-transition: color 1000ms linear;\n  -o-transition: color 1000ms linear;\n  -ms-transition: color 1000ms linear;\n  transition: color 1000ms linear; }\n\n.home hr {\n  float: left;\n  padding: 0;\n  border: none;\n  color: white;\n  text-align: center;\n  position: relative; }\n\n.home .hr1 {\n  border-top: medium double white;\n  border-bottom: medium double white;\n  width: 86%;\n  top: -15em; }\n\n.home .hr2 {\n  border-top: medium double white;\n  width: 72%;\n  top: -12em; }\n\n.home .hr3 {\n  border: 1px solid;\n  width: 58%;\n  top: -9em; }\n\n.home p {\n  position: relative;\n  margin-right: 1em;\n  font-size: 1.5em;\n  float: right; }\n\n.hrs-appear {\n  transition: width 2s; }\n", "", {"version":3,"sources":["/./app/components/styles/app/components/styles/_variables.scss","/./app/components/styles/app/components/styles/home.scss"],"names":[],"mappings":"AACA;EACE,wBAAuB;EACvB,kPAK8D,EAAA;;AAIhE;EACI,sBAAqB;EACrB,mCAAiE;EACjE,8MAGoF;EACpF,oBAAmB;EACnB,mBAAkB,EAAA;;AClBtB;EAEE,mBAAkB;EAClB,YAAW;EACX,WAAU;EACV,sBAAqB;EACrB,gBAAe;EACf,aAAY,EACZ;;AARF;EAUK,aAAY;EACZ,wCAAuC;EACvC,qCAAoC;EACpC,mCAAkC;EAClC,oCAAmC;EACnC,gCAA+B,EAElC;;AAjBF;EAoBE,YAAW;EACX,WAAU;EACP,aAAY;EACf,aAAY;EACZ,mBAAkB;EAClB,mBAAkB,EAClB;;AA1BF;EA4BK,gCAA+B;EAC/B,mCAAkC;EACrC,WAAU;EACV,WAAU,EACV;;AAhCF;EAkCK,gCAA+B;EAClC,WAAU;EACV,WAAU,EACV;;AArCF;EAuCE,kBAAiB;EACjB,WAAU;EACV,UAAS,EACT;;AA1CF;EA6CE,mBAAkB;EAClB,kBAAiB;EACjB,iBAAgB;EAChB,aAAW,EACX;;AAKF;EACC,qBAAoB,EACpB","file":"home.scss","sourcesContent":["// FONTS\r\n@font-face {\r\n  font-family: 'Ailerons';\r\n  src: local('Ailerons'), \r\n  local('Aileron-Regular'), \r\n  url(./fonts/Ailerons/ailerons-typeface-webfont.woff2) format('woff2'),\r\n  url(./fonts/Ailerons/ailerons-typeface-webfont.woff) format('woff'),\r\n  url(./fonts/Ailerons/ailerons-typeface-webfont.ttf) format('truetype'),\r\n  url(./fonts/Ailerons/Ailerons-Typeface.otf) format('opentype');\r\n}\r\n\r\n\r\n@font-face {\r\n    font-family: 'nordic';\r\n    src: url('./fonts/Nordic/nordic_alternative_regular-webfont.eot');\r\n    src: url('./fonts/Nordic/nordic_alternative_regular-webfont.eot?#iefix') format('embedded-opentype'),\r\n         url('./fonts/Nordic/nordic_alternative_regular-webfont.woff2') format('woff2'),\r\n         url('./fonts/Nordic/nordic_alternative_regular-webfont.woff') format('woff'),\r\n         url('./fonts/Nordic/nordic_alternative_regular-webfont.ttf') format('truetype');\r\n    font-weight: normal;\r\n    font-style: normal;\r\n\r\n}\r\n\r\n// COLORS\r\n$offblack\t: #333;\r\n$offwhite\t: #ededed;","@import 'app/components/styles/_variables.scss';\r\n\r\n.home {\r\n\t.name {\r\n\t\tposition: relative;\r\n\t\tleft: -15px;\r\n\t\ttop: -70px;\r\n\t\tfont-family: 'Nordic';\r\n\t\tfont-size: 13vw;\r\n\t\tcolor: white;\r\n\t}\r\n\tReactCssTransitionGroup {\r\n\t    color: black;\r\n\t    -webkit-transition: color 1000ms linear;\r\n\t    -moz-transition: color 1000ms linear;\r\n\t    -o-transition: color 1000ms linear;\r\n\t    -ms-transition: color 1000ms linear;\r\n\t    transition: color 1000ms linear;\r\n\t    \r\n\t}\r\n\r\n\thr {\r\n\t\tfloat: left;\r\n\t\tpadding: 0;\r\n\t    border: none;\r\n\t\tcolor: white;\r\n\t\ttext-align: center;\r\n\t\tposition: relative;\r\n\t}\r\n\t.hr1{\r\n\t    border-top: medium double white;\r\n\t    border-bottom: medium double white;\r\n\t\twidth: 86%;\r\n\t\ttop: -15em;\t\r\n\t}\r\n\t.hr2{\r\n\t    border-top: medium double white;\r\n\t\twidth: 72%;\r\n\t\ttop: -12em;\r\n\t}\r\n\t.hr3{\r\n\t\tborder: 1px solid;\r\n\t\twidth: 58%;\r\n\t\ttop: -9em;\r\n\t}\r\n\r\n\tp {\r\n\t\tposition: relative;\r\n\t\tmargin-right: 1em;\r\n\t\tfont-size: 1.5em;\r\n\t\tfloat:right;\r\n\t}\r\n}\r\n\r\n\r\n\r\n.hrs-appear{\r\n\ttransition: width 2s;\r\n}\r\n"],"sourceRoot":"webpack://"}]);
+
+	// exports
+
+
+/***/ },
+/* 265 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(266);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(247)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/sass-loader/index.js?sourceMap!./main.scss", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js?sourceMap!./../../../node_modules/sass-loader/index.js?sourceMap!./main.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 266 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(238)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "@font-face {\n  font-family: 'Ailerons';\n  src: local(\"Ailerons\"), local(\"Aileron-Regular\"), url(" + __webpack_require__(239) + ") format(\"woff2\"), url(" + __webpack_require__(240) + ") format(\"woff\"), url(" + __webpack_require__(241) + ") format(\"truetype\"), url(" + __webpack_require__(242) + ") format(\"opentype\"); }\n\n@font-face {\n  font-family: 'nordic';\n  src: url(" + __webpack_require__(243) + ");\n  src: url(" + __webpack_require__(243) + "?#iefix) format(\"embedded-opentype\"), url(" + __webpack_require__(244) + ") format(\"woff2\"), url(" + __webpack_require__(245) + ") format(\"woff\"), url(" + __webpack_require__(246) + ") format(\"truetype\");\n  font-weight: normal;\n  font-style: normal; }\n\nbody {\n  margin: 0; }\n\n.main {\n  font-family: 'Ailerons'; }\n  .main .content {\n    background-color: #333;\n    float: left;\n    width: 85%;\n    height: 100%;\n    color: white; }\n", "", {"version":3,"sources":["/./app/components/styles/app/components/styles/_variables.scss","/./app/components/styles/app/components/styles/main.scss"],"names":[],"mappings":"AACA;EACE,wBAAuB;EACvB,kPAK8D,EAAA;;AAIhE;EACI,sBAAqB;EACrB,mCAAiE;EACjE,8MAGoF;EACpF,oBAAmB;EACnB,mBAAkB,EAAA;;AClBtB;EACC,UAAQ,EACR;;AAED;EACC,wBAAuB,EAQvB;EATD;IAGE,uBDgBc;ICfd,YAAU;IACV,WAAU;IACV,aAAY;IACZ,aAAY,EACZ","file":"main.scss","sourcesContent":["// FONTS\r\n@font-face {\r\n  font-family: 'Ailerons';\r\n  src: local('Ailerons'), \r\n  local('Aileron-Regular'), \r\n  url(./fonts/Ailerons/ailerons-typeface-webfont.woff2) format('woff2'),\r\n  url(./fonts/Ailerons/ailerons-typeface-webfont.woff) format('woff'),\r\n  url(./fonts/Ailerons/ailerons-typeface-webfont.ttf) format('truetype'),\r\n  url(./fonts/Ailerons/Ailerons-Typeface.otf) format('opentype');\r\n}\r\n\r\n\r\n@font-face {\r\n    font-family: 'nordic';\r\n    src: url('./fonts/Nordic/nordic_alternative_regular-webfont.eot');\r\n    src: url('./fonts/Nordic/nordic_alternative_regular-webfont.eot?#iefix') format('embedded-opentype'),\r\n         url('./fonts/Nordic/nordic_alternative_regular-webfont.woff2') format('woff2'),\r\n         url('./fonts/Nordic/nordic_alternative_regular-webfont.woff') format('woff'),\r\n         url('./fonts/Nordic/nordic_alternative_regular-webfont.ttf') format('truetype');\r\n    font-weight: normal;\r\n    font-style: normal;\r\n\r\n}\r\n\r\n// COLORS\r\n$offblack\t: #333;\r\n$offwhite\t: #ededed;","@import 'app/components/styles/_variables.scss';\r\n\r\nbody{\r\n\tmargin:0;\r\n}\r\n\r\n.main {\r\n\tfont-family: 'Ailerons';\r\n\t.content{\r\n\t\tbackground-color: $offblack;\r\n\t\tfloat:left;\r\n\t\twidth: 85%;\r\n\t\theight: 100%;\r\n\t\tcolor: white;\r\n\t}\t\r\n}\r\n\r\n"],"sourceRoot":"webpack://"}]);
+
+	// exports
+
+
+/***/ },
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';

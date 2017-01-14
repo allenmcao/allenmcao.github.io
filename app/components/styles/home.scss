@@ -1,0 +1,59 @@
+@import 'app/components/styles/_variables.scss';
+
+.home {
+	.name {
+		position: relative;
+		left: -15px;
+		top: -70px;
+		font-family: 'Nordic';
+		font-size: 13vw;
+		color: white;
+	}
+	ReactCssTransitionGroup {
+	    color: black;
+	    -webkit-transition: color 1000ms linear;
+	    -moz-transition: color 1000ms linear;
+	    -o-transition: color 1000ms linear;
+	    -ms-transition: color 1000ms linear;
+	    transition: color 1000ms linear;
+	    
+	}
+
+	hr {
+		float: left;
+		padding: 0;
+	    border: none;
+		color: white;
+		text-align: center;
+		position: relative;
+	}
+	.hr1{
+	    border-top: medium double white;
+	    border-bottom: medium double white;
+		width: 86%;
+		top: -15em;	
+	}
+	.hr2{
+	    border-top: medium double white;
+		width: 72%;
+		top: -12em;
+	}
+	.hr3{
+		border: 1px solid;
+		width: 58%;
+		top: -9em;
+	}
+
+	p {
+		position: relative;
+		margin-right: 1em;
+		font-size: 1.5em;
+		float:right;
+	}
+}
+
+
+
+.hrs-appear{
+	transition: width 2s;
+}

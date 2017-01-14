@@ -1,0 +1,17 @@
+@import 'app/components/styles/_variables.scss';
+
+body{
+	margin:0;
+}
+
+.main {
+	font-family: 'Ailerons';
+	.content{
+		background-color: $offblack;
+		float:left;
+		width: 85%;
+		height: 100%;
+		color: white;
+	}	
+}
+
