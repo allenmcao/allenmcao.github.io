@@ -45,15 +45,13 @@
 		font-family: 'Nordic';
 		font-size: 13vw;
 		color: white;
-		animation: fadeInSlow;
-		animation-timing-function: ease-in;
-		animation-duration: 10s;
+
 	}
 
 	.hrDiv {
 		animation: widenIn;
 		animation-timing-function: cubic-bezier(0.64, 0.00, .50, 1);
-		animation-duration: 12s;
+		animation-duration: 8s;
 	}
 	hr {
 		float: left;
@@ -87,7 +85,7 @@
 		font-size: 1.5em;
 		float:right;
 		animation: fadeIn;
-		animation-duration: 15s;
+		animation-duration: 12s;
 	}
 }
 

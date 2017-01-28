@@ -23,6 +23,7 @@
   "homepage": "https://github.com/allenmcao/allenmcao.github.io#readme",
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.2",
+    "gsap": "^1.19.1",
     "react": "^15.3.2",
     "react-addons-css-transition-group": "^15.4.2",
     "react-dom": "^15.3.2",
