@@ -42,8 +42,9 @@ export default class Home extends React.Component {
     }
     return (
         <div className='home'>
-            
-            <h2 ref="namee" className='name'>ALLEN CAO</h2>
+            <div className='nameWrapper'>
+                <h2 ref="namee" className='name'>ALLEN CAO</h2>
+            </div>
             {horizs}
             <p>University of California, Berkeley</p>
         </div>

@@ -2,11 +2,16 @@
 
 @keyframes fadeInSlow {
 	0% {
-		color: black
+		color: black;
+		text-shadow: 0px 0px 0 black;
+	}
+	40% {
+		text-shadow: 1px 1px 50px $offblack;
 	}
 	
 	to {
-		color: white
+		color: white;
+		text-shadow: 1px 1px 10px white;
 	}
 }
 
@@ -26,9 +31,6 @@
 	0% {
 		width: 0%
 	}
-	55% {
-		width: 0%
-	}
 	100% {
 		width: 100%
 	}
@@ -37,40 +39,50 @@
 
 
 .home {
-	overflow: hidden;
-	.name {
-		top: -0.6em;
-		left: -17px;
-		position:relative;
-		font-family: 'Nordic';
-		font-size: 13vw;
-		color: white;
-		animation: fadeInSlow;
-		animation-timing-function: ease-in;
-		animation-duration: 10s;
+	overflow: visible;
+	z-index: 9999;
+	.nameWrapper {
+		overflow:hidden;
+		.name {
+			top: -0.6em;
+			left: -17px;
+			position:relative;
+			font-family: 'Nordic';
+			font-size: 13vw;
+			color: white;
+			text-shadow: 1px 1px 10px white;
+			animation: fadeInSlow;
+			animation-timing-function: ease-in;
+			animation-duration: 5s;
+		}
 	}
 
 	.hrDiv {
 		animation: widenIn;
 		animation-timing-function: cubic-bezier(0.64, 0.00, .50, 1);
-		animation-duration: 12s;
+		animation-duration: 6s;
+		z-index: 9999;
 	}
 	hr {
+		z-index: 9999;
+		box-shadow: 10px 1px 50px white;
 		float: left;
 		padding: 0;
-		left: -2px;
+		left: -1em;
 		color: white;
 		text-align: center;
 		position: relative;
 	}
 	.hr1{
 		border-top: medium double white;
+		border-left: white;
 		width: 72%;
 		top: -15em;	
 	}
 	.hr2{
 	    border-top: 3px double white;
 	    border-bottom: medium double white;
+	    border-left: white;
 		width: 86%;
 		top: -12em;
 	}
@@ -87,7 +99,7 @@
 		font-size: 1.5em;
 		float:right;
 		animation: fadeIn;
-		animation-duration: 15s;
+		animation-duration: 8s;
 	}
 }
 

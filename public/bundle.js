@@ -21664,12 +21664,6 @@
 	    _createClass(Navigation, [{
 	        key: 'render',
 	        value: function render() {
-	            var linkstyle = {
-	                textDecoration: 'none',
-	                ':hover': {
-	                    textDecoration: 'none'
-	                }
-	            };
 	            return _react2.default.createElement(
 	                'nav',
 	                null,
@@ -21684,7 +21678,7 @@
 	                            null,
 	                            _react2.default.createElement(
 	                                _reactRouter.Link,
-	                                { to: 'home', style: linkstyle },
+	                                { className: 'linky', to: 'home' },
 	                                'Home'
 	                            )
 	                        ),
@@ -21693,7 +21687,7 @@
 	                            null,
 	                            _react2.default.createElement(
 	                                _reactRouter.Link,
-	                                { to: 'aboutme', style: linkstyle },
+	                                { className: 'linky', to: 'aboutme' },
 	                                'About'
 	                            )
 	                        ),
@@ -21702,29 +21696,45 @@
 	                            null,
 	                            _react2.default.createElement(
 	                                _reactRouter.Link,
-	                                { to: 'work', style: linkstyle },
+	                                { className: 'linky', to: 'work' },
 	                                'Work'
 	                            )
 	                        ),
 	                        _react2.default.createElement(
 	                            'li',
 	                            null,
-	                            'Education'
+	                            _react2.default.createElement(
+	                                _reactRouter.Link,
+	                                { className: 'linky', to: 'education' },
+	                                'Education'
+	                            )
 	                        ),
 	                        _react2.default.createElement(
 	                            'li',
 	                            null,
-	                            'Skills'
+	                            _react2.default.createElement(
+	                                _reactRouter.Link,
+	                                { className: 'linky', to: 'skills' },
+	                                'Skills'
+	                            )
 	                        ),
 	                        _react2.default.createElement(
 	                            'li',
 	                            null,
-	                            'Projects'
+	                            _react2.default.createElement(
+	                                _reactRouter.Link,
+	                                { className: 'linky', to: 'projects' },
+	                                'Projects'
+	                            )
 	                        ),
 	                        _react2.default.createElement(
 	                            'li',
 	                            null,
-	                            'References'
+	                            _react2.default.createElement(
+	                                _reactRouter.Link,
+	                                { className: 'linky', to: 'references' },
+	                                'References'
+	                            )
 	                        )
 	                    )
 	                )
@@ -26951,9 +26961,13 @@
 	                'div',
 	                { className: 'home' },
 	                _react2.default.createElement(
-	                    'h2',
-	                    { ref: 'namee', className: 'name' },
-	                    'ALLEN CAO'
+	                    'div',
+	                    { className: 'nameWrapper' },
+	                    _react2.default.createElement(
+	                        'h2',
+	                        { ref: 'namee', className: 'name' },
+	                        'ALLEN CAO'
+	                    )
 	                ),
 	                horizs,
 	                _react2.default.createElement(
