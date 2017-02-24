@@ -28,7 +28,7 @@
 }
 
 @keyframes widenIn {
-	0% {
+	0%, 30% {
 		width: 0%
 	}
 	100% {
@@ -40,9 +40,9 @@
 
 .home {
 	overflow: visible;
-	z-index: 9999;
 	.nameWrapper {
 		overflow:hidden;
+		height: 40%;
 		.name {
 			top: -0.6em;
 			left: -17px;
@@ -56,48 +56,61 @@
 			animation-duration: 5s;
 		}
 	}
+	.quoteWrapper {
+		height: 15%;
+	}
+	.quote {
+		width: 100%;
+		margin: auto;
+		text-align: center;
+		font-size: 1.8em;
+	}
+	.quoter{
+		text-align: center;
+	}
 
 	.hrDiv {
 		animation: widenIn;
 		animation-timing-function: cubic-bezier(0.64, 0.00, .50, 1);
-		animation-duration: 6s;
-		z-index: 9999;
+		animation-duration: 8s;
+		animation-fill-mode: forwards;
+		position: absolute;
+		height: 45%;
+		left: -1.5em;
 	}
 	hr {
-		z-index: 9999;
-		box-shadow: 10px 1px 50px white;
+		position: absolute;
+		box-shadow: 10px 0px 50px white;
 		float: left;
-		padding: 0;
-		left: -1em;
 		color: white;
 		text-align: center;
-		position: relative;
 	}
 	.hr1{
+		top: 15%;
 		border-top: medium double white;
 		border-left: white;
+		border-bottom: white;
 		width: 72%;
-		top: -15em;	
 	}
 	.hr2{
+		top: 30%;
 	    border-top: 3px double white;
 	    border-bottom: medium double white;
 	    border-left: white;
 		width: 86%;
-		top: -12em;
 	}
 	.hr3{
-		
+		top: 45%;
 		border: 1px solid;
 		width: 58%;
-		top: -9em;
 	}
 
-	p {
-		position: relative;
-		margin-right: 1em;
+	.berk {
+		position: absolute;
 		font-size: 1.5em;
 		float:right;
+		bottom: 5%;
+		right: 1em;
 		animation: fadeIn;
 		animation-duration: 8s;
 	}

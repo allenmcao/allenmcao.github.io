@@ -30,23 +30,22 @@ export default class Home extends React.Component {
         // myEl.className = "name-load";
     }
     render () {
-    let horizs = null;
-    let blah = null
-    if (this.state.mounted) {
-        horizs = (
-        <div className='hrDiv' key="base">
-            <hr className='hr1' key="one"/>
-            <hr className='hr2' key="two"/>
-            <hr className='hr3' key="three"/>
-        </div>);
-    }
     return (
         <div className='home'>
             <div className='nameWrapper'>
                 <h2 ref="namee" className='name'>ALLEN CAO</h2>
             </div>
-            {horizs}
-            <p>University of California, Berkeley</p>
+            <div className="quoteWrapper">
+                <p className="quote">"If debugging is the process of removing software bugs,</p>
+                <p className="quote">then programming must be the process of putting them in."</p>
+                <p className="quoter">-Edsger Dijkstra</p>
+            </div>
+            <div className='hrDiv' key="base">
+                <hr className='hr1' key="one"/>
+                <hr className='hr2' key="two"/>
+                <hr className='hr3' key="three"/>
+            </div>
+            <p className="berk">University of California, Berkeley</p>
         </div>
     );
     }

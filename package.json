@@ -26,6 +26,7 @@
     "react": "^15.3.2",
     "react-addons-css-transition-group": "^15.4.2",
     "react-dom": "^15.3.2",
+    "react-github-corner": "^0.3.0",
     "redux": "^3.6.0",
     "underscore": "^1.8.3"
   },
