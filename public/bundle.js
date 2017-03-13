@@ -34,7 +34,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/build/";
+/******/ 	__webpack_require__.p = "/public/";
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -21510,19 +21510,23 @@
 
 	var _main2 = _interopRequireDefault(_main);
 
-	var _home = __webpack_require__(249);
+	var _home = __webpack_require__(254);
 
 	var _home2 = _interopRequireDefault(_home);
 
-	var _aboutme = __webpack_require__(248);
+	var _aboutme = __webpack_require__(252);
 
 	var _aboutme2 = _interopRequireDefault(_aboutme);
 
-	var _work = __webpack_require__(265);
+	var _work = __webpack_require__(270);
 
 	var _work2 = _interopRequireDefault(_work);
 
-	var _not_found = __webpack_require__(266);
+	var _Projects = __webpack_require__(274);
+
+	var _Projects2 = _interopRequireDefault(_Projects);
+
+	var _not_found = __webpack_require__(271);
 
 	var _not_found2 = _interopRequireDefault(_not_found);
 
@@ -21530,9 +21534,6 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// const config = require('./config');
-
-	// const Main = require('./components/main');
 	exports.default = _react2.default.createElement(
 	    _reactRouter.Router,
 	    { history: _reactRouter.hashHistory },
@@ -21543,9 +21544,14 @@
 	        _react2.default.createElement(_reactRouter.Route, { path: 'home', component: _home2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: 'aboutme', component: _aboutme2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: 'work', component: _work2.default }),
+	        _react2.default.createElement(_reactRouter.Route, { path: 'projects', component: _Projects2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '*', component: _not_found2.default })
 	    )
 	);
+
+	// const config = require('./config');
+
+	// const Main = require('./components/main');
 
 /***/ },
 /* 178 */
@@ -21576,15 +21582,15 @@
 
 	var _navigation2 = _interopRequireDefault(_navigation);
 
-	var _aboutme = __webpack_require__(248);
+	var _aboutme = __webpack_require__(252);
 
 	var _aboutme2 = _interopRequireDefault(_aboutme);
 
-	var _home = __webpack_require__(249);
+	var _home = __webpack_require__(254);
 
 	var _home2 = _interopRequireDefault(_home);
 
-	var _main = __webpack_require__(264);
+	var _main = __webpack_require__(269);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -26950,7 +26956,11 @@
 /* 245 */,
 /* 246 */,
 /* 247 */,
-/* 248 */
+/* 248 */,
+/* 249 */,
+/* 250 */,
+/* 251 */,
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26964,6 +26974,8 @@
 	var _react = __webpack_require__(178);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _aboutme = __webpack_require__(253);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -26990,17 +27002,18 @@
 	        null,
 	        _react2.default.createElement(
 	          'h2',
-	          null,
+	          { className: 'about' },
 	          'About Me'
 	        ),
 	        _react2.default.createElement(
 	          'p',
-	          null,
-	          'I am a third-year Computer Science major at UC Berkeley.'
+	          { className: 'aboutP' },
+	          'Hi! I am a third-year Computer Science major at UC Berkeley. My hobbies right now include CS projects, homeworks, and other forms of studying.'
 	        ),
+	        _react2.default.createElement('hr', { className: 'divOne' }),
 	        _react2.default.createElement(
 	          'h2',
-	          null,
+	          { className: 'contact' },
 	          'Contact'
 	        ),
 	        _react2.default.createElement(
@@ -27010,8 +27023,8 @@
 	        ),
 	        _react2.default.createElement(
 	          'p',
-	          null,
-	          '8587170211'
+	          { className: 'contactP' },
+	          '(858)-717-0211'
 	        ),
 	        _react2.default.createElement(
 	          'h3',
@@ -27020,9 +27033,10 @@
 	        ),
 	        _react2.default.createElement(
 	          'p',
-	          null,
+	          { className: 'contactP' },
 	          'allen.m.cao@gmail.com'
-	        )
+	        ),
+	        _react2.default.createElement('hr', { className: 'divTwo' })
 	      );
 	    }
 	  }]);
@@ -27033,7 +27047,13 @@
 	exports.default = AboutMe;
 
 /***/ },
-/* 249 */
+/* 253 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27052,11 +27072,11 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _reactAddonsCssTransitionGroup = __webpack_require__(250);
+	var _reactAddonsCssTransitionGroup = __webpack_require__(255);
 
 	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
 
-	var _home = __webpack_require__(263);
+	var _home = __webpack_require__(268);
 
 	var _reactRouter = __webpack_require__(183);
 
@@ -27158,13 +27178,13 @@
 	exports.default = Home;
 
 /***/ },
-/* 250 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(251);
+	module.exports = __webpack_require__(256);
 
 /***/ },
-/* 251 */
+/* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -27189,8 +27209,8 @@
 
 	var React = __webpack_require__(87);
 
-	var ReactTransitionGroup = __webpack_require__(252);
-	var ReactCSSTransitionGroupChild = __webpack_require__(255);
+	var ReactTransitionGroup = __webpack_require__(257);
+	var ReactCSSTransitionGroupChild = __webpack_require__(260);
 
 	function createTransitionTimeoutPropValidator(transitionType) {
 	  var timeoutPropName = 'transition' + transitionType + 'Timeout';
@@ -27273,7 +27293,7 @@
 	module.exports = ReactCSSTransitionGroup;
 
 /***/ },
-/* 252 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -27297,7 +27317,7 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var React = __webpack_require__(87);
-	var ReactTransitionChildMapping = __webpack_require__(253);
+	var ReactTransitionChildMapping = __webpack_require__(258);
 
 	var emptyFunction = __webpack_require__(18);
 
@@ -27506,7 +27526,7 @@
 	module.exports = ReactTransitionGroup;
 
 /***/ },
-/* 253 */
+/* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -27521,7 +27541,7 @@
 
 	'use strict';
 
-	var flattenChildren = __webpack_require__(254);
+	var flattenChildren = __webpack_require__(259);
 
 	var ReactTransitionChildMapping = {
 	  /**
@@ -27614,7 +27634,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 254 */
+/* 259 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -27695,7 +27715,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 255 */
+/* 260 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -27711,10 +27731,10 @@
 	'use strict';
 
 	var React = __webpack_require__(87);
-	var ReactAddonsDOMDependencies = __webpack_require__(256);
+	var ReactAddonsDOMDependencies = __webpack_require__(261);
 
-	var CSSCore = __webpack_require__(261);
-	var ReactTransitionEvents = __webpack_require__(262);
+	var CSSCore = __webpack_require__(266);
+	var ReactTransitionEvents = __webpack_require__(267);
 
 	var onlyChild = __webpack_require__(108);
 
@@ -27866,7 +27886,7 @@
 	module.exports = ReactCSSTransitionGroupChild;
 
 /***/ },
-/* 256 */
+/* 261 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -27893,14 +27913,14 @@
 
 	  exports.getReactPerf = function () {
 	    if (!ReactPerf) {
-	      ReactPerf = __webpack_require__(257);
+	      ReactPerf = __webpack_require__(262);
 	    }
 	    return ReactPerf;
 	  };
 
 	  exports.getReactTestUtils = function () {
 	    if (!ReactTestUtils) {
-	      ReactTestUtils = __webpack_require__(258);
+	      ReactTestUtils = __webpack_require__(263);
 	    }
 	    return ReactTestUtils;
 	  };
@@ -27908,7 +27928,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 257 */
+/* 262 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -28414,7 +28434,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 258 */
+/* 263 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -28432,7 +28452,7 @@
 	var _prodInvariant = __webpack_require__(5),
 	    _assign = __webpack_require__(23);
 
-	var EventConstants = __webpack_require__(259);
+	var EventConstants = __webpack_require__(264);
 	var EventPluginHub = __webpack_require__(13);
 	var EventPluginRegistry = __webpack_require__(14);
 	var EventPropagators = __webpack_require__(12);
@@ -28443,7 +28463,7 @@
 	var ReactInstanceMap = __webpack_require__(115);
 	var ReactUpdates = __webpack_require__(30);
 	var SyntheticEvent = __webpack_require__(27);
-	var ReactShallowRenderer = __webpack_require__(260);
+	var ReactShallowRenderer = __webpack_require__(265);
 
 	var findDOMNode = __webpack_require__(171);
 	var invariant = __webpack_require__(7);
@@ -28831,7 +28851,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 259 */
+/* 264 */
 /***/ function(module, exports) {
 
 	/**
@@ -28927,7 +28947,7 @@
 	module.exports = EventConstants;
 
 /***/ },
-/* 260 */
+/* 265 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -29067,7 +29087,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 261 */
+/* 266 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -29194,7 +29214,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 262 */
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -29271,25 +29291,25 @@
 	module.exports = ReactTransitionEvents;
 
 /***/ },
-/* 263 */
+/* 268 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 264 */
+/* 269 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 265 */
+/* 270 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	        value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -29297,6 +29317,8 @@
 	var _react = __webpack_require__(178);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _work = __webpack_require__(273);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29307,41 +29329,99 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var Work = function (_React$Component) {
-	  _inherits(Work, _React$Component);
+	        _inherits(Work, _React$Component);
 
-	  function Work() {
-	    _classCallCheck(this, Work);
+	        function Work() {
+	                _classCallCheck(this, Work);
 
-	    return _possibleConstructorReturn(this, (Work.__proto__ || Object.getPrototypeOf(Work)).apply(this, arguments));
-	  }
+	                return _possibleConstructorReturn(this, (Work.__proto__ || Object.getPrototypeOf(Work)).apply(this, arguments));
+	        }
 
-	  _createClass(Work, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          'h2',
-	          null,
-	          'WORK'
-	        ),
-	        _react2.default.createElement(
-	          'p',
-	          null,
-	          'stuff'
-	        )
-	      );
-	    }
-	  }]);
+	        _createClass(Work, [{
+	                key: 'render',
+	                value: function render() {
+	                        return _react2.default.createElement(
+	                                'div',
+	                                { className: 'work' },
+	                                _react2.default.createElement(
+	                                        'div',
+	                                        { className: 'telelytics' },
+	                                        _react2.default.createElement(
+	                                                'h1',
+	                                                null,
+	                                                'Telelytics'
+	                                        ),
+	                                        _react2.default.createElement(
+	                                                'h2',
+	                                                null,
+	                                                'Software Engineering Intern'
+	                                        ),
+	                                        _react2.default.createElement(
+	                                                'ul',
+	                                                null,
+	                                                _react2.default.createElement(
+	                                                        'li',
+	                                                        null,
+	                                                        'Helped build the Telelytics telemedicine service.'
+	                                                ),
+	                                                _react2.default.createElement(
+	                                                        'li',
+	                                                        null,
+	                                                        'Worked on the front-end/full-stack team developing the patient-doctor interface using React.js and Redux (with a material-design emphasis) to implement account logins, confidentiality, and video appointments (Twilio), etc.'
+	                                                ),
+	                                                _react2.default.createElement(
+	                                                        'li',
+	                                                        null,
+	                                                        'Also assisted with basic backend using Express, and Passport, and a small Redis server to store patient data.'
+	                                                )
+	                                        )
+	                                ),
+	                                _react2.default.createElement('br', null),
+	                                _react2.default.createElement('br', null),
+	                                _react2.default.createElement(
+	                                        'div',
+	                                        { className: 'bids' },
+	                                        _react2.default.createElement(
+	                                                'h1',
+	                                                null,
+	                                                'UC Berkeley Undergraduate Research Apprenticeship Program (URAP)'
+	                                        ),
+	                                        _react2.default.createElement(
+	                                                'h2',
+	                                                null,
+	                                                'Text Thresher Research Project'
+	                                        ),
+	                                        _react2.default.createElement(
+	                                                'ul',
+	                                                null,
+	                                                _react2.default.createElement(
+	                                                        'li',
+	                                                        null,
+	                                                        'Worked with full-stack with an emphasis on the front-end side with React, Redux, Sass, Webpack, and ES6. Contributed to the specialized highlighting interface that allows users to change, combine, and intermingle selections when curating crowd-sourced data.'
+	                                                ),
+	                                                _react2.default.createElement(
+	                                                        'li',
+	                                                        null,
+	                                                        'Also assisted with the backend using Django, Docker, and Python. Created docker containers to programmatically setup work environment/databases, and set/retrieve tasks from CrowdCrafting.org (crowd-sourcing service).'
+	                                                ),
+	                                                _react2.default.createElement(
+	                                                        'li',
+	                                                        null,
+	                                                        '3 years in development and currently seeking NHS grant funding. Adopted Agile development (Scrum) as of 5 months.'
+	                                                )
+	                                        )
+	                                )
+	                        );
+	                }
+	        }]);
 
-	  return Work;
+	        return Work;
 	}(_react2.default.Component);
 
 	exports.default = Work;
 
 /***/ },
-/* 266 */
+/* 271 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29355,6 +29435,8 @@
 	var _react = __webpack_require__(178);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _not_found = __webpack_require__(272);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29399,6 +29481,139 @@
 	}(_react2.default.Component);
 
 	exports.default = NotFound;
+
+/***/ },
+/* 272 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 273 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 274 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(178);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	// import { styles } from './styles/projects.scss'
+
+	var Projects = function (_React$Component) {
+	    _inherits(Projects, _React$Component);
+
+	    function Projects() {
+	        _classCallCheck(this, Projects);
+
+	        return _possibleConstructorReturn(this, (Projects.__proto__ || Object.getPrototypeOf(Projects)).apply(this, arguments));
+	    }
+
+	    _createClass(Projects, [{
+	        key: "render",
+	        value: function render() {
+	            return _react2.default.createElement(
+	                "div",
+	                { className: "projects" },
+	                _react2.default.createElement(
+	                    "div",
+	                    { className: "acid" },
+	                    _react2.default.createElement(
+	                        "h1",
+	                        null,
+	                        "Advanced Cyberinfrastructure (ACID)"
+	                    ),
+	                    _react2.default.createElement(
+	                        "h2",
+	                        null,
+	                        "San Diego Supercomputer Center (SDSC)"
+	                    ),
+	                    _react2.default.createElement(
+	                        "ul",
+	                        null,
+	                        _react2.default.createElement(
+	                            "li",
+	                            null,
+	                            " Research at UCSD San Diego Supercomputer Center "
+	                        )
+	                    )
+	                ),
+	                _react2.default.createElement("br", null),
+	                _react2.default.createElement("br", null),
+	                _react2.default.createElement(
+	                    "div",
+	                    { className: "epitopes" },
+	                    _react2.default.createElement(
+	                        "h1",
+	                        null,
+	                        "Immune Epitope and Protein Disorder Project - (UCSD San Diego Supercomputer Center). "
+	                    ),
+	                    _react2.default.createElement(
+	                        "h2",
+	                        null,
+	                        "San Diego Supercomputer Center (SDSC)"
+	                    ),
+	                    _react2.default.createElement(
+	                        "ul",
+	                        null,
+	                        _react2.default.createElement(
+	                            "li",
+	                            null,
+	                            "Bioinformatics project trying to find the relationship between epitopes and protein disorder."
+	                        )
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    "div",
+	                    { className: "epitopes" },
+	                    _react2.default.createElement(
+	                        "h1",
+	                        null,
+	                        "SynWrite(NotePadExtended)"
+	                    ),
+	                    _react2.default.createElement(
+	                        "h2",
+	                        null,
+	                        "Self"
+	                    ),
+	                    _react2.default.createElement(
+	                        "ul",
+	                        null,
+	                        _react2.default.createElement(
+	                            "li",
+	                            null,
+	                            "Java-based text editor that suggests autofill based on synonyms/hyponyms and not autosuggestion."
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Projects;
+	}(_react2.default.Component);
+
+	exports.default = Projects;
 
 /***/ }
 /******/ ]);

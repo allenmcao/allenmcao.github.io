@@ -45,7 +45,7 @@
 		height: 40%;
 		.name {
 			top: -0.6em;
-			left: -0.10em;
+			left: -0.08em;
 			position:relative;
 			font-family: 'Nordic';
 			font-size: 13vw;
@@ -64,9 +64,11 @@
 		margin: auto;
 		text-align: center;
 		font-size: 1.8em;
+		font-family: Qontra;
 	}
 	.quoter{
 		text-align: center;
+		font-family: Qontra;
 	}
 
 	.hrDiv {
@@ -83,7 +85,6 @@
 		box-shadow: 10px 0px 50px white;
 		float: left;
 		color: white;
-		text-align: center;
 	}
 	.hr1{
 		top: 15%;
