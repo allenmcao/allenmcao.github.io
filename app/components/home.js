@@ -2,52 +2,51 @@ import React from 'react';
 import ReactDOM from 'react-dom'
 
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group' 
-import { styles } from './styles/home.scss'
-
 import { Link } from 'react-router'
 
+import Typist from 'react-typist';
+
+import { styles } from './styles/home.scss'
+
 export default class Home extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {mounted: false};
+    delayGen(mean, std, { line, lineIdx, charIdx, defDelayGenerator }) {
+        if (lineIdx === 0 && charIdx === line.length - 1) {
+          return 500;
+        }
+        if (lineIdx === 1 && charIdx === line.length - 1) {
+          return 1250;
+        }
+        return defDelayGenerator(mean + 25);
     }
 
-    getInitialState() {
-        return { mounted: false };
-    }
-
-    componentDidMount() {
-        this.setState({ mounted: true });
-        // var elem = this.getDOMNode();
-        // // Set the opacity of the element to 0
-        // elem.style.opacity = 0;
-        // window.requestAnimationFrame(function() {
-        //     // Now set a transition on the opacity
-        //     elem.style.transition = "width 2500ms ease-in";
-        //     // and set the opacity to 1
-        // });
-        var myEl = ReactDOM.findDOMNode(this.refs.namee);
-        // myEl.className = "name-load";
-    }
     render () {
-    return (
-        <div className='home'>
-            <div className='nameWrapper'>
-                <h2 ref="namee" className='name'>ALLEN CAO</h2>
+        return (
+            <div className='home'>
+                <div className='nameWrapper'>
+                    <h2 ref="namee" className='name'>ALLEN CAO</h2>
+                </div>
+
+                <Typist 
+                    className="quoteWrapper" 
+                    startDelay={2000} 
+                    avgTypingDelay={50} 
+                    delayGenerator={this.delayGen}
+                    // cursor={{ hideWhenDone: true }}
+                >
+                    "If debugging is the process of removing software bugs,
+                    <br/>
+                    then programming must be the process of putting them in.
+                    <br/>
+                    -Edsger Dijkstra
+                </Typist>
+
+                <div className='hrDiv' key="base">
+                    <hr className='hr1' key="one"/>
+                    <hr className='hr2' key="two"/>
+                    <hr className='hr3' key="three"/>
+                </div>
+                <p className="berk">University of California, Berkeley</p>
             </div>
-            <div className="quoteWrapper">
-                <p className="quote">"If debugging is the process of removing software bugs,</p>
-                <p className="quote">then programming must be the process of putting them in."</p>
-                <p className="quoter">-Edsger Dijkstra</p>
-            </div>
-            <div className='hrDiv' key="base">
-                <hr className='hr1' key="one"/>
-                <hr className='hr2' key="two"/>
-                <hr className='hr3' key="three"/>
-            </div>
-            <p className="berk">University of California, Berkeley</p>
-        </div>
-    );
+        );
     }
 }
-// <Link to='/aboutme' className='navWrapper'>PODSFJPSDOF</Link>

@@ -1,0 +1,52 @@
+@import "./_typist.scss";
+
+@keyframes appear{
+	0%, 99% { color:black; }
+	to { color:white; }
+}
+
+.projects {
+	height: 100%;
+	width: 100%;
+	font-family: Qontra;
+
+	.startPound {
+		top: -2vw;
+		position: absolute;
+		left: 1vw;
+		font-size: 3vw;
+	}
+	.startTypist {
+		position: absolute;
+		top: 0.8vw;
+		left: 4vw;
+		font-size: 3vw;
+	}
+
+	.list {
+		position: absolute;
+		top: 7vw;
+		left: 4vw;
+		animation: appear 5s;
+	}
+	.acid, .epitopes, .synwrites {
+		display: table-cell;
+		margin: .5vw;
+	}
+
+	.endPound{
+		position:absolute;
+		font-size: 3vw;
+		left: 1vw;
+		top: 80%;
+		animation: appear 5s;
+	}
+
+	.endTypist{
+		position: absolute;
+		top: 85%;
+		left: 4vw;
+		font-size: 3vw;
+		animation: appear 5s;
+	}
+}

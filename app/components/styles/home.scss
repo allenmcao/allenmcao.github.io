@@ -1,4 +1,5 @@
 @import 'app/components/styles/_variables.scss';
+@import './_typist.scss';
 
 @keyframes fadeInSlow {
 	0% {
@@ -58,16 +59,10 @@
 	}
 	.quoteWrapper {
 		height: 15%;
-	}
-	.quote {
-		width: 100%;
 		margin: auto;
-		text-align: center;
+		margin-left: 10vw;
+		text-align: left;
 		font-size: 1.8em;
-		font-family: Qontra;
-	}
-	.quoter{
-		text-align: center;
 		font-family: Qontra;
 	}
 

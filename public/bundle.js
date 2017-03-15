@@ -21518,15 +21518,27 @@
 
 	var _aboutme2 = _interopRequireDefault(_aboutme);
 
-	var _work = __webpack_require__(270);
+	var _work = __webpack_require__(271);
 
 	var _work2 = _interopRequireDefault(_work);
 
-	var _Projects = __webpack_require__(274);
+	var _education = __webpack_require__(273);
 
-	var _Projects2 = _interopRequireDefault(_Projects);
+	var _education2 = _interopRequireDefault(_education);
 
-	var _not_found = __webpack_require__(271);
+	var _skills = __webpack_require__(275);
+
+	var _skills2 = _interopRequireDefault(_skills);
+
+	var _projects = __webpack_require__(276);
+
+	var _projects2 = _interopRequireDefault(_projects);
+
+	var _references = __webpack_require__(277);
+
+	var _references2 = _interopRequireDefault(_references);
+
+	var _not_found = __webpack_require__(278);
 
 	var _not_found2 = _interopRequireDefault(_not_found);
 
@@ -21534,6 +21546,9 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	// const config = require('./config');
+
+	// const Main = require('./components/main');
 	exports.default = _react2.default.createElement(
 	    _reactRouter.Router,
 	    { history: _reactRouter.hashHistory },
@@ -21544,14 +21559,13 @@
 	        _react2.default.createElement(_reactRouter.Route, { path: 'home', component: _home2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: 'aboutme', component: _aboutme2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: 'work', component: _work2.default }),
-	        _react2.default.createElement(_reactRouter.Route, { path: 'projects', component: _Projects2.default }),
+	        _react2.default.createElement(_reactRouter.Route, { path: 'skills', component: _skills2.default }),
+	        _react2.default.createElement(_reactRouter.Route, { path: 'education', component: _education2.default }),
+	        _react2.default.createElement(_reactRouter.Route, { path: 'projects', component: _projects2.default }),
+	        _react2.default.createElement(_reactRouter.Route, { path: 'references', component: _references2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '*', component: _not_found2.default })
 	    )
 	);
-
-	// const config = require('./config');
-
-	// const Main = require('./components/main');
 
 /***/ },
 /* 178 */
@@ -21590,7 +21604,7 @@
 
 	var _home2 = _interopRequireDefault(_home);
 
-	var _main = __webpack_require__(269);
+	var _main = __webpack_require__(270);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27076,9 +27090,13 @@
 
 	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
 
-	var _home = __webpack_require__(268);
-
 	var _reactRouter = __webpack_require__(183);
+
+	var _reactTypist = __webpack_require__(268);
+
+	var _reactTypist2 = _interopRequireDefault(_reactTypist);
+
+	var _home = __webpack_require__(269);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27091,34 +27109,27 @@
 	var Home = function (_React$Component) {
 	    _inherits(Home, _React$Component);
 
-	    function Home(props) {
+	    function Home() {
 	        _classCallCheck(this, Home);
 
-	        var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
-
-	        _this.state = { mounted: false };
-	        return _this;
+	        return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
 	    }
 
 	    _createClass(Home, [{
-	        key: 'getInitialState',
-	        value: function getInitialState() {
-	            return { mounted: false };
-	        }
-	    }, {
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {
-	            this.setState({ mounted: true });
-	            // var elem = this.getDOMNode();
-	            // // Set the opacity of the element to 0
-	            // elem.style.opacity = 0;
-	            // window.requestAnimationFrame(function() {
-	            //     // Now set a transition on the opacity
-	            //     elem.style.transition = "width 2500ms ease-in";
-	            //     // and set the opacity to 1
-	            // });
-	            var myEl = _reactDom2.default.findDOMNode(this.refs.namee);
-	            // myEl.className = "name-load";
+	        key: 'delayGen',
+	        value: function delayGen(mean, std, _ref) {
+	            var line = _ref.line,
+	                lineIdx = _ref.lineIdx,
+	                charIdx = _ref.charIdx,
+	                defDelayGenerator = _ref.defDelayGenerator;
+
+	            if (lineIdx === 0 && charIdx === line.length - 1) {
+	                return 500;
+	            }
+	            if (lineIdx === 1 && charIdx === line.length - 1) {
+	                return 1250;
+	            }
+	            return defDelayGenerator(mean + 25);
 	        }
 	    }, {
 	        key: 'render',
@@ -27136,23 +27147,19 @@
 	                    )
 	                ),
 	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'quoteWrapper' },
-	                    _react2.default.createElement(
-	                        'p',
-	                        { className: 'quote' },
-	                        '"If debugging is the process of removing software bugs,'
-	                    ),
-	                    _react2.default.createElement(
-	                        'p',
-	                        { className: 'quote' },
-	                        'then programming must be the process of putting them in."'
-	                    ),
-	                    _react2.default.createElement(
-	                        'p',
-	                        { className: 'quoter' },
-	                        '-Edsger Dijkstra'
-	                    )
+	                    _reactTypist2.default,
+	                    {
+	                        className: 'quoteWrapper',
+	                        startDelay: 2000,
+	                        avgTypingDelay: 50,
+	                        delayGenerator: this.delayGen
+	                        // cursor={{ hideWhenDone: true }}
+	                    },
+	                    '"If debugging is the process of removing software bugs,',
+	                    _react2.default.createElement('br', null),
+	                    'then programming must be the process of putting them in.',
+	                    _react2.default.createElement('br', null),
+	                    '-Edsger Dijkstra'
 	                ),
 	                _react2.default.createElement(
 	                    'div',
@@ -27172,8 +27179,6 @@
 
 	    return Home;
 	}(_react2.default.Component);
-	// <Link to='/aboutme' className='navWrapper'>PODSFJPSDOF</Link>
-
 
 	exports.default = Home;
 
@@ -29292,9 +29297,518 @@
 
 /***/ },
 /* 268 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	// removed by extract-text-webpack-plugin
+	module.exports =
+	/******/ (function(modules) { // webpackBootstrap
+	/******/ 	// The module cache
+	/******/ 	var installedModules = {};
+
+	/******/ 	// The require function
+	/******/ 	function __webpack_require__(moduleId) {
+
+	/******/ 		// Check if module is in cache
+	/******/ 		if(installedModules[moduleId])
+	/******/ 			return installedModules[moduleId].exports;
+
+	/******/ 		// Create a new module (and put it into the cache)
+	/******/ 		var module = installedModules[moduleId] = {
+	/******/ 			exports: {},
+	/******/ 			id: moduleId,
+	/******/ 			loaded: false
+	/******/ 		};
+
+	/******/ 		// Execute the module function
+	/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+
+	/******/ 		// Flag the module as loaded
+	/******/ 		module.loaded = true;
+
+	/******/ 		// Return the exports of the module
+	/******/ 		return module.exports;
+	/******/ 	}
+
+
+	/******/ 	// expose the modules object (__webpack_modules__)
+	/******/ 	__webpack_require__.m = modules;
+
+	/******/ 	// expose the module cache
+	/******/ 	__webpack_require__.c = installedModules;
+
+	/******/ 	// __webpack_public_path__
+	/******/ 	__webpack_require__.p = "";
+
+	/******/ 	// Load entry module and return exports
+	/******/ 	return __webpack_require__(0);
+	/******/ })
+	/************************************************************************/
+	/******/ ([
+	/* 0 */
+	/***/ function(module, exports, __webpack_require__) {
+
+		'use strict';
+
+		Object.defineProperty(exports, "__esModule", {
+		  value: true
+		});
+
+		var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+		var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+		var _react = __webpack_require__(1);
+
+		var _react2 = _interopRequireDefault(_react);
+
+		var _Cursor = __webpack_require__(2);
+
+		var _Cursor2 = _interopRequireDefault(_Cursor);
+
+		var _utils = __webpack_require__(4);
+
+		var utils = _interopRequireWildcard(_utils);
+
+		function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+		function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+		function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+		function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+		function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+		var Typist = function (_Component) {
+		  _inherits(Typist, _Component);
+
+		  function Typist(props) {
+		    _classCallCheck(this, Typist);
+
+		    var _this = _possibleConstructorReturn(this, (Typist.__proto__ || Object.getPrototypeOf(Typist)).call(this, props));
+
+		    _this.state = {
+		      text: [],
+		      isDone: false
+		    };
+
+		    _this.onTypingDone = function () {
+		      if (!_this.mounted) {
+		        return;
+		      }
+		      _this.setState({ isDone: true });
+		      _this.props.onTypingDone();
+		    };
+
+		    _this.delayGenerator = function (line, lineIdx, character, charIdx) {
+		      var mean = _this.props.avgTypingDelay;
+		      var std = _this.props.stdTypingDelay;
+		      return _this.props.delayGenerator(mean, std, {
+		        line: line,
+		        lineIdx: lineIdx,
+		        character: character,
+		        charIdx: charIdx,
+		        defDelayGenerator: function defDelayGenerator() {
+		          var mn = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : mean;
+		          var st = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : std;
+		          return utils.gaussianRnd(mn, st);
+		        }
+		      });
+		    };
+
+		    _this.mounted = false;
+		    _this.linesToType = [];
+
+		    if (props.children) {
+		      _this.linesToType = utils.extractText(props.children);
+		    }
+		    return _this;
+		  }
+
+		  _createClass(Typist, [{
+		    key: 'componentDidMount',
+		    value: function componentDidMount() {
+		      this.mounted = true;
+		      var _props = this.props;
+		      var children = _props.children;
+		      var startDelay = _props.startDelay;
+
+		      if (children) {
+		        if (startDelay > 0 && typeof window !== 'undefined') {
+		          setTimeout(this.typeAllLines.bind(this), startDelay);
+		        } else {
+		          this.typeAllLines();
+		        }
+		      } else {
+		        this.onTypingDone();
+		      }
+		    }
+		  }, {
+		    key: 'shouldComponentUpdate',
+		    value: function shouldComponentUpdate(nextProps, nextState) {
+		      for (var idx = 0; idx < nextState.text.length; idx++) {
+		        var txt = this.state.text[idx];
+		        var ntxt = nextState.text[idx];
+		        if (txt !== ntxt && ntxt.length > 0) return true;
+		      }
+		      return this.state.isDone !== nextState.isDone;
+		    }
+		  }, {
+		    key: 'componentWillUnmount',
+		    value: function componentWillUnmount() {
+		      this.mounted = false;
+		    }
+		  }, {
+		    key: 'typeAllLines',
+		    value: function typeAllLines() {
+		      var _this2 = this;
+
+		      var lines = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.linesToType;
+
+		      return utils.eachPromise(lines, function (line, idx) {
+		        if (!_this2.mounted) {
+		          return Promise.resolve();
+		        }
+		        return new Promise(function (resolve) {
+		          _this2.setState({ text: _this2.state.text.concat(['']) }, function () {
+		            _this2.typeLine(line, idx).then(resolve);
+		          });
+		        });
+		      }).then(function () {
+		        return _this2.onTypingDone();
+		      });
+		    }
+		  }, {
+		    key: 'typeLine',
+		    value: function typeLine(line, lineIdx) {
+		      var _this3 = this;
+
+		      return utils.eachPromise(line, function (character, charIdx) {
+		        if (!_this3.mounted) {
+		          return Promise.resolve();
+		        }
+		        return new Promise(function (resolve) {
+		          var text = _this3.state.text.slice();
+		          text[lineIdx] += character;
+		          _this3.setState({ text: text }, function () {
+		            var delay = _this3.delayGenerator(line, lineIdx, character, charIdx);
+		            setTimeout(resolve, delay);
+		          });
+		        });
+		      });
+		    }
+		  }, {
+		    key: 'render',
+		    value: function render() {
+		      var _props2 = this.props;
+		      var className = _props2.className;
+		      var cursor = _props2.cursor;
+		      var isDone = this.state.isDone;
+
+		      var innerTree = utils.extractTreeWithText(this.props.children, this.state.text);
+
+		      return _react2.default.createElement(
+		        'div',
+		        { className: 'Typist ' + className },
+		        innerTree,
+		        _react2.default.createElement(_Cursor2.default, _extends({ isDone: isDone }, cursor))
+		      );
+		    }
+		  }]);
+
+		  return Typist;
+		}(_react.Component);
+
+		Typist.propTypes = {
+		  children: _react.PropTypes.node,
+		  className: _react.PropTypes.string,
+		  avgTypingDelay: _react.PropTypes.number,
+		  stdTypingDelay: _react.PropTypes.number,
+		  startDelay: _react.PropTypes.number,
+		  cursor: _react.PropTypes.object,
+		  onTypingDone: _react.PropTypes.func,
+		  delayGenerator: _react.PropTypes.func
+		};
+		Typist.defaultProps = {
+		  className: '',
+		  avgTypingDelay: 70,
+		  stdTypingDelay: 25,
+		  startDelay: 0,
+		  cursor: {},
+		  onTypingDone: function onTypingDone() {},
+		  delayGenerator: utils.gaussianRnd
+		};
+		exports.default = Typist;
+
+	/***/ },
+	/* 1 */
+	/***/ function(module, exports) {
+
+		module.exports = __webpack_require__(178);
+
+	/***/ },
+	/* 2 */
+	/***/ function(module, exports, __webpack_require__) {
+
+		'use strict';
+
+		Object.defineProperty(exports, "__esModule", {
+		  value: true
+		});
+
+		var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+		var _react = __webpack_require__(1);
+
+		var _react2 = _interopRequireDefault(_react);
+
+		__webpack_require__(3);
+
+		function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+		function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+		function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+		function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+		var Cursor = function (_Component) {
+		  _inherits(Cursor, _Component);
+
+		  function Cursor() {
+		    var _ref;
+
+		    var _temp, _this, _ret;
+
+		    _classCallCheck(this, Cursor);
+
+		    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+		      args[_key] = arguments[_key];
+		    }
+
+		    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Cursor.__proto__ || Object.getPrototypeOf(Cursor)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+		      shouldRender: _this.props.show
+		    }, _temp), _possibleConstructorReturn(_this, _ret);
+		  }
+
+		  _createClass(Cursor, [{
+		    key: 'componentWillReceiveProps',
+		    value: function componentWillReceiveProps(nextProps) {
+		      var _this2 = this;
+
+		      var shouldHide = !this.props.isDone && nextProps.isDone && this.props.hideWhenDone;
+		      if (shouldHide) {
+		        setTimeout(function () {
+		          return _this2.setState({ shouldRender: false });
+		        }, this.props.hideWhenDoneDelay);
+		      }
+		    }
+		  }, {
+		    key: 'render',
+		    value: function render() {
+		      if (this.state.shouldRender) {
+		        var className = this.props.blink ? ' Cursor--blinking' : '';
+		        return _react2.default.createElement(
+		          'span',
+		          { className: 'Cursor' + className },
+		          this.props.element
+		        );
+		      }
+		      return null;
+		    }
+		  }]);
+
+		  return Cursor;
+		}(_react.Component);
+
+		Cursor.propTypes = {
+		  blink: _react.PropTypes.bool,
+		  show: _react.PropTypes.bool,
+		  element: _react.PropTypes.node,
+		  hideWhenDone: _react.PropTypes.bool,
+		  hideWhenDoneDelay: _react.PropTypes.number,
+		  isDone: _react.PropTypes.bool
+		};
+		Cursor.defaultProps = {
+		  blink: true,
+		  show: true,
+		  element: '|',
+		  hideWhenDone: false,
+		  hideWhenDoneDelay: 1000,
+		  isDone: false
+		};
+		exports.default = Cursor;
+
+	/***/ },
+	/* 3 */
+	/***/ function(module, exports) {
+
+		// removed by extract-text-webpack-plugin
+
+	/***/ },
+	/* 4 */
+	/***/ function(module, exports, __webpack_require__) {
+
+		'use strict';
+
+		Object.defineProperty(exports, "__esModule", {
+		  value: true
+		});
+		exports.sleep = undefined;
+
+		var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+		exports.gaussianRnd = gaussianRnd;
+		exports.eachPromise = eachPromise;
+		exports.exclude = exclude;
+		exports.extractText = extractText;
+		exports.elementFactoryMaker = elementFactoryMaker;
+		exports.extractTreeWithText = extractTreeWithText;
+
+		var _react = __webpack_require__(1);
+
+		var _react2 = _interopRequireDefault(_react);
+
+		function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+		function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+		var sleep = exports.sleep = function sleep(val) {
+		  return new Promise(function (resolve) {
+		    return setTimeout(resolve, val);
+		  });
+		};
+
+		function gaussianRnd(mean, std) {
+		  var times = 12;
+		  var sum = 0;
+		  for (var idx = 0; idx < times; idx++) {
+		    sum += Math.random();
+		  }
+		  sum -= times / 2;
+		  return Math.round(sum * std) + mean;
+		}
+
+		function eachPromise(arr, iterator) {
+		  var length = arr.length;
+
+		  return Array.from(arr).reduce(function (prev, current, idx) {
+		    return prev.then(function () {
+		      return Promise.resolve(current).then(function (val) {
+		        return iterator(val, idx, length);
+		      });
+		    });
+		  }, Promise.resolve());
+		}
+
+		function exclude(obj, keys) {
+		  var res = {};
+		  for (var key in obj) {
+		    if (keys.indexOf(key) === -1) {
+		      res[key] = obj[key];
+		    }
+		  }
+		  return res;
+		}
+
+		function extractText(toType) {
+		  var st = toType ? [toType] : [];
+		  var lines = [];
+
+		  while (st.length > 0) {
+		    var cur = st.pop();
+
+		    if (_react2.default.isValidElement(cur)) {
+		      _react2.default.Children.forEach(cur.props.children, function (child) {
+		        st.push(child);
+		      });
+		    } else {
+		      if (Array.isArray(cur)) {
+		        var _iteratorNormalCompletion = true;
+		        var _didIteratorError = false;
+		        var _iteratorError = undefined;
+
+		        try {
+		          for (var _iterator = cur[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+		            var el = _step.value;
+
+		            st.push(el);
+		          }
+		        } catch (err) {
+		          _didIteratorError = true;
+		          _iteratorError = err;
+		        } finally {
+		          try {
+		            if (!_iteratorNormalCompletion && _iterator.return) {
+		              _iterator.return();
+		            }
+		          } finally {
+		            if (_didIteratorError) {
+		              throw _iteratorError;
+		            }
+		          }
+		        }
+		      } else {
+		        lines.unshift(cur);
+		      }
+		    }
+		  }
+		  return lines;
+		}
+
+		function elementFactoryMaker() {
+		  var key = 0;
+		  return function (el) {
+		    var tag = el.type;
+		    var props = exclude(el.props, ['children']);
+		    props.key = 'Typist-el-' + key++;
+		    return _react2.default.createElement.bind(null, tag, props);
+		  };
+		}
+
+		function extractTreeWithText() {
+		  for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+		    args[_key] = arguments[_key];
+		  }
+
+		  if (!args[0]) return void 0;
+		  var factMaker = elementFactoryMaker();
+
+		  var inner = function inner(tree, text, textIdx) {
+		    if (textIdx >= text.length) return [null, textIdx];
+		    var idx = textIdx;
+		    var recurse = function recurse(ch) {
+		      var _inner = inner(ch, text, idx);
+
+		      var _inner2 = _slicedToArray(_inner, 2);
+
+		      var child = _inner2[0];
+		      var advIdx = _inner2[1];
+
+		      idx = advIdx;
+		      return child;
+		    };
+
+		    // Recursively call on children of React Element
+		    if (_react2.default.isValidElement(tree)) {
+		      var fact = factMaker(tree);
+		      var children = _react2.default.Children.map(tree.props.children, recurse) || [];
+		      return [fact.apply(undefined, _toConsumableArray(children)), idx];
+		    }
+
+		    // Recursively call on array
+		    if (Array.isArray(tree)) {
+		      var _children = tree.map(recurse);
+		      return [_children, idx];
+		    }
+
+		    // Return text
+		    return [text[idx], idx + 1];
+		  };
+		  return inner.apply(undefined, args.concat([0]))[0];
+		}
+
+	/***/ }
+	/******/ ]);
 
 /***/ },
 /* 269 */
@@ -29304,121 +29818,9 @@
 
 /***/ },
 /* 270 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	        value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(178);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _work = __webpack_require__(273);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Work = function (_React$Component) {
-	        _inherits(Work, _React$Component);
-
-	        function Work() {
-	                _classCallCheck(this, Work);
-
-	                return _possibleConstructorReturn(this, (Work.__proto__ || Object.getPrototypeOf(Work)).apply(this, arguments));
-	        }
-
-	        _createClass(Work, [{
-	                key: 'render',
-	                value: function render() {
-	                        return _react2.default.createElement(
-	                                'div',
-	                                { className: 'work' },
-	                                _react2.default.createElement(
-	                                        'div',
-	                                        { className: 'telelytics' },
-	                                        _react2.default.createElement(
-	                                                'h1',
-	                                                null,
-	                                                'Telelytics'
-	                                        ),
-	                                        _react2.default.createElement(
-	                                                'h2',
-	                                                null,
-	                                                'Software Engineering Intern'
-	                                        ),
-	                                        _react2.default.createElement(
-	                                                'ul',
-	                                                null,
-	                                                _react2.default.createElement(
-	                                                        'li',
-	                                                        null,
-	                                                        'Helped build the Telelytics telemedicine service.'
-	                                                ),
-	                                                _react2.default.createElement(
-	                                                        'li',
-	                                                        null,
-	                                                        'Worked on the front-end/full-stack team developing the patient-doctor interface using React.js and Redux (with a material-design emphasis) to implement account logins, confidentiality, and video appointments (Twilio), etc.'
-	                                                ),
-	                                                _react2.default.createElement(
-	                                                        'li',
-	                                                        null,
-	                                                        'Also assisted with basic backend using Express, and Passport, and a small Redis server to store patient data.'
-	                                                )
-	                                        )
-	                                ),
-	                                _react2.default.createElement('br', null),
-	                                _react2.default.createElement('br', null),
-	                                _react2.default.createElement(
-	                                        'div',
-	                                        { className: 'bids' },
-	                                        _react2.default.createElement(
-	                                                'h1',
-	                                                null,
-	                                                'UC Berkeley Undergraduate Research Apprenticeship Program (URAP)'
-	                                        ),
-	                                        _react2.default.createElement(
-	                                                'h2',
-	                                                null,
-	                                                'Text Thresher Research Project'
-	                                        ),
-	                                        _react2.default.createElement(
-	                                                'ul',
-	                                                null,
-	                                                _react2.default.createElement(
-	                                                        'li',
-	                                                        null,
-	                                                        'Worked with full-stack with an emphasis on the front-end side with React, Redux, Sass, Webpack, and ES6. Contributed to the specialized highlighting interface that allows users to change, combine, and intermingle selections when curating crowd-sourced data.'
-	                                                ),
-	                                                _react2.default.createElement(
-	                                                        'li',
-	                                                        null,
-	                                                        'Also assisted with the backend using Django, Docker, and Python. Created docker containers to programmatically setup work environment/databases, and set/retrieve tasks from CrowdCrafting.org (crowd-sourcing service).'
-	                                                ),
-	                                                _react2.default.createElement(
-	                                                        'li',
-	                                                        null,
-	                                                        '3 years in development and currently seeking NHS grant funding. Adopted Agile development (Scrum) as of 5 months.'
-	                                                )
-	                                        )
-	                                )
-	                        );
-	                }
-	        }]);
-
-	        return Work;
-	}(_react2.default.Component);
-
-	exports.default = Work;
+	// removed by extract-text-webpack-plugin
 
 /***/ },
 /* 271 */
@@ -29436,7 +29838,457 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _not_found = __webpack_require__(272);
+	var _work = __webpack_require__(272);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Work = function (_React$Component) {
+	    _inherits(Work, _React$Component);
+
+	    function Work() {
+	        _classCallCheck(this, Work);
+
+	        return _possibleConstructorReturn(this, (Work.__proto__ || Object.getPrototypeOf(Work)).apply(this, arguments));
+	    }
+
+	    _createClass(Work, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'work' },
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'telelytics' },
+	                    _react2.default.createElement(
+	                        'h1',
+	                        null,
+	                        'Telelytics'
+	                    ),
+	                    _react2.default.createElement(
+	                        'h2',
+	                        null,
+	                        'Software Engineering Intern'
+	                    ),
+	                    _react2.default.createElement(
+	                        'ul',
+	                        null,
+	                        _react2.default.createElement(
+	                            'li',
+	                            null,
+	                            'Helped build the Telelytics telemedicine service.'
+	                        ),
+	                        _react2.default.createElement(
+	                            'li',
+	                            null,
+	                            'Worked on the front-end/full-stack team developing the patient-doctor interface using React.js and Redux (with a material-design emphasis) to implement account logins, confidentiality, and video appointments (Twilio), etc.'
+	                        ),
+	                        _react2.default.createElement(
+	                            'li',
+	                            null,
+	                            'Also assisted with basic backend using Express, and Passport, and a small Redis server to store patient data.'
+	                        )
+	                    )
+	                ),
+	                _react2.default.createElement('br', null),
+	                _react2.default.createElement('br', null),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'bids' },
+	                    _react2.default.createElement(
+	                        'h1',
+	                        null,
+	                        'UC Berkeley Undergraduate Research Apprenticeship Program (URAP)'
+	                    ),
+	                    _react2.default.createElement(
+	                        'h2',
+	                        null,
+	                        'Text Thresher Research Project'
+	                    ),
+	                    _react2.default.createElement(
+	                        'ul',
+	                        null,
+	                        _react2.default.createElement(
+	                            'li',
+	                            null,
+	                            'Worked with full-stack with an emphasis on the front-end side with React, Redux, Sass, Webpack, and ES6. Contributed to the specialized highlighting interface that allows users to change, combine, and intermingle selections when curating crowd-sourced data.'
+	                        ),
+	                        _react2.default.createElement(
+	                            'li',
+	                            null,
+	                            'Also assisted with the backend using Django, Docker, and Python. Created docker containers to programmatically setup work environment/databases, and set/retrieve tasks from CrowdCrafting.org (crowd-sourcing service).'
+	                        ),
+	                        _react2.default.createElement(
+	                            'li',
+	                            null,
+	                            '3 years in development and currently seeking NHS grant funding. Adopted Agile development (Scrum) as of 5 months.'
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Work;
+	}(_react2.default.Component);
+
+	exports.default = Work;
+
+/***/ },
+/* 272 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 273 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(178);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _projects = __webpack_require__(274);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Education = function (_React$Component) {
+	  _inherits(Education, _React$Component);
+
+	  function Education() {
+	    _classCallCheck(this, Education);
+
+	    return _possibleConstructorReturn(this, (Education.__proto__ || Object.getPrototypeOf(Education)).apply(this, arguments));
+	  }
+
+	  _createClass(Education, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'education' },
+	        'education'
+	      );
+	    }
+	  }]);
+
+	  return Education;
+	}(_react2.default.Component);
+
+	exports.default = Education;
+
+/***/ },
+/* 274 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 275 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(178);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	// import { styles } from './styles/projects.scss'
+
+	var Skills = function (_React$Component) {
+	  _inherits(Skills, _React$Component);
+
+	  function Skills() {
+	    _classCallCheck(this, Skills);
+
+	    return _possibleConstructorReturn(this, (Skills.__proto__ || Object.getPrototypeOf(Skills)).apply(this, arguments));
+	  }
+
+	  _createClass(Skills, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        { className: "projects" },
+	        "Skills"
+	      );
+	    }
+	  }]);
+
+	  return Skills;
+	}(_react2.default.Component);
+
+	exports.default = Skills;
+
+/***/ },
+/* 276 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(178);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactTypist = __webpack_require__(268);
+
+	var _reactTypist2 = _interopRequireDefault(_reactTypist);
+
+	var _projects = __webpack_require__(274);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Projects = function (_React$Component) {
+	    _inherits(Projects, _React$Component);
+
+	    function Projects() {
+	        _classCallCheck(this, Projects);
+
+	        return _possibleConstructorReturn(this, (Projects.__proto__ || Object.getPrototypeOf(Projects)).apply(this, arguments));
+	    }
+
+	    _createClass(Projects, [{
+	        key: 'delayGen',
+	        value: function delayGen(mean, std, _ref) {
+	            var line = _ref.line,
+	                lineIdx = _ref.lineIdx,
+	                charIdx = _ref.charIdx,
+	                defDelayGenerator = _ref.defDelayGenerator;
+
+	            if (lineIdx === 0 && charIdx === line.length - 1) {
+	                return 700;
+	            }
+	            // if (lineIdx === 1 && charIdx === line.length - 1) {
+	            //   return 1250;
+	            // }
+	            return defDelayGenerator(mean + 25);
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'projects' },
+	                _react2.default.createElement(
+	                    'p',
+	                    { className: 'startPound' },
+	                    ' $ '
+	                ),
+	                _react2.default.createElement(
+	                    _reactTypist2.default,
+	                    { className: 'startTypist',
+	                        startDelay: 2000,
+	                        avgTypingDelay: 150,
+	                        stdTypingDelay: 0.4,
+	                        delayGenerator: this.delayGen,
+	                        cursor: { hideWhenDone: true, hideWhenDoneDelay: 400 }
+	                    },
+	                    'projects',
+	                    _react2.default.createElement('br', null),
+	                    ""
+	                ),
+	                _react2.default.createElement(
+	                    'p',
+	                    { className: 'endPound' },
+	                    ' $ '
+	                ),
+	                _react2.default.createElement(_reactTypist2.default, { className: 'endTypist' }),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'list' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'acid' },
+	                        _react2.default.createElement(
+	                            'h1',
+	                            null,
+	                            'Advanced Cyberinfrastructure Development(ACID)'
+	                        ),
+	                        _react2.default.createElement(
+	                            'h2',
+	                            null,
+	                            'UCSD San Diego Supercomputer Center'
+	                        ),
+	                        _react2.default.createElement(
+	                            'ul',
+	                            null,
+	                            _react2.default.createElement(
+	                                'li',
+	                                null,
+	                                ' Research at UCSD San Diego Supercomputer Center '
+	                            )
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'epitopes' },
+	                        _react2.default.createElement(
+	                            'h1',
+	                            null,
+	                            'Immune Epitope and Protein Disorder Project'
+	                        ),
+	                        _react2.default.createElement(
+	                            'h2',
+	                            null,
+	                            'UCSD San Diego Supercomputer Center'
+	                        ),
+	                        _react2.default.createElement(
+	                            'ul',
+	                            null,
+	                            _react2.default.createElement(
+	                                'li',
+	                                null,
+	                                'Bioinformatics project trying to find the relationship between epitopes and protein disorder.'
+	                            )
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'synwrites' },
+	                        _react2.default.createElement(
+	                            'h1',
+	                            null,
+	                            'SynWrite - NotePadExtended'
+	                        ),
+	                        _react2.default.createElement(
+	                            'h2',
+	                            null,
+	                            'Self'
+	                        ),
+	                        _react2.default.createElement(
+	                            'ul',
+	                            null,
+	                            _react2.default.createElement(
+	                                'li',
+	                                null,
+	                                'Java-based text editor that suggests autofill based on synonyms/hyponyms and not autosuggestion.'
+	                            )
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Projects;
+	}(_react2.default.Component);
+
+	exports.default = Projects;
+
+/***/ },
+/* 277 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(178);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	// import { styles } from './styles/projects.scss'
+
+	var References = function (_React$Component) {
+	  _inherits(References, _React$Component);
+
+	  function References() {
+	    _classCallCheck(this, References);
+
+	    return _possibleConstructorReturn(this, (References.__proto__ || Object.getPrototypeOf(References)).apply(this, arguments));
+	  }
+
+	  _createClass(References, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        { className: "projects" },
+	        "references"
+	      );
+	    }
+	  }]);
+
+	  return References;
+	}(_react2.default.Component);
+
+	exports.default = References;
+
+/***/ },
+/* 278 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(178);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _not_found = __webpack_require__(279);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29483,137 +30335,10 @@
 	exports.default = NotFound;
 
 /***/ },
-/* 272 */
+/* 279 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 273 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 274 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(178);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	// import { styles } from './styles/projects.scss'
-
-	var Projects = function (_React$Component) {
-	    _inherits(Projects, _React$Component);
-
-	    function Projects() {
-	        _classCallCheck(this, Projects);
-
-	        return _possibleConstructorReturn(this, (Projects.__proto__ || Object.getPrototypeOf(Projects)).apply(this, arguments));
-	    }
-
-	    _createClass(Projects, [{
-	        key: "render",
-	        value: function render() {
-	            return _react2.default.createElement(
-	                "div",
-	                { className: "projects" },
-	                _react2.default.createElement(
-	                    "div",
-	                    { className: "acid" },
-	                    _react2.default.createElement(
-	                        "h1",
-	                        null,
-	                        "Advanced Cyberinfrastructure (ACID)"
-	                    ),
-	                    _react2.default.createElement(
-	                        "h2",
-	                        null,
-	                        "San Diego Supercomputer Center (SDSC)"
-	                    ),
-	                    _react2.default.createElement(
-	                        "ul",
-	                        null,
-	                        _react2.default.createElement(
-	                            "li",
-	                            null,
-	                            " Research at UCSD San Diego Supercomputer Center "
-	                        )
-	                    )
-	                ),
-	                _react2.default.createElement("br", null),
-	                _react2.default.createElement("br", null),
-	                _react2.default.createElement(
-	                    "div",
-	                    { className: "epitopes" },
-	                    _react2.default.createElement(
-	                        "h1",
-	                        null,
-	                        "Immune Epitope and Protein Disorder Project - (UCSD San Diego Supercomputer Center). "
-	                    ),
-	                    _react2.default.createElement(
-	                        "h2",
-	                        null,
-	                        "San Diego Supercomputer Center (SDSC)"
-	                    ),
-	                    _react2.default.createElement(
-	                        "ul",
-	                        null,
-	                        _react2.default.createElement(
-	                            "li",
-	                            null,
-	                            "Bioinformatics project trying to find the relationship between epitopes and protein disorder."
-	                        )
-	                    )
-	                ),
-	                _react2.default.createElement(
-	                    "div",
-	                    { className: "epitopes" },
-	                    _react2.default.createElement(
-	                        "h1",
-	                        null,
-	                        "SynWrite(NotePadExtended)"
-	                    ),
-	                    _react2.default.createElement(
-	                        "h2",
-	                        null,
-	                        "Self"
-	                    ),
-	                    _react2.default.createElement(
-	                        "ul",
-	                        null,
-	                        _react2.default.createElement(
-	                            "li",
-	                            null,
-	                            "Java-based text editor that suggests autofill based on synonyms/hyponyms and not autosuggestion."
-	                        )
-	                    )
-	                )
-	            );
-	        }
-	    }]);
-
-	    return Projects;
-	}(_react2.default.Component);
-
-	exports.default = Projects;
 
 /***/ }
 /******/ ]);

@@ -4,9 +4,6 @@
 	0% {
 		color: black
 	}
-	55% {
-		color: black
-	}
 	100% {
 		color: white
 	}
@@ -16,6 +13,9 @@
 	text-align: center;
 	font-family: 'Nordic';
 	font-size: 5vw;
+	animation: fadeIn;
+	animation-duration: 2s;
+	animation-timing-function: ease-in;
 }
 
 .aboutP {
@@ -23,6 +23,9 @@
 	font-family: 'Qontra';
 	margin-bottom: 2em;
 	font-size: 1vw;
+	animation: fadeIn;
+	animation-duration: 2s;
+	animation-timing-function: ease-in;
 }
 
 .contact {
@@ -31,12 +34,17 @@
 	margin-bottom: 0.3em;
 	font-family: 'Nordic';
 	font-size: 5vw;
+	animation: fadeIn;
+	animation-duration: 2s;
+	animation-timing-function: ease-in;
 }
 
 h3 {
 	text-align: center;
 	font-family: 'Qontra';
-	
+	animation: fadeIn;
+	animation-duration: 2s;
+	animation-timing-function: ease-in;
 }
 
 .contactP {
@@ -44,6 +52,9 @@ h3 {
 	font-family: 'Qontra';
 	margin-bottom: 2em;
 	font-size: 1vw;
+	animation: fadeIn;
+	animation-duration: 2s;
+	animation-timing-function: ease-in;
 }
 
 hr {
@@ -81,7 +92,7 @@ hr {
 	}
 }
 .divTwo {
-	top: 90%;
+	top: 85%;
 	position: absolute;
 	right: 0;
 	animation: widening2;
