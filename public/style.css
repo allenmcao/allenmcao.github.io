@@ -330,22 +330,27 @@ body {
     position: absolute;
     top: 7vw;
     left: 4vw;
-    animation: appear 5s; }
+    animation: appear 4s;
+    width: 90%; }
   .projects .acid, .projects .epitopes, .projects .synwrites {
     display: table-cell;
-    margin: .5vw; }
+    margin: .5vw;
+    width: 20%;
+    padding-right: 1em; }
+    .projects .acid a, .projects .epitopes a, .projects .synwrites a {
+      animation: appear 4s; }
   .projects .endPound {
     position: absolute;
     font-size: 3vw;
     left: 1vw;
     top: 80%;
-    animation: appear 5s; }
+    animation: appear 4.1s; }
   .projects .endTypist {
     position: absolute;
     top: 85%;
     left: 4vw;
     font-size: 3vw;
-    animation: appear 5s; }
+    animation: appear 4.1s; }
 .not-found {
   position: relative;
   top: 40%;

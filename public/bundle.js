@@ -30123,11 +30123,11 @@
 	                _react2.default.createElement(
 	                    _reactTypist2.default,
 	                    { className: 'startTypist',
-	                        startDelay: 2000,
+	                        startDelay: 1000,
 	                        avgTypingDelay: 150,
 	                        stdTypingDelay: 0.4,
 	                        delayGenerator: this.delayGen,
-	                        cursor: { hideWhenDone: true, hideWhenDoneDelay: 400 }
+	                        cursor: { hideWhenDone: true, hideWhenDoneDelay: 300 }
 	                    },
 	                    'projects',
 	                    _react2.default.createElement('br', null),
@@ -30161,8 +30161,28 @@
 	                            _react2.default.createElement(
 	                                'li',
 	                                null,
-	                                ' Research at UCSD San Diego Supercomputer Center '
+	                                'Research at UCSD San Diego Supercomputer Center '
+	                            ),
+	                            _react2.default.createElement(
+	                                'li',
+	                                null,
+	                                'Analyzed visitor, user, and download data from the Tropical Ecology and Assessment Monitoring (TEAM) portal.'
+	                            ),
+	                            _react2.default.createElement(
+	                                'li',
+	                                null,
+	                                'Used PostgreSQL to extract database information, the results were graphed and mapped in order to find relationships. '
+	                            ),
+	                            _react2.default.createElement(
+	                                'li',
+	                                null,
+	                                'Assisted in a camera trap study by Hewlett Packard (HP) to programmatically recognize animal species from photos.'
 	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            'a',
+	                            { href: 'https://github.com/allenmcao/SDSC_Advanced_Cyberinfrastructure', target: '_blank' },
+	                            'Check Me Out'
 	                        )
 	                    ),
 	                    _react2.default.createElement(
@@ -30185,7 +30205,27 @@
 	                                'li',
 	                                null,
 	                                'Bioinformatics project trying to find the relationship between epitopes and protein disorder.'
+	                            ),
+	                            _react2.default.createElement(
+	                                'li',
+	                                null,
+	                                'Participated in a research project led by Dr. Julia Ponomarenko'
+	                            ),
+	                            _react2.default.createElement(
+	                                'li',
+	                                null,
+	                                'Researched and worked in a team environment on bioinformatics using Unix, BLAST, Python, SQL, MySQL Workbench, command line, and Eclipse to transform data from the Immune Epitope Database (IEDB).'
+	                            ),
+	                            _react2.default.createElement(
+	                                'li',
+	                                null,
+	                                'Performed statistical analysis to compare similarities of epitope to proteome genome sequences. '
 	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            'a',
+	                            { href: 'https://github.com/allenmcao/SDSC_Epitopes', target: '_blank' },
+	                            'Check Me Out'
 	                        )
 	                    ),
 	                    _react2.default.createElement(
@@ -30199,7 +30239,7 @@
 	                        _react2.default.createElement(
 	                            'h2',
 	                            null,
-	                            'Self'
+	                            'WIP'
 	                        ),
 	                        _react2.default.createElement(
 	                            'ul',
@@ -30207,8 +30247,23 @@
 	                            _react2.default.createElement(
 	                                'li',
 	                                null,
-	                                'Java-based text editor that suggests autofill based on synonyms/hyponyms and not autosuggestion.'
+	                                'Java-based text editor'
+	                            ),
+	                            _react2.default.createElement(
+	                                'li',
+	                                null,
+	                                'Customizable text color, size, and '
+	                            ),
+	                            _react2.default.createElement(
+	                                'li',
+	                                null,
+	                                'Suggests autofill based on synonyms/hyponyms instead of auto-suggestion.'
 	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            'a',
+	                            { href: 'https://github.com/allenmcao/NotepadExtended', target: '_blank' },
+	                            'Check Me Out'
 	                        )
 	                    )
 	                )

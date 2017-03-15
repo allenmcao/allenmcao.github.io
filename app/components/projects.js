@@ -22,11 +22,11 @@ export default class Projects extends React.Component {
             <div className="projects">
                 <p className="startPound"> $ </p>
                 <Typist className="startTypist"
-                    startDelay={2000}
+                    startDelay={1000}
                     avgTypingDelay={150}
                     stdTypingDelay={0.4}
                     delayGenerator={this.delayGen}
-                    cursor={{ hideWhenDone: true, hideWhenDoneDelay: 400 }}
+                    cursor={{ hideWhenDone: true, hideWhenDoneDelay: 300 }}
                     >
                     projects 
                     <br/>
@@ -41,8 +41,19 @@ export default class Projects extends React.Component {
                         <h1>Advanced Cyberinfrastructure Development(ACID)</h1>
                         <h2>UCSD San Diego Supercomputer Center</h2>
                         <ul>
-                            <li> Research at UCSD San Diego Supercomputer Center </li>
+                            <li>Research at UCSD San Diego Supercomputer Center </li>
+                            <li>Analyzed visitor, user, and download data from the 
+                                Tropical Ecology and Assessment Monitoring (TEAM) portal.</li>
+                            <li>Used PostgreSQL to extract database information, the 
+                                results were graphed and mapped in order to find 
+                                relationships. </li>
+                            <li>Assisted in a camera trap study by 
+                                Hewlett Packard (HP) to programmatically recognize animal
+                                species from photos.</li> 
                         </ul>
+                        <a href="https://github.com/allenmcao/SDSC_Advanced_Cyberinfrastructure" target="_blank">
+                            Check Me Out
+                        </a>
                     </div>
 
                     <div className="epitopes">
@@ -51,15 +62,29 @@ export default class Projects extends React.Component {
                         <ul>
                             <li>Bioinformatics project trying to find the relationship 
                                 between epitopes and protein disorder.</li>
+                            <li>Participated in a research project led by Dr. Julia Ponomarenko</li>
+                            <li>Researched and worked in a team environment on bioinformatics 
+                                using Unix, BLAST, Python, SQL, MySQL Workbench, command line, 
+                                and Eclipse to transform data from the Immune Epitope Database (IEDB).</li>
+                            <li>Performed statistical analysis to compare similarities of epitope to 
+                                proteome genome sequences. </li>
                         </ul>
+                        <a href="https://github.com/allenmcao/SDSC_Epitopes" target="_blank">
+                            Check Me Out
+                        </a>
                     </div>
 
                     <div className="synwrites">
                         <h1>SynWrite - NotePadExtended</h1>
-                        <h2>Self</h2>
+                        <h2>WIP</h2>
                         <ul>
-                            <li>Java-based text editor that suggests autofill based on synonyms/hyponyms and not autosuggestion.</li>
+                            <li>Java-based text editor</li>
+                            <li>Customizable text color, size, and </li>
+                            <li>Suggests autofill based on synonyms/hyponyms instead of auto-suggestion.</li>
                         </ul>
+                        <a href="https://github.com/allenmcao/NotepadExtended" target="_blank">
+                            Check Me Out
+                        </a>
                     </div>
                 </div>
             </div>

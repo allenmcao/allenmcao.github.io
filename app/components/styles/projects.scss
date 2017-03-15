@@ -27,11 +27,17 @@
 		position: absolute;
 		top: 7vw;
 		left: 4vw;
-		animation: appear 5s;
+		animation: appear 4s;
+		width: 90%;
 	}
 	.acid, .epitopes, .synwrites {
 		display: table-cell;
 		margin: .5vw;
+		width: 20%;
+		padding-right: 1em;
+		a{
+			animation: appear 4s;
+		}
 	}
 
 	.endPound{
@@ -39,7 +45,7 @@
 		font-size: 3vw;
 		left: 1vw;
 		top: 80%;
-		animation: appear 5s;
+		animation: appear 4.1s;
 	}
 
 	.endTypist{
@@ -47,6 +53,6 @@
 		top: 85%;
 		left: 4vw;
 		font-size: 3vw;
-		animation: appear 5s;
+		animation: appear 4.1s;
 	}
 }
