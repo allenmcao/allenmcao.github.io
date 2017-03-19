@@ -36,6 +36,7 @@
 		width: 20%;
 		padding-right: 1em;
 		a{
+			color: white;
 			animation: appear 4s;
 		}
 	}
@@ -45,7 +46,7 @@
 		font-size: 3vw;
 		left: 1vw;
 		top: 80%;
-		animation: appear 4.1s;
+		animation: appear 4.3s;
 	}
 
 	.endTypist{
@@ -53,6 +54,6 @@
 		top: 85%;
 		left: 4vw;
 		font-size: 3vw;
-		animation: appear 4.1s;
+		animation: appear 4.3s;
 	}
 }

@@ -289,11 +289,31 @@ body {
     height: 100%;
     color: white;
     z-index: 9999; }
-.work h1 {
-  font-family: Qontra; }
-
-.work li {
-  font-family: Qontra; }
+.work {
+  margin: 4vw; }
+  .work h1 {
+    font-family: Qontra; }
+  .work li {
+    font-family: Qontra; }
+.education {
+  margin-left: 1em;
+  font-family: Qontra;
+  font-size: 2em; }
+  .education h2 {
+    font-family: Nordic; }
+  .education div {
+    margin-left: 1em;
+    margin-top: 1em; }
+.skills {
+  margin-left: 1em;
+  font-family: Qontra;
+  font-size: 2em; }
+  .skills h2 {
+    font-size: 3em;
+    font-family: Nordic; }
+  .skills div {
+    margin-left: 1em;
+    margin-top: 1em; }
 .Typist .Cursor--blinking {
   opacity: 1;
   animation: blink 1s linear infinite; }
@@ -338,19 +358,28 @@ body {
     width: 20%;
     padding-right: 1em; }
     .projects .acid a, .projects .epitopes a, .projects .synwrites a {
+      color: white;
       animation: appear 4s; }
   .projects .endPound {
     position: absolute;
     font-size: 3vw;
     left: 1vw;
     top: 80%;
-    animation: appear 4.1s; }
+    animation: appear 4.3s; }
   .projects .endTypist {
     position: absolute;
     top: 85%;
     left: 4vw;
     font-size: 3vw;
-    animation: appear 4.1s; }
+    animation: appear 4.3s; }
+.references {
+  margin-left: 3em; }
+  .references h2 {
+    font-size: 5em;
+    font-family: Nordic; }
+  .references div {
+    font-size: 2em;
+    font-family: Qontra; }
 .not-found {
   position: relative;
   top: 40%;

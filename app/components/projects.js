@@ -28,7 +28,7 @@ export default class Projects extends React.Component {
                     delayGenerator={this.delayGen}
                     cursor={{ hideWhenDone: true, hideWhenDoneDelay: 300 }}
                     >
-                    projects 
+                    Projects 
                     <br/>
                     {""}                 
                 </Typist>
@@ -51,6 +51,7 @@ export default class Projects extends React.Component {
                                 Hewlett Packard (HP) to programmatically recognize animal
                                 species from photos.</li> 
                         </ul>
+                        <br/>
                         <a href="https://github.com/allenmcao/SDSC_Advanced_Cyberinfrastructure" target="_blank">
                             Check Me Out
                         </a>
@@ -69,6 +70,7 @@ export default class Projects extends React.Component {
                             <li>Performed statistical analysis to compare similarities of epitope to 
                                 proteome genome sequences. </li>
                         </ul>
+                        <br/>
                         <a href="https://github.com/allenmcao/SDSC_Epitopes" target="_blank">
                             Check Me Out
                         </a>
@@ -82,6 +84,7 @@ export default class Projects extends React.Component {
                             <li>Customizable text color, size, and </li>
                             <li>Suggests autofill based on synonyms/hyponyms instead of auto-suggestion.</li>
                         </ul>
+                        <br/>
                         <a href="https://github.com/allenmcao/NotepadExtended" target="_blank">
                             Check Me Out
                         </a>
