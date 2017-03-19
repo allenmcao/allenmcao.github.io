@@ -6,6 +6,7 @@ export default class Work extends React.Component {
   render () {
         return (
         <div className="work">
+            <div className="header">WORK</div>
             <div className="telelytics">
                 <h1>Telelytics</h1>
                 <h2>Software Engineering Intern</h2>

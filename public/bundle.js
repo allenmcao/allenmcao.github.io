@@ -21530,15 +21530,15 @@
 
 	var _skills2 = _interopRequireDefault(_skills);
 
-	var _projects = __webpack_require__(276);
+	var _projects = __webpack_require__(277);
 
 	var _projects2 = _interopRequireDefault(_projects);
 
-	var _references = __webpack_require__(278);
+	var _references = __webpack_require__(279);
 
 	var _references2 = _interopRequireDefault(_references);
 
-	var _not_found = __webpack_require__(279);
+	var _not_found = __webpack_require__(281);
 
 	var _not_found2 = _interopRequireDefault(_not_found);
 
@@ -29865,6 +29865,11 @@
 	                { className: 'work' },
 	                _react2.default.createElement(
 	                    'div',
+	                    { className: 'header' },
+	                    'WORK'
+	                ),
+	                _react2.default.createElement(
+	                    'div',
 	                    { className: 'telelytics' },
 	                    _react2.default.createElement(
 	                        'h1',
@@ -30058,7 +30063,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _skills = __webpack_require__(281);
+	var _skills = __webpack_require__(276);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30129,6 +30134,12 @@
 
 /***/ },
 /* 276 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 277 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30147,7 +30158,7 @@
 
 	var _reactTypist2 = _interopRequireDefault(_reactTypist);
 
-	var _projects = __webpack_require__(277);
+	var _projects = __webpack_require__(278);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30353,13 +30364,13 @@
 	exports.default = Projects;
 
 /***/ },
-/* 277 */
+/* 278 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 278 */
+/* 279 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30374,7 +30385,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _references = __webpack_require__(282);
+	var _references = __webpack_require__(280);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30431,7 +30442,13 @@
 	exports.default = References;
 
 /***/ },
-/* 279 */
+/* 280 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 281 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30446,7 +30463,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _not_found = __webpack_require__(280);
+	var _not_found = __webpack_require__(282);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30491,18 +30508,6 @@
 	}(_react2.default.Component);
 
 	exports.default = NotFound;
-
-/***/ },
-/* 280 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 281 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
 
 /***/ },
 /* 282 */
