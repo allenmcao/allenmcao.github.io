@@ -58,6 +58,8 @@
 		}
 	}
 	.quoteWrapper {
+		position: absolute;
+		top: 30%;
 		height: 15%;
 		margin: auto;
 		margin-left: 10vw;
@@ -71,8 +73,10 @@
 		animation-timing-function: cubic-bezier(0.64, 0.00, .50, 1);
 		animation-duration: 8s;
 		animation-fill-mode: forwards;
+		width: 100%;
 		position: absolute;
 		height: 45%;
+		top:45%;
 		left: -1.5em;
 	}
 	hr {

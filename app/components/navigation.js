@@ -13,6 +13,10 @@ export default class Navigation extends React.Component {
                 direction='left'
                 bannerColor='black'
                 />
+            <div className='nameWrapper'>
+                <div className='name1'>ALLEN</div>
+                <div className='name2'>CAO</div>
+            </div>
             <div className='navWrapper'>
                 <ul>
                     <li><Link className='linky' to='home'>Home</Link></li>

@@ -7,7 +7,8 @@ export default class AboutMe extends React.Component {
     return (    
         <div>
             <h2 className='about'>About Me</h2>
-            <p className="aboutP">Hi! I am a third-year Computer Science major at UC Berkeley. My hobbies right now include CS projects, homeworks, and other forms of studying.</p>
+            <p className="aboutP">Hi! I am a third-year Computer Science major at UC Berkeley. 
+                <br/><br/>My hobbies right now include CS projects, homeworks, and various other non-extracurricular activies!</p>
             <hr className='divOne'/>
 
             <h2 className='contact'>Contact</h2>

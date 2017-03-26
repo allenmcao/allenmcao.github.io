@@ -21698,6 +21698,20 @@
 	                }),
 	                _react2.default.createElement(
 	                    'div',
+	                    { className: 'nameWrapper' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'name1' },
+	                        'ALLEN'
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'name2' },
+	                        'CAO'
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'div',
 	                    { className: 'navWrapper' },
 	                    _react2.default.createElement(
 	                        'ul',
@@ -26980,7 +26994,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -27000,62 +27014,65 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var AboutMe = function (_React$Component) {
-	  _inherits(AboutMe, _React$Component);
+	    _inherits(AboutMe, _React$Component);
 
-	  function AboutMe() {
-	    _classCallCheck(this, AboutMe);
+	    function AboutMe() {
+	        _classCallCheck(this, AboutMe);
 
-	    return _possibleConstructorReturn(this, (AboutMe.__proto__ || Object.getPrototypeOf(AboutMe)).apply(this, arguments));
-	  }
-
-	  _createClass(AboutMe, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          'h2',
-	          { className: 'about' },
-	          'About Me'
-	        ),
-	        _react2.default.createElement(
-	          'p',
-	          { className: 'aboutP' },
-	          'Hi! I am a third-year Computer Science major at UC Berkeley. My hobbies right now include CS projects, homeworks, and other forms of studying.'
-	        ),
-	        _react2.default.createElement('hr', { className: 'divOne' }),
-	        _react2.default.createElement(
-	          'h2',
-	          { className: 'contact' },
-	          'Contact'
-	        ),
-	        _react2.default.createElement(
-	          'h3',
-	          null,
-	          'Phone'
-	        ),
-	        _react2.default.createElement(
-	          'p',
-	          { className: 'contactP' },
-	          '(858)-717-0211'
-	        ),
-	        _react2.default.createElement(
-	          'h3',
-	          null,
-	          'Email'
-	        ),
-	        _react2.default.createElement(
-	          'p',
-	          { className: 'contactP' },
-	          'allen.m.cao@gmail.com'
-	        ),
-	        _react2.default.createElement('hr', { className: 'divTwo' })
-	      );
+	        return _possibleConstructorReturn(this, (AboutMe.__proto__ || Object.getPrototypeOf(AboutMe)).apply(this, arguments));
 	    }
-	  }]);
 
-	  return AboutMe;
+	    _createClass(AboutMe, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    'h2',
+	                    { className: 'about' },
+	                    'About Me'
+	                ),
+	                _react2.default.createElement(
+	                    'p',
+	                    { className: 'aboutP' },
+	                    'Hi! I am a third-year Computer Science major at UC Berkeley.',
+	                    _react2.default.createElement('br', null),
+	                    _react2.default.createElement('br', null),
+	                    'My hobbies right now include CS projects, homeworks, and various other non-extracurricular activies!'
+	                ),
+	                _react2.default.createElement('hr', { className: 'divOne' }),
+	                _react2.default.createElement(
+	                    'h2',
+	                    { className: 'contact' },
+	                    'Contact'
+	                ),
+	                _react2.default.createElement(
+	                    'h3',
+	                    null,
+	                    'Phone'
+	                ),
+	                _react2.default.createElement(
+	                    'p',
+	                    { className: 'contactP' },
+	                    '(858)-717-0211'
+	                ),
+	                _react2.default.createElement(
+	                    'h3',
+	                    null,
+	                    'Email'
+	                ),
+	                _react2.default.createElement(
+	                    'p',
+	                    { className: 'contactP' },
+	                    'allen.m.cao@gmail.com'
+	                ),
+	                _react2.default.createElement('hr', { className: 'divTwo' })
+	            );
+	        }
+	    }]);
+
+	    return AboutMe;
 	}(_react2.default.Component);
 
 	exports.default = AboutMe;
@@ -27139,12 +27156,10 @@
 	                { className: 'home' },
 	                _react2.default.createElement(
 	                    'div',
-	                    { className: 'nameWrapper' },
-	                    _react2.default.createElement(
-	                        'h2',
-	                        { ref: 'namee', className: 'name' },
-	                        'ALLEN CAO'
-	                    )
+	                    { className: 'hrDiv', key: 'base' },
+	                    _react2.default.createElement('hr', { className: 'hr1', key: 'one' }),
+	                    _react2.default.createElement('hr', { className: 'hr2', key: 'two' }),
+	                    _react2.default.createElement('hr', { className: 'hr3', key: 'three' })
 	                ),
 	                _react2.default.createElement(
 	                    _reactTypist2.default,
@@ -27160,13 +27175,6 @@
 	                    'then programming must be the process of putting them in.',
 	                    _react2.default.createElement('br', null),
 	                    '-Edsger Dijkstra'
-	                ),
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'hrDiv', key: 'base' },
-	                    _react2.default.createElement('hr', { className: 'hr1', key: 'one' }),
-	                    _react2.default.createElement('hr', { className: 'hr2', key: 'two' }),
-	                    _react2.default.createElement('hr', { className: 'hr3', key: 'three' })
 	                ),
 	                _react2.default.createElement(
 	                    'p',

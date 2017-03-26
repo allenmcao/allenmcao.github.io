@@ -1,11 +1,58 @@
 @import 'app/components/styles/_variables.scss';
 
+@keyframes nameanim {
+    from{
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
 nav{
     position: relative;
     float: left;
     width: 15%;
     height: 100%;
-    line-height: 100%;   
+    line-height: 100%;
+
+    .nameWrapper {
+        float:right;
+        position: absolute;
+        top: 20%;
+        text-align: right;
+        font-family: Nordic;
+        font-weight: bold;
+        right: -0.3vw;
+        animation: nameanim;
+        animation-duration: 5s;
+
+        .name1{
+            float:right;
+            padding-top: 1em;
+            background-position: right;
+            background-size: 7.2vw;
+            background-image: linear-gradient(to left, black 50%, transparent);
+            color:transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            font-size: 2vw;
+
+
+        }
+        .name2{
+            padding-top: 0.8em;
+            height: 2em;
+            background-position: right;
+            background-size: 11.41vw 100vw;;
+            background-image: linear-gradient(to left, black 25%, transparent);
+            color:transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            font-size: 5vw;
+        }
+    }
+
     .navWrapper {
         text-align: right;
         position: relative;

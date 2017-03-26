@@ -15,6 +15,12 @@
   font-weight: normal;
   font-style: normal; }
 
+@keyframes nameanim {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
 nav {
   position: relative;
   float: left;
@@ -22,6 +28,36 @@ nav {
   height: 100%;
   line-height: 100%;
   z-index: 9999; }
+  nav .nameWrapper {
+    float: right;
+    position: absolute;
+    top: 20%;
+    text-align: right;
+    font-family: Nordic;
+    font-weight: bold;
+    right: -0.3vw;
+    animation: nameanim;
+    animation-duration: 5s; }
+    nav .nameWrapper .name1 {
+      float: right;
+      padding-top: 1em;
+      background-position: right;
+      background-size: 7.2vw;
+      background-image: linear-gradient(to left, black 50%, transparent);
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      font-size: 2vw; }
+    nav .nameWrapper .name2 {
+      padding-top: 0.8em;
+      height: 2em;
+      background-position: right;
+      background-size: 11.41vw 100vw;
+      background-image: linear-gradient(to left, black 25%, transparent);
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      font-size: 5vw; }
   nav .navWrapper {
     text-align: right;
     position: relative;
@@ -87,9 +123,9 @@ nav {
   animation-timing-function: ease-in; }
 
 .contact {
-  margin-top: 1.3em;
+  margin-top: 1.4em;
   margin-left: 6em;
-  margin-bottom: 0.3em;
+  margin-bottom: 0.5em;
   font-family: 'Nordic';
   font-size: 5vw;
   animation: fadeIn;
@@ -99,6 +135,7 @@ nav {
 h3 {
   text-align: center;
   font-family: 'Qontra';
+  margin-bottom: -0.5em;
   animation: fadeIn;
   animation-duration: 2s;
   animation-timing-function: ease-in; }
@@ -124,7 +161,7 @@ hr {
     width: 90%; } }
 
 .divOne {
-  top: 36.5%;
+  top: 41.6%;
   border: 1px solid;
   position: absolute;
   left: -1.5em;
@@ -140,7 +177,7 @@ hr {
     width: 85%; } }
 
 .divTwo {
-  top: 85%;
+  top: 90%;
   position: absolute;
   right: 0;
   animation: widening2;
@@ -216,6 +253,8 @@ hr {
       animation-timing-function: ease-in;
       animation-duration: 5s; }
   .home .quoteWrapper {
+    position: absolute;
+    top: 30%;
     height: 15%;
     margin: auto;
     margin-left: 10vw;
@@ -227,8 +266,10 @@ hr {
     animation-timing-function: cubic-bezier(0.64, 0, 0.5, 1);
     animation-duration: 8s;
     animation-fill-mode: forwards;
+    width: 100%;
     position: absolute;
     height: 45%;
+    top: 45%;
     left: -1.5em; }
   .home hr {
     position: absolute;

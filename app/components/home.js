@@ -22,8 +22,11 @@ export default class Home extends React.Component {
     render () {
         return (
             <div className='home'>
-                <div className='nameWrapper'>
-                    <h2 ref="namee" className='name'>ALLEN CAO</h2>
+
+                <div className='hrDiv' key="base">
+                    <hr className='hr1' key="one"/>
+                    <hr className='hr2' key="two"/>
+                    <hr className='hr3' key="three"/>
                 </div>
 
                 <Typist 
@@ -40,12 +43,8 @@ export default class Home extends React.Component {
                     -Edsger Dijkstra
                 </Typist>
 
-                <div className='hrDiv' key="base">
-                    <hr className='hr1' key="one"/>
-                    <hr className='hr2' key="two"/>
-                    <hr className='hr3' key="three"/>
-                </div>
                 <p className="berk">University of California, Berkeley</p>
+                
             </div>
         );
     }
