@@ -1,13 +1,14 @@
 @import 'app/components/styles/_variables.scss';
 
 @keyframes nameanim {
-    from{
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
+    from    { opacity:0; }
+    to      { opacity:1; }
 }
+@keyframes nameanimDelay {
+    from,30%{ opacity:0; }
+    to      { opacity:1; }
+}
+
 nav{
     position: relative;
     float: left;
@@ -23,33 +24,34 @@ nav{
         font-family: Nordic;
         font-weight: bold;
         right: -0.3vw;
-        animation: nameanim;
-        animation-duration: 5s;
+
 
         .name1{
             float:right;
             padding-top: 1em;
+            height: 1em;
             background-position: right;
-            background-size: 7.2vw;
             background-image: linear-gradient(to left, black 50%, transparent);
             color:transparent;
             -webkit-background-clip: text;
             background-clip: text;
-            font-size: 2vw;
-
+            font-size: 2.5vw;
+            animation: nameanim;
+            animation-duration: 10s;
 
         }
         .name2{
             padding-top: 0.8em;
             height: 2em;
+            margin-right: -0.1em;
             background-position: right;
-            background-size: 11.41vw 100vw;;
             background-image: linear-gradient(to left, black 25%, transparent);
             color:transparent;
             -webkit-background-clip: text;
             background-clip: text;
-
-            font-size: 5vw;
+            animation: nameanimDelay;
+            animation-duration: 6s;
+            font-size: 5.5vw;
         }
     }
 
@@ -66,12 +68,22 @@ nav{
                 border-top: 0px solid white;
                 border-bottom: 0px solid white;
                 border-right: 0px solid black;
+
+
                 .linky {
                     margin-right: 2em;
                     text-decoration: none;
                     color: $offblack;
                     transition: 1s;
                 }
+/*                .linky:hover::after {
+                    content: '';
+                    position: absolute;
+                    width: 120%;
+                    height: 1px;
+                    background-image: linear-gradient(to left, #666 75%, transparent);
+                }*/
+
             }
             li:hover .linky{
                 text-shadow: -1px 1px 1px #000,  -1px -1px 1px #000;
@@ -81,6 +93,11 @@ nav{
                 transition: 1s;
                 border-right: 20px solid black;
             }
+
+            li:hover::after {
+
+            }
+
         }
     }
     z-index: 9999;

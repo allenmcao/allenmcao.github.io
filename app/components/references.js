@@ -8,10 +8,20 @@ export default class References extends React.Component {
             <div className="references">
                 <h2>References</h2>
                 <div>Nick Adams</div>
+                <div>Research Fellow, Berkeley Institute for Data Science</div>
+                <br/>
+                <div>nickbadams@berkeley.edu</div>
+
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <div>Ali Ferguson</div>
+                <div>Communications Manager, Berkeley Institute for Data Science</div>
                 <br/>
                 <br/>
                 <div>-Contact Info-</div>
-                <div>nickbadams@berkeley.edu</div>
+                <div>aferguson@berkeley.edu</div>
             </div>
         )
   }

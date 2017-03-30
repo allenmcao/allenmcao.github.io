@@ -86,7 +86,7 @@ hr {
 }
 
 @keyframes widening2 {
-	0% {
+	0% , 30% {
 		width: 0%
 	}
 	100% {
