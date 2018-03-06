@@ -35,7 +35,7 @@ nav{
             color:transparent;
             -webkit-background-clip: text;
             background-clip: text;
-            font-size: 2.5vw;
+            font-size: 4.5vh;
             animation: nameanim;
             animation-duration: 10s;
 
@@ -51,7 +51,7 @@ nav{
             background-clip: text;
             animation: nameanimDelay;
             animation-duration: 6s;
-            font-size: 5.5vw;
+            font-size: 10vh;
         }
     }
 
@@ -60,8 +60,8 @@ nav{
         position: relative;
         top: 35%;
         ul {
-            line-height: 2em;
-            font-size: 1.2em;
+            line-height: 5vh;
+            font-size: 3vh;
             li {
                 list-style: none;
                 transition: 2s;
