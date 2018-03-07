@@ -27036,12 +27036,13 @@
 	                _react2.default.createElement(
 	                    'p',
 	                    { className: 'aboutP' },
-	                    'Hi! I am a third-year Computer Science major at UC Berkeley.',
+	                    'Hi! I am a fourth-year Computer Science major at UC Berkeley.',
 	                    _react2.default.createElement('br', null),
 	                    _react2.default.createElement('br', null),
 	                    'My hobbies right now include CS projects, homeworks, and various other non-extracurricular activies!'
 	                ),
 	                _react2.default.createElement('hr', { className: 'divOne' }),
+	                _react2.default.createElement('hr', { className: 'divOneUnder' }),
 	                _react2.default.createElement(
 	                    'h2',
 	                    { className: 'contact' },
