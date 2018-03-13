@@ -30111,27 +30111,27 @@
 	                _react2.default.createElement(
 	                    'div',
 	                    null,
-	                    '5+ Years  -  Java \u2022 Python \u2022 Javascript \u2022 HTML5 \u2022 CSS3'
+	                    'Proficient  -  Java \u2022 Python \u2022 JavaScript \u2022 HTML/CSS \u2022 SQL'
 	                ),
 	                _react2.default.createElement(
 	                    'div',
 	                    null,
-	                    '3+ Years  -  SQL (PostgresSQL/MYSQL) \u2022 C/C++'
+	                    'Familiar    -  C/C++ \u2022 Ruby \u2022 Gosu'
 	                ),
 	                _react2.default.createElement(
 	                    'div',
 	                    null,
-	                    'Software:'
+	                    'Technologies:'
 	                ),
 	                _react2.default.createElement(
 	                    'div',
 	                    null,
-	                    'IDEs        -  MySQL \u2022 Eclipse \u2022 IntelliJ \u2022 Microsoft Office (Excel, PowerPoint, Word)'
+	                    'Front End  -  Node,  React/Redux, Sass, jQuery, Bootstrap, D3,  Angular'
 	                ),
 	                _react2.default.createElement(
 	                    'div',
 	                    null,
-	                    'OSes       -  Windows \u2022 Mac \u2022 Linux (Ubuntu/Linux Mint) \u2022 Docker \u2022 VirtualBox \u2022 Cloud9'
+	                    'Back End  -  Spring, PostgreSQL, MySQL, JPA, Django, Redis'
 	                )
 	            );
 	        }
@@ -30223,7 +30223,7 @@
 	                        delayGenerator: this.delayGen,
 	                        cursor: { hideWhenDone: true, hideWhenDoneDelay: 300 }
 	                    },
-	                    'Projects',
+	                    './projects_about.txt',
 	                    _react2.default.createElement('br', null),
 	                    ""
 	                ),

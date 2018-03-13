@@ -1,3 +1,12 @@
+@keyframes fade {
+	0% {
+		color: black
+	}
+	100% {
+		color: white
+	}
+}
+
 .education{
 	margin-left: 1em;
 	font-family: Qontra;
@@ -8,9 +17,16 @@
 		font-size: 3em;
 		text-align: center;
 		font-family: Nordic;
+		animation: fade;
+		animation-timing-function: ease-out;
+		animation-duration: 3s;
 	}
 	div {
+		text-align: center;
 		margin-left: 1em;
 		margin-top: 1em;
+		animation: fade;
+		animation-timing-function: ease-out;
+		animation-duration: 7s;
 	}
 }

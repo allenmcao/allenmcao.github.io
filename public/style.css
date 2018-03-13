@@ -400,6 +400,12 @@ body {
     animation: fade;
     animation-timing-function: ease-out;
     animation-duration: 7s; }
+@keyframes fade {
+  0% {
+    color: black; }
+  100% {
+    color: white; } }
+
 .education {
   margin-left: 1em;
   font-family: Qontra;
@@ -408,20 +414,39 @@ body {
   .education h2 {
     font-size: 3em;
     text-align: center;
-    font-family: Nordic; }
+    font-family: Nordic;
+    animation: fade;
+    animation-timing-function: ease-out;
+    animation-duration: 3s; }
   .education div {
+    text-align: center;
     margin-left: 1em;
-    margin-top: 1em; }
+    margin-top: 1em;
+    animation: fade;
+    animation-timing-function: ease-out;
+    animation-duration: 7s; }
+@keyframes fade {
+  0% {
+    color: black; }
+  100% {
+    color: white; } }
+
 .skills {
   margin-left: 1em;
   font-family: Qontra;
-  font-size: 2em; }
+  font-size: 5vmin; }
   .skills h2 {
-    font-size: 3em;
-    font-family: Nordic; }
+    font-size: 9vmin;
+    font-family: Nordic;
+    animation: fade;
+    animation-timing-function: ease-out;
+    animation-duration: 2s; }
   .skills div {
     margin-left: 1em;
-    margin-top: 1em; }
+    margin-top: 1em;
+    animation: fade;
+    animation-timing-function: ease-out;
+    animation-duration: 7s; }
 .Typist .Cursor--blinking {
   opacity: 1;
   animation: blink 1s linear infinite; }
@@ -445,49 +470,62 @@ body {
   width: 100%;
   font-family: Qontra; }
   .projects .startPound {
-    top: -2vw;
+    top: -1vmin;
     position: absolute;
-    left: 1vw;
-    font-size: 3vw; }
+    left: 4vmin;
+    font-size: 4vmin; }
   .projects .startTypist {
     position: absolute;
-    top: 0.8vw;
-    left: 4vw;
-    font-size: 3vw; }
+    top: 2.5vmin;
+    left: 8vmin;
+    font-size: 4.3vmin; }
   .projects .list {
     position: absolute;
-    top: 7vw;
-    left: 4vw;
-    animation: appear 4s;
-    width: 90%; }
+    top: 8vmin;
+    left: 8vmin;
+    animation: appear 6s;
+    width: 90%;
+    font-size: 2vmin; }
   .projects .acid, .projects .epitopes, .projects .synwrites {
     display: table-cell;
-    margin: .5vw;
+    margin: .5vmin;
     width: 20%;
     padding-right: 1em; }
     .projects .acid a, .projects .epitopes a, .projects .synwrites a {
       color: white;
-      animation: appear 4s; }
+      animation: appear 6s; }
   .projects .endPound {
     position: absolute;
-    font-size: 3vw;
-    left: 1vw;
-    top: 80%;
-    animation: appear 4.3s; }
+    font-size: 4vmin;
+    left: 4vmin;
+    top: 50vmin;
+    animation: appear 6.3s; }
   .projects .endTypist {
     position: absolute;
-    top: 85%;
-    left: 4vw;
-    font-size: 3vw;
-    animation: appear 4.3s; }
+    top: 53vmin;
+    left: 8vmin;
+    font-size: 4.3vmin;
+    animation: appear 6.3s; }
+@keyframes fade {
+  0% {
+    color: black; }
+  100% {
+    color: white; } }
+
 .references {
-  margin-left: 3em; }
+  margin-left: 6vmin; }
   .references h2 {
-    font-size: 5em;
-    font-family: Nordic; }
+    font-size: 10vmin;
+    font-family: Nordic;
+    animation: fade;
+    animation-duration: 2s;
+    animation-timing-function: ease-in; }
   .references div {
-    font-size: 2em;
-    font-family: Qontra; }
+    font-size: 4vmin;
+    font-family: Qontra;
+    animation: fade;
+    animation-duration: 6s;
+    animation-timing-function: ease-in; }
 .not-found {
   position: relative;
   top: 40%;

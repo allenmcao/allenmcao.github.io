@@ -1,14 +1,29 @@
+@keyframes fade {
+	0% {
+		color: black
+	}
+	100% {
+		color: white
+	}
+}
+
 .skills{
 	margin-left: 1em;
 	font-family: Qontra;
-	font-size: 2em;
+	font-size: 5vmin;
 
 	h2 {
-		font-size: 3em;
+		font-size: 9vmin;
 		font-family: Nordic;
+		animation: fade;
+		animation-timing-function: ease-out;
+		animation-duration: 2s;
 	}
 	div {
 		margin-left: 1em;
 		margin-top: 1em;
+		animation: fade;
+		animation-timing-function: ease-out;
+		animation-duration: 7s;
 	}
 }

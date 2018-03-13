@@ -11,49 +11,50 @@
 	font-family: Qontra;
 
 	.startPound {
-		top: -2vw;
+		top: -1vmin;
 		position: absolute;
-		left: 1vw;
-		font-size: 3vw;
+		left: 4vmin;
+		font-size: 4vmin;
 	}
 	.startTypist {
 		position: absolute;
-		top: 0.8vw;
-		left: 4vw;
-		font-size: 3vw;
+		top: 2.5vmin;
+		left: 8vmin;
+		font-size: 4.3vmin;
 	}
 
 	.list {
 		position: absolute;
-		top: 7vw;
-		left: 4vw;
-		animation: appear 4s;
+		top: 8vmin;
+		left: 8vmin;
+		animation: appear 6s;
 		width: 90%;
+		font-size: 2vmin;
 	}
 	.acid, .epitopes, .synwrites {
 		display: table-cell;
-		margin: .5vw;
+		margin: .5vmin;
 		width: 20%;
 		padding-right: 1em;
 		a{
 			color: white;
-			animation: appear 4s;
+			animation: appear 6s;
 		}
 	}
 
 	.endPound{
 		position:absolute;
-		font-size: 3vw;
-		left: 1vw;
-		top: 80%;
-		animation: appear 4.3s;
+		font-size: 4vmin;
+		left: 4vmin;
+		top: 50vmin;
+		animation: appear 6.3s;
 	}
 
 	.endTypist{
 		position: absolute;
-		top: 85%;
-		left: 4vw;
-		font-size: 3vw;
-		animation: appear 4.3s;
+		top: 53vmin;
+		left: 8vmin;
+		font-size: 4.3vmin;
+		animation: appear 6.3s;
 	}
 }

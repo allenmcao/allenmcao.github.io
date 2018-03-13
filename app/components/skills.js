@@ -8,12 +8,11 @@ export default class Skills extends React.Component {
             <div className="skills">
                 <h2>Skills</h2>
                 <div>Languages:</div>
-                <div>5+ Years  -  Java • Python • Javascript • HTML5 • CSS3</div>
-                <div>3+ Years  -  SQL (PostgresSQL/MYSQL) • C/C++</div>
-                <div>Software:</div>
-                <div>IDEs        -  MySQL • Eclipse • IntelliJ • Microsoft Office (Excel, PowerPoint, Word)</div>
-                <div>OSes       -  Windows • Mac • Linux (Ubuntu/Linux Mint) • Docker • VirtualBox • Cloud9</div>
-
+                <div>Proficient  -  Java • Python • JavaScript • HTML/CSS • SQL</div>
+                <div>Familiar    -  C/C++ • Ruby • Gosu</div>
+                <div>Technologies:</div>
+                <div>Front End  -  Node,  React/Redux, Sass, jQuery, Bootstrap, D3,  Angular</div>
+                <div>Back End  -  Spring, PostgreSQL, MySQL, JPA, Django, Redis</div>
             </div>
         )
   }

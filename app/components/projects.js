@@ -28,7 +28,7 @@ export default class Projects extends React.Component {
                     delayGenerator={this.delayGen}
                     cursor={{ hideWhenDone: true, hideWhenDoneDelay: 300 }}
                     >
-                    Projects 
+                    ./projects_about.txt
                     <br/>
                     {""}                 
                 </Typist>
