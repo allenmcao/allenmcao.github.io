@@ -76,7 +76,7 @@ hr {
 	}
 }
 .divOne {	
-	top: 41.6%;
+	top: 41.3vh;
 	background-color: white;
 	border: 1px solid;
 	position: absolute;
@@ -98,15 +98,15 @@ hr {
 }
 
 .divOneUnder {
-	top: 46.8%;
+	top: 47.0%;
 	background-color: white;
 	border: 1px solid;
 	position: absolute;
 	left: -1.5em;
 	width: 20%;
 	animation: widening1U;
-	animation-timing-function: linear;
-	animation-duration: 3s;
+	animation-timing-function: ease-out;
+	animation-duration: 5s;
 }
 
 @keyframes widening2 {

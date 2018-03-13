@@ -29838,7 +29838,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	            value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -29846,6 +29846,10 @@
 	var _react = __webpack_require__(178);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _reactTypist = __webpack_require__(268);
+
+	var _reactTypist2 = _interopRequireDefault(_reactTypist);
 
 	var _work = __webpack_require__(272);
 
@@ -29858,98 +29862,95 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var Work = function (_React$Component) {
-	    _inherits(Work, _React$Component);
+	            _inherits(Work, _React$Component);
 
-	    function Work() {
-	        _classCallCheck(this, Work);
+	            function Work() {
+	                        _classCallCheck(this, Work);
 
-	        return _possibleConstructorReturn(this, (Work.__proto__ || Object.getPrototypeOf(Work)).apply(this, arguments));
-	    }
+	                        return _possibleConstructorReturn(this, (Work.__proto__ || Object.getPrototypeOf(Work)).apply(this, arguments));
+	            }
 
-	    _createClass(Work, [{
-	        key: 'render',
-	        value: function render() {
-	            return _react2.default.createElement(
-	                'div',
-	                { className: 'work' },
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'header' },
-	                    'WORK'
-	                ),
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'telelytics' },
-	                    _react2.default.createElement(
-	                        'h1',
-	                        null,
-	                        'Telelytics'
-	                    ),
-	                    _react2.default.createElement(
-	                        'h2',
-	                        null,
-	                        'Software Engineering Intern'
-	                    ),
-	                    _react2.default.createElement(
-	                        'ul',
-	                        null,
-	                        _react2.default.createElement(
-	                            'li',
-	                            null,
-	                            'Helped build the Telelytics telemedicine service.'
-	                        ),
-	                        _react2.default.createElement(
-	                            'li',
-	                            null,
-	                            'Worked on the front-end/full-stack team developing the patient-doctor interface using React.js and Redux (with a material-design emphasis) to implement account logins, confidentiality, and video appointments (Twilio), etc.'
-	                        ),
-	                        _react2.default.createElement(
-	                            'li',
-	                            null,
-	                            'Also assisted with basic backend using Express, and Passport, and a small Redis server to store patient data.'
-	                        )
-	                    )
-	                ),
-	                _react2.default.createElement('br', null),
-	                _react2.default.createElement('br', null),
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'bids' },
-	                    _react2.default.createElement(
-	                        'h1',
-	                        null,
-	                        'UC Berkeley Undergraduate Research Apprenticeship Program (URAP)'
-	                    ),
-	                    _react2.default.createElement(
-	                        'h2',
-	                        null,
-	                        'Text Thresher Research Project'
-	                    ),
-	                    _react2.default.createElement(
-	                        'ul',
-	                        null,
-	                        _react2.default.createElement(
-	                            'li',
-	                            null,
-	                            'Worked with full-stack with an emphasis on the front-end side with React, Redux, Sass, Webpack, and ES6. Contributed to the specialized highlighting interface that allows users to change, combine, and intermingle selections when curating crowd-sourced data.'
-	                        ),
-	                        _react2.default.createElement(
-	                            'li',
-	                            null,
-	                            'Also assisted with the backend using Django, Docker, and Python. Created docker containers to programmatically setup work environment/databases, and set/retrieve tasks from CrowdCrafting.org (crowd-sourcing service).'
-	                        ),
-	                        _react2.default.createElement(
-	                            'li',
-	                            null,
-	                            '3 years in development and currently seeking NHS grant funding. Adopted Agile development (Scrum) as of 5 months.'
-	                        )
-	                    )
-	                )
-	            );
-	        }
-	    }]);
+	            _createClass(Work, [{
+	                        key: 'render',
+	                        value: function render() {
+	                                    return _react2.default.createElement(
+	                                                'div',
+	                                                { className: 'work' },
+	                                                _react2.default.createElement(
+	                                                            'div',
+	                                                            { className: 'header' },
+	                                                            _react2.default.createElement(
+	                                                                        'b',
+	                                                                        null,
+	                                                                        'WORK'
+	                                                            )
+	                                                ),
+	                                                _react2.default.createElement(
+	                                                            'div',
+	                                                            { className: 'guidewire' },
+	                                                            _react2.default.createElement(
+	                                                                        'h1',
+	                                                                        null,
+	                                                                        'Guidewire Software'
+	                                                            ),
+	                                                            _react2.default.createElement(
+	                                                                        'h2',
+	                                                                        null,
+	                                                                        'Software Engineering Intern'
+	                                                            ),
+	                                                            _react2.default.createElement(
+	                                                                        'p',
+	                                                                        null,
+	                                                                        'Developed, tested, and deployed Transwarp, a performance data collection and visualization project that provides an easily viewable interface to check, compare, and analyze performance trends for core product software. Can compare performance metrics across commits, branches, applications, authors, and more. Created with Spring backend (Java, Hibernate JPA, and PostgreSQL database with Angular frontend management) and React/Redux front-end along with D3 data visualization'
+	                                                            )
+	                                                ),
+	                                                _react2.default.createElement('br', null),
+	                                                _react2.default.createElement('br', null),
+	                                                _react2.default.createElement(
+	                                                            'div',
+	                                                            { className: 'bids' },
+	                                                            _react2.default.createElement(
+	                                                                        'h1',
+	                                                                        null,
+	                                                                        'UC Berkeley Undergraduate Research Apprenticeship Program (URAP)'
+	                                                            ),
+	                                                            _react2.default.createElement(
+	                                                                        'h2',
+	                                                                        null,
+	                                                                        'Text Thresher Research Project'
+	                                                            ),
+	                                                            _react2.default.createElement(
+	                                                                        'p',
+	                                                                        null,
+	                                                                        'Contributed to web application that expedites article processing to actual data using crowdsourced contributions. Uses unique highlighting scheme to efficiently guide users into answering researcher-generated questions. Worked with full-stack with an emphasis on the front-end side with React, Redux, Sass, Webpack, and ES6. Testing using Facebook\u2019s Jest unit-testing framework combined with Enzyme. Programmatically sets up Pybossa server to set/retrieve tasks from CrowdCrafting.org (crowd-sourcing service). More information here: https://bids.berkeley.edu/news/introducing-textthresher-10-beta'
+	                                                            )
+	                                                ),
+	                                                _react2.default.createElement('br', null),
+	                                                _react2.default.createElement('br', null),
+	                                                _react2.default.createElement(
+	                                                            'div',
+	                                                            { className: 'telelytics' },
+	                                                            _react2.default.createElement(
+	                                                                        'h1',
+	                                                                        null,
+	                                                                        'Telelytics'
+	                                                            ),
+	                                                            _react2.default.createElement(
+	                                                                        'h2',
+	                                                                        null,
+	                                                                        'Software Engineering Intern'
+	                                                            ),
+	                                                            _react2.default.createElement(
+	                                                                        'p',
+	                                                                        null,
+	                                                                        'Helped build the Telelytics telemedicine service. Worked on the front-end/full-stack team developing the patient-doctor interface using React.js and Redux (with a material-design emphasis) to implement account logins, confidentiality, and video appointments (Twilio), etc. Also assisted with basic backend using Express, and Passport, and a small Redis server to store patient data.'
+	                                                            )
+	                                                )
+	                                    );
+	                        }
+	            }]);
 
-	    return Work;
+	            return Work;
 	}(_react2.default.Component);
 
 	exports.default = Work;

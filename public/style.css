@@ -30,7 +30,7 @@
 nav {
   position: relative;
   float: left;
-  width: 12%;
+  width: 15%;
   height: 100%;
   line-height: 100%;
   z-index: 9999; }
@@ -182,7 +182,7 @@ hr {
     width: 90%; } }
 
 .divOne {
-  top: 41.6%;
+  top: 41.3vh;
   background-color: white;
   border: 1px solid;
   position: absolute;
@@ -199,15 +199,15 @@ hr {
     width: 20%; } }
 
 .divOneUnder {
-  top: 46.8%;
+  top: 47.0%;
   background-color: white;
   border: 1px solid;
   position: absolute;
   left: -1.5em;
   width: 20%;
   animation: widening1U;
-  animation-timing-function: linear;
-  animation-duration: 3s; }
+  animation-timing-function: ease-out;
+  animation-duration: 5s; }
 
 @keyframes widening2 {
   0%, 30% {
@@ -365,20 +365,41 @@ body {
     display: inline-block;
     position: relative;
     background-color: black;
-    width: 88%;
+    width: 85%;
     height: 100%;
     color: white;
     z-index: 9999; }
+@keyframes fade {
+  0% {
+    color: black; }
+  100% {
+    color: white; } }
+
 .work {
-  margin: 4vw; }
+  margin: 4vw;
+  font-size: 1.8vmin; }
   .work .header {
     font-family: Nordic;
-    font-size: 5em;
-    text-align: center; }
+    font-size: 7vmin;
+    text-align: center;
+    animation: fade;
+    animation-timing-function: ease-out;
+    animation-duration: 1s; }
   .work h1 {
-    font-family: Qontra; }
-  .work li {
-    font-family: Qontra; }
+    font-family: Qontra;
+    animation: fade;
+    animation-timing-function: ease-out;
+    animation-duration: 3s; }
+  .work h2 {
+    font-family: Qontra;
+    animation: fade;
+    animation-timing-function: ease-out;
+    animation-duration: 7s; }
+  .work p {
+    font-family: Qontra;
+    animation: fade;
+    animation-timing-function: ease-out;
+    animation-duration: 7s; }
 .education {
   margin-left: 1em;
   font-family: Qontra;
