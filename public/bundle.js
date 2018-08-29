@@ -21716,6 +21716,7 @@
 	                    _react2.default.createElement(
 	                        'ul',
 	                        null,
+	                        _react2.default.createElement('hr', { id: '1' }),
 	                        _react2.default.createElement(
 	                            'li',
 	                            null,
@@ -21725,6 +21726,7 @@
 	                                'Home'
 	                            )
 	                        ),
+	                        _react2.default.createElement('hr', { id: '2' }),
 	                        _react2.default.createElement(
 	                            'li',
 	                            null,
@@ -21734,6 +21736,7 @@
 	                                'About'
 	                            )
 	                        ),
+	                        _react2.default.createElement('hr', { id: '3' }),
 	                        _react2.default.createElement(
 	                            'li',
 	                            null,
@@ -21743,6 +21746,7 @@
 	                                'Work'
 	                            )
 	                        ),
+	                        _react2.default.createElement('hr', { id: '4' }),
 	                        _react2.default.createElement(
 	                            'li',
 	                            null,
@@ -21752,6 +21756,7 @@
 	                                'Education'
 	                            )
 	                        ),
+	                        _react2.default.createElement('hr', { id: '5' }),
 	                        _react2.default.createElement(
 	                            'li',
 	                            null,
@@ -21761,6 +21766,7 @@
 	                                'Skills'
 	                            )
 	                        ),
+	                        _react2.default.createElement('hr', { id: '6' }),
 	                        _react2.default.createElement(
 	                            'li',
 	                            null,
@@ -21770,6 +21776,7 @@
 	                                'Projects'
 	                            )
 	                        ),
+	                        _react2.default.createElement('hr', { id: '7' }),
 	                        _react2.default.createElement(
 	                            'li',
 	                            null,
@@ -21778,7 +21785,8 @@
 	                                { className: 'linky', to: 'references' },
 	                                'References'
 	                            )
-	                        )
+	                        ),
+	                        _react2.default.createElement('hr', { id: '8' })
 	                    )
 	                )
 	            );
@@ -30223,7 +30231,7 @@
 	                        delayGenerator: this.delayGen,
 	                        cursor: { hideWhenDone: true, hideWhenDoneDelay: 300 }
 	                    },
-	                    './projects_about.txt',
+	                    './projects/readme.txt',
 	                    _react2.default.createElement('br', null),
 	                    ""
 	                ),

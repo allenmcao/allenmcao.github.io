@@ -8,13 +8,13 @@
 }
 
 .education{
-	margin-left: 1em;
+	margin-left: 1vmin;
 	font-family: Qontra;
-	font-size: 1.4em;
+	font-size: 5vmin;
 	text-align: center;
 
 	h2 {
-		font-size: 3em;
+		font-size: 10vmin;
 		text-align: center;
 		font-family: Nordic;
 		animation: fade;
@@ -23,8 +23,8 @@
 	}
 	div {
 		text-align: center;
-		margin-left: 1em;
-		margin-top: 1em;
+		font-weight: lighter;
+		margin-top: 1vmin;
 		animation: fade;
 		animation-timing-function: ease-out;
 		animation-duration: 7s;
