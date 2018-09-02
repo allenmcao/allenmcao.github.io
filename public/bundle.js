@@ -21716,7 +21716,6 @@
 	                    _react2.default.createElement(
 	                        'ul',
 	                        null,
-	                        _react2.default.createElement('hr', { id: '1' }),
 	                        _react2.default.createElement(
 	                            'li',
 	                            null,
@@ -21724,9 +21723,13 @@
 	                                _reactRouter.Link,
 	                                { className: 'linky', to: 'home' },
 	                                'Home'
+	                            ),
+	                            _react2.default.createElement(
+	                                'span',
+	                                null,
+	                                '\xA0'
 	                            )
 	                        ),
-	                        _react2.default.createElement('hr', { id: '2' }),
 	                        _react2.default.createElement(
 	                            'li',
 	                            null,
@@ -21734,9 +21737,13 @@
 	                                _reactRouter.Link,
 	                                { className: 'linky', to: 'aboutme' },
 	                                'About'
+	                            ),
+	                            _react2.default.createElement(
+	                                'span',
+	                                null,
+	                                '\xA0'
 	                            )
 	                        ),
-	                        _react2.default.createElement('hr', { id: '3' }),
 	                        _react2.default.createElement(
 	                            'li',
 	                            null,
@@ -21744,9 +21751,13 @@
 	                                _reactRouter.Link,
 	                                { className: 'linky', to: 'work' },
 	                                'Work'
+	                            ),
+	                            _react2.default.createElement(
+	                                'span',
+	                                null,
+	                                '\xA0'
 	                            )
 	                        ),
-	                        _react2.default.createElement('hr', { id: '4' }),
 	                        _react2.default.createElement(
 	                            'li',
 	                            null,
@@ -21754,9 +21765,13 @@
 	                                _reactRouter.Link,
 	                                { className: 'linky', to: 'education' },
 	                                'Education'
+	                            ),
+	                            _react2.default.createElement(
+	                                'span',
+	                                null,
+	                                '\xA0'
 	                            )
 	                        ),
-	                        _react2.default.createElement('hr', { id: '5' }),
 	                        _react2.default.createElement(
 	                            'li',
 	                            null,
@@ -21764,9 +21779,13 @@
 	                                _reactRouter.Link,
 	                                { className: 'linky', to: 'skills' },
 	                                'Skills'
+	                            ),
+	                            _react2.default.createElement(
+	                                'span',
+	                                null,
+	                                '\xA0'
 	                            )
 	                        ),
-	                        _react2.default.createElement('hr', { id: '6' }),
 	                        _react2.default.createElement(
 	                            'li',
 	                            null,
@@ -21774,9 +21793,13 @@
 	                                _reactRouter.Link,
 	                                { className: 'linky', to: 'projects' },
 	                                'Projects'
+	                            ),
+	                            _react2.default.createElement(
+	                                'span',
+	                                null,
+	                                '\xA0'
 	                            )
 	                        ),
-	                        _react2.default.createElement('hr', { id: '7' }),
 	                        _react2.default.createElement(
 	                            'li',
 	                            null,
@@ -21784,9 +21807,13 @@
 	                                _reactRouter.Link,
 	                                { className: 'linky', to: 'references' },
 	                                'References'
+	                            ),
+	                            _react2.default.createElement(
+	                                'span',
+	                                null,
+	                                '\xA0'
 	                            )
-	                        ),
-	                        _react2.default.createElement('hr', { id: '8' })
+	                        )
 	                    )
 	                )
 	            );
