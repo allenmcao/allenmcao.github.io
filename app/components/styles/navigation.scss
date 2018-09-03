@@ -12,7 +12,7 @@
 nav{
     position: relative;
     float: left;
-    width: 15%;
+    width: 10%;
     height: 100%;
     line-height: 100%;
 
@@ -28,21 +28,21 @@ nav{
 
         .name1{
             float:right;
-            padding-top: 2vh;
-            height: 4vh;
+            padding-top: 2vmin;
+            height: 4vmin;
             background-position: right;
             background-image: linear-gradient(to left, black 50%, transparent);
             color:transparent;
             -webkit-background-clip: text;
             background-clip: text;
-            font-size: 2.5vw;
+            font-size: 2vw;
             animation: nameanim;
             animation-duration: 10s;
 
         }
         .name2{
-            padding-top: 5vh;
-            height: 10vh;
+            padding-top: 5vmin;
+            height: 10vmin;
             margin-right: -0.1em;
             background-position: right;
             background-image: linear-gradient(to left, black 25%, transparent);
@@ -51,7 +51,7 @@ nav{
             background-clip: text;
             animation: nameanimDelay;
             animation-duration: 6s;
-            font-size: 5vw;
+            font-size: 4vw;
         }
     }
 
@@ -64,11 +64,12 @@ nav{
             margin-top: 2.3vh;
             line-height: 5.5vh;
             border: 0px;
+            padding-left: 0px;
             
             li {
                 overflow: hidden;
                 margin: 0;
-                font-size: 2.5vh;
+                font-size: 1vw;
                 border: 0px;
                 list-style: none;
                 border-top: 0px solid white;
@@ -85,9 +86,9 @@ nav{
                     position: relative;
                     z-index: 1;
                 }
-                span {
+                .cover {
                     background-color: black;
-                    transition: 2s;
+                    transition: 1s;
                     width: 0vw;
                     position: absolute;
                     right: 0px;
@@ -100,7 +101,7 @@ nav{
             
 
             li:hover span {
-                width: 12vw;
+                width: 100%;
             }
 
         }
