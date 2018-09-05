@@ -15,20 +15,10 @@ import Skills from './components/skills'
 import Projects from './components/projects'
 import References from './components/references'
 import NotFound from './components/not_found'
-import { hashHistory, IndexRedirect, Router, Route, Link } from 'react-router'
+import { HashRouter, Switch, Redirect, Route, Link } from 'react-router-dom'
 
 export default (
-    <Router history={hashHistory}>
-        <Route path='/' component={Main}>
-            <IndexRedirect from='/' to="/home" />
-            <Route path='home' component={Home}/>
-            <Route path='aboutme' component={AboutMe}/>
-            <Route path='work' component={Work}/>
-            <Route path='skills' component={Skills}/>
-            <Route path='education' component={Education}/>
-            <Route path='projects' component={Projects}/>
-            <Route path='references' component={References}/>
-            <Route path='*' component={NotFound}/>
-        </Route>
-    </Router>
+    <HashRouter>
+        <Main />
+    </HashRouter>
 );

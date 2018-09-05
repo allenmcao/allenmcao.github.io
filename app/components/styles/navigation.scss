@@ -56,13 +56,12 @@ nav{
     }
 
     .navWrapper {
+        top: 35.1vh;
         text-align: right;
         position: relative;
-        top: 35%;
         ul {
             margin: 0;
             margin-top: 2.3vh;
-            line-height: 5.5vh;
             border: 0px;
             padding-left: 0px;
             
@@ -79,7 +78,6 @@ nav{
 
                 .linky {
                     margin-right: 1em;
-                    text-decoration: none;
                     color: $offblack;
                     transition: 1s;
                     float: right;
@@ -93,14 +91,26 @@ nav{
                     position: absolute;
                     right: 0px;
                 }
-
+                .divider {
+                    background-color: white;
+                    width: 100%;
+                    color: black;
+                    display: block;
+                }
             }
+            li:nth-child(odd) {
+                line-height: 5.5vh
+            }
+            li:nth-child(even) {
+                line-height: .5vh;
+            }
+
             li:hover .linky{
                 color: white;
             }
             
 
-            li:hover span {
+            li:hover .cover {
                 width: 100%;
             }
 

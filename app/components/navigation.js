@@ -1,19 +1,22 @@
 import React from 'react';
 
 import GithubCorner from 'react-github-corner';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { styles } from './styles/navigation.scss'
 
 export default class Navigation extends React.Component {
     navList () {
         const navs = ['home', 'aboutme', 'work', 'education', 'skills', 'projects', 'references']
         return navs.map(nav => 
-                            <a href={'#/' + nav}>
+                            <Link to={'/' + nav} style={{ textDecoration: 'none' }}>
                                 <li>
                                     <span className='linky'>{nav}</span>
                                     <span className='cover'>&nbsp;</span>
                                 </li>
-                            </a>)
+                                <li>
+                                    <span className='divider'>&nbsp;</span>
+                                </li>
+                            </Link>)
     }
     render () {
         return (

@@ -75,12 +75,11 @@ hr {
 		width: 90%
 	}
 }
-.divOne {	
-	top: 41.3vh;
+.lineOne {	
+	top: 42.85vh;
 	background-color: white;
-	border: 1px solid;
+	border-top: 3px solid;
 	position: absolute;
-	left: -1.5em;
 	width: 90%;
 	animation: widening;
 	animation-timing-function: ease-out;
@@ -97,12 +96,11 @@ hr {
 	}
 }
 
-.divOneUnder {
-	top: 47.0%;
+.lineOneUnder {
+	top: 48.7vh;
 	background-color: white;
 	border: 1px solid;
 	position: absolute;
-	left: -1.5em;
 	width: 20%;
 	animation: widening1U;
 	animation-timing-function: ease-out;
@@ -117,11 +115,14 @@ hr {
 		width: 85%
 	}
 }
-.divTwo {
+.lineTwo {
 	top: 90%;
+	background-color: white;
+	border: 1px solid;
 	position: absolute;
 	right: 0;
 	animation: widening2;
+	animation-fill-mode: forwards;
 	animation-timing-function: ease-out;
 	animation-duration: 5s;
 }
