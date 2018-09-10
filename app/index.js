@@ -16,4 +16,6 @@ import ReactDOM from 'react-dom';
 // const routes = require('./routes');
 import routes from './routes';
 
+import { ConnectedRouter } from 'react-router-redux';
+
 ReactDOM.render(routes, document.getElementById('app'));
