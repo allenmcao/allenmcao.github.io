@@ -7,8 +7,8 @@ import { styles } from './styles/navigation.scss'
 export default class Navigation extends React.Component {
     navList () {
         const navs = ['home', 'aboutme', 'work', 'education', 'skills', 'projects', 'references']
-        return navs.map(nav => 
-                            <Link to={'/' + nav} style={{ textDecoration: 'none' }}>
+        return navs.map((nav,index) => 
+                            <Link to={`/${nav}`} key={index}>
                                 <li>
                                     <span className='linky'>{nav}</span>
                                     <span className='cover'>&nbsp;</span>

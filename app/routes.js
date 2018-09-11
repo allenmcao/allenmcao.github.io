@@ -11,20 +11,20 @@ import Main from './components/main'
 // import Projects from './components/projects'
 // import References from './components/references'
 // import NotFound from './components/not_found'
-import { HashRouter, Switch, Redirect, Route, Link } from 'react-router-dom'
+import { HashRouter, Switch, Redirect, Route, Link} from 'react-router-dom'
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux'
 
 import configureStore from './configureStore'
-import createHistory from 'history/createBrowserHistory';
+import { createBrowserHistory } from 'history';
 
 const initialState = {};
-const history = createHistory();
+const history = createBrowserHistory({ basename: window.location.pathname });
 const store = configureStore(initialState, history);
 
 export default (
     <Provider store={store}>
-        <ConnectedRouter history={history}>
+        <ConnectedRouter basename='/Users/Allen/work/allenmcao.github.io/' history={history}>
             <Main />
         </ConnectedRouter>
     </Provider>

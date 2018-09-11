@@ -29,6 +29,7 @@ export default class Main extends React.Component {
                     <Route path='/education' component={Education}/>
                     <Route path='/projects' component={Projects}/>
                     <Route path='/references' component={References}/>
+                    <Redirect from='/' to='/home' />
                 </Switch>
             </div>
         </main>        
