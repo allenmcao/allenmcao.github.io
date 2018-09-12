@@ -24,7 +24,7 @@ const store = configureStore(initialState, history);
 
 export default (
     <Provider store={store}>
-        <ConnectedRouter history={history}>
+        <ConnectedRouter basename={process.env.PUBLIC_URL} history={history}>
             <Main />
         </ConnectedRouter>
     </Provider>
