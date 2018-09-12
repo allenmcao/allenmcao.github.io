@@ -19,12 +19,12 @@ import configureStore from './configureStore'
 import { createBrowserHistory } from 'history';
 
 const initialState = {};
-const history = createBrowserHistory({ basename: window.location.pathname });
+const history = createBrowserHistory();
 const store = configureStore(initialState, history);
 
 export default (
     <Provider store={store}>
-        <ConnectedRouter basename='/Users/Allen/work/allenmcao.github.io/' history={history}>
+        <ConnectedRouter history={history}>
             <Main />
         </ConnectedRouter>
     </Provider>
