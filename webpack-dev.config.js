@@ -1,6 +1,7 @@
 var path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   mode: 'development',
@@ -8,9 +9,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
-    publicPath: '/',
+    publicPath: '/public/',
   },
-  stats: 'minimal',
   devServer: {
     stats: 'minimal',
     historyApiFallback: true,
@@ -35,23 +35,14 @@ module.exports = {
         ]
       },
       {
-        test: /\.(scss|css)$/,
+        test: /\.css$/,
         exclude: /node_modules/,
-        use: [
-            MiniCssExtractPlugin.loader,
-            {
-                loader: "css-loader",
-                options: {
-                    minimize: {
-                        safe: true
-                    }
-                }
-            },
-            {
-                loader: "sass-loader",
-                options: {}
-            }
-        ]
+        loaders: ['style', 'css']
+      },
+      {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        loaders: ExtractTextPlugin.extract('css-loader!sass-loader') 
       },
       { test: /\.woff(\?.*)?$/,  loader: 'url-loader?prefix=fonts/&name=[path][name].[ext]&mimetype=application/font-woff' },
       { test: /\.woff2(\?.*)?$/, loader: 'url-loader?prefix=fonts/&name=[path][name].[ext]&mimetype=application/font-woff2' },
@@ -63,13 +54,14 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebPackPlugin({
-      template: "./index.html",
-      filename: "./index.html"
-    }),
-    new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[id].css"
-    })
+    // new HtmlWebPackPlugin({
+    //   template: "./index.html",
+    //   filename: "./index.html"
+    // }),
+    // new MiniCssExtractPlugin({
+    //   filename: "[name].css",
+    //   chunkFilename: "[id].css"
+    // })
+    new ExtractTextPlugin('style.css')
   ]
 };

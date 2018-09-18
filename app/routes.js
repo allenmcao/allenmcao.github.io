@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import Main from './components/main'
+import Main from './containers/main'
 // import Home from './components/home'
 // import AboutMe from './components/aboutme'
 // import Work from './components/work'
