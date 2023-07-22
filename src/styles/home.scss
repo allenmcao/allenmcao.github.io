@@ -1,0 +1,117 @@
+@import 'styles/_variables.scss';
+
+@keyframes fadeInSlow {
+	0% {
+		color: white;
+		text-shadow: 0px 0px 0 white;
+	}
+	40% {
+		text-shadow: 1px 1px 50px $offblack;
+	}
+	
+	to {
+		color: black;
+		text-shadow: 1px 1px 10px black;
+	}
+}
+
+@keyframes fadeIn {
+	0% {
+		color: white
+	}
+	60% {
+		color: white
+	}
+	100% {
+		color: black
+	}
+}
+
+@keyframes widenIn {
+	0% {
+		width: 0%
+	}
+	100% {
+		width: 100%
+	}
+}
+
+
+
+.home {
+	overflow: visible;
+	.nameWrapper {
+		overflow:hidden;
+		height: 40%;
+		.name {
+			top: -0.6em;
+			left: -0.08em;
+			position:relative;
+			font-family: 'Nordic';
+			font-size: 13vw;
+			color: white;
+			text-shadow: 1px 1px 10px white;
+			animation: fadeInSlow;
+			animation-timing-function: ease-in;
+			animation-duration: 5s;
+		}
+	}
+	.quoteWrapper {
+		position: absolute;
+		top: 30%;
+		height: 15%;
+		margin: auto;
+		margin-left: 10vw;
+		text-align: left;
+		font-size: 1.8em;
+		font-family: Antipasto;
+	}
+
+	.hrDiv {
+		animation: widenIn;
+		animation-timing-function: cubic-bezier(0.64, 0.00, .50, 1);
+		animation-duration: 4s;
+		animation-fill-mode: forwards;
+		width: 100%;
+		position: absolute;
+		height: 45%;
+		top:45%;
+		left: -15%;
+		z-index: 0;
+	}
+	hr {
+		position: absolute;
+		float: left;
+		color: black;
+        background-color: black;
+        border: 1px solid;
+		width: 0%;
+	}
+	.hr1{
+		top: 15%;
+		height: 3px;
+		width: 82%;
+	}
+	.hr2{
+		top: 30%;
+	    height: 5px;
+		width: 96%;
+	}
+	.hr3{
+		top: 45%;
+		width: 68%;
+	}
+
+	.berk {
+        font-family:LibelSuit;
+		position: absolute;
+		font-size: 1.5em;
+		float:right;
+		bottom: 5%;
+		right: 1em;
+		animation: fadeIn;
+		animation-duration: 6s;
+	}
+}
+
+
