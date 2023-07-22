@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { motion } from 'framer-motion';
 
 import {blackCircleAnim, blackSplatterAnim, whiteCircleAnim, whiteSplatterAnim} from './framer'
@@ -46,26 +46,30 @@ export const WhiteCircle = ({k, delay, size}) => {
 }
 
 export const WhiteSplatter = ({delay, size}) => {
-    const rotateAngle = Math.round(randomize(360));
-    const rotateAngle2 = rotateAngle + 180 % 360;
+    const [rotateAngle, setRotateAngle] = useState(Math.random() * 360);
+    useEffect(() => {
+        setRotateAngle(Math.random() * 360);
+        return () => {};
+    }, [])
+    
     return (
         <>
-        <motion.img className="absolute max-w-max"
-            style={{boxShadow: "0 0 0 9999px black", transform: "rotate(" + rotateAngle + "deg)"}}
-            initial="initial"
-            animate="animate"
-            variants={whiteSplatterAnim(delay, size)}
-            src={whiteSplatter3}
-            >
-        </motion.img>
-        <motion.img className="absolute max-w-max"
-            style={{boxShadow: "0 0 0 9999px black", transform: "rotate(" + rotateAngle2 + "deg)"}}
-            initial="initial"
-            animate="animate"
-            variants={whiteSplatterAnim(delay, size)}
-            src={whiteSplatter3}
-            >
-        </motion.img>
+            <motion.img className="absolute max-w-max"
+                style={{boxShadow: "0 0 0 9999px black", transform: "rotate(" + rotateAngle + "deg)"}}
+                initial="initial"
+                animate="animate"
+                variants={whiteSplatterAnim(delay, size)}
+                src={whiteSplatter3}
+                >
+            </motion.img>
+            <motion.img className="absolute max-w-max"
+                style={{boxShadow: "0 0 0 9999px black", transform: "rotate(" + (rotateAngle + 180) + "deg)"}}
+                initial="initial"
+                animate="animate"
+                variants={whiteSplatterAnim(delay, size)}
+                src={whiteSplatter3}
+                >
+            </motion.img>
         </>
     )
 }

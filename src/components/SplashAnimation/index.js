@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {motion} from 'framer-motion';
 
 import Expire from 'components/Expire'
@@ -13,50 +13,55 @@ const arrowLine = {
 }
 
 const arrowDiv = {
-    initial: {fontSize:'80px'},
+    initial: {marginLeft: 100, fontSize:'80px', opacity: 0},
     animate: {
+        opacity: [0,1,1],
         fontSize: ['80px','100px','100px'], 
-        marginLeft: 150, 
+        marginLeft: 210, 
         marginTop: 30, 
         transition: { 
-            duration: 5, 
-        }
-    },
-    hover: {
-        marginLeft: 160, 
-        marginTop: 35,
-        transition: {
-            delay: 0
+            delay: 2.25,
+            duration: 6, 
+            times: [0,0.001,1]
         }
     },
 }
 
+const parentVariant = {
+    transition: {
+        staggerChildren: 1
+    }
+}
+
 const SplashAnimation = () => {
+    const [splashes, setSplashes] = useState([]);
     const {width, height} = getCurrentDimension();
     const vmax = Math.max(width, height);
+    useEffect(() => {
+        let splas = []
+        let w = -400;
+        while (w < width + 300) {
+            let h = -500;
+            while (h < height) {
+                let d = Math.round(randomize(2))/1.5 + randomize(0.2) + 0.2;
+                let s = (d/1.4) * 0.3 + 0.3;
 
-    // Randomize black splash animations across screen
-    const splashes = [];
-    let w = -400;
-    while (w < width + 300) {
-        let h = -500;
-        while (h < height) {
-            let d = Math.round(randomize(2))/1.5 + randomize(0.2) + 0.2;
-            let s = (d/1.4) * 0.3 + 0.3;
-
-            splashes.push(
-                <BlackSplash 
-                    className="overflow-hidden" 
-                    key={w.toString() + h.toString()} mr={w + randomize(200)} 
-                    mt={h + randomize(200)}
-                    delay={d}
-                    size={s}
-                />
-            )
-            h += 280;
+                splas.push(
+                    <BlackSplash 
+                        className="overflow-hidden" 
+                        key={w.toString() + h.toString()} mr={w + randomize(200)} 
+                        mt={h + randomize(200)}
+                        delay={d}
+                        size={s}
+                    />
+                )
+                h += 280;
+            }
+            w += 280;
         }
-        w += 280;
-    }
+        console.log(splas);
+        setSplashes(splas);
+    }, [])
 
     const [arrowHover, setArrowHover] = useState(false)
     function handleMouseEnterArrow() {
@@ -67,7 +72,7 @@ const SplashAnimation = () => {
     }
 
     return (
-        <motion.div  className="absolute w-full h-full overflow-hidden " initial={{opacity: 0}} animate={{opacity:1, transition: {staggerChildren: 0.5}}}>
+        <motion.div  className="absolute w-full h-full overflow-hidden " initial="initial" animate="animate" variants={parentVariant}>
 
                 <motion.div  className="absolute inset-0 flex items-center justify-center bg-white">
                     {splashes}
@@ -84,7 +89,7 @@ const SplashAnimation = () => {
                     <motion.div 
                             className="absolute font-[Libelsuit] font-bold rotate-[330deg]"
                             initial={{opacity: 0, fontSize:'80px', marginLeft: -50, marginTop:-30}}
-                            animate={{opacity: [0,1,1],  fontSize: ['80px','100px','100px'], marginLeft: -250, marginTop: -50, transition:{ duration: 5, delay: 2.25, times: [0,0.1,1]}}}
+                            animate={{opacity: [0,1,1],  fontSize: ['80px','100px','100px'], marginLeft: -200, marginTop: -50, transition:{ duration: 5, delay: 2.25, times: [0,0.1,1]}}}
                         >
                             GO
                     </motion.div>
@@ -98,9 +103,7 @@ const SplashAnimation = () => {
                         onMouseLeave={handleMouseLeaveArrow}
                     >
                         <motion.span
-                            className="top-[68px] right-[90px] align-middle rounded-full bg-black leading-10 w-0 h-4 inline-block"
-                            initial="initial"
-                            animate="initial"
+                            className="relative top-[-9px] right-[-15px] align-middle rounded-full bg-black w-0 h-4 inline-block"
                             whileHover="hover"
                             variants={arrowLine}
                         >
