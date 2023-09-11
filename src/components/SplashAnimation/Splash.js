@@ -69,10 +69,16 @@ export const whiteCircleAnim = (delay, size) => {
                 ease: [0.1, 1, 0.1, 1]
             },
         },
+        exit: {
+            opacity: [0,0,0],
+            transition: {
+                times: [0,0.01,1]
+            }
+        }
     }
 };
 
-export const whiteSplatterAnim = (delay, size) => {
+export const whiteSplatterAnim = (delay, size, vmax) => {
     return {
         initial: {
             height: 0,
@@ -91,8 +97,12 @@ export const whiteSplatterAnim = (delay, size) => {
             },
         },
         exit: {
-            height: 7 * size,
-            width: 7 * size,
+            height: 2.2 * vmax,
+            width: 2.2 * vmax,
+            transition: {
+                duration: 3,
+                ease: [0.1, 1, 0.1, 1]
+            }
         }
     }
 };
@@ -126,13 +136,14 @@ export const WhiteCircle = ({k, delay, size}) => {
         <motion.div className='absolute rounded-full bg-white'
             initial="initial"
             animate="animate"
+            exit="exit"
             variants={whiteCircleAnim(delay, size)}
             key={k}
         />
     )
 }
 
-export const WhiteSplatter = ({delay, size}) => {
+export const WhiteSplatter = ({delay, size, vmax}) => {
     const [rotateAngle, setRotateAngle] = useState(Math.random() * 360);
     useEffect(() => {
         setRotateAngle(Math.random() * 360);
@@ -146,7 +157,7 @@ export const WhiteSplatter = ({delay, size}) => {
                 initial="initial"
                 animate="animate"
                 exit="exit"
-                variants={whiteSplatterAnim(delay, size)}
+                variants={whiteSplatterAnim(delay, size, vmax)}
                 src={whiteSplatter3}
                 >
             </motion.img>
@@ -155,7 +166,7 @@ export const WhiteSplatter = ({delay, size}) => {
                 initial="initial"
                 animate="animate"
                 exit="exit"
-                variants={whiteSplatterAnim(delay, size)}
+                variants={whiteSplatterAnim(delay, size, vmax)}
                 src={whiteSplatter3}
                 >
             </motion.img>

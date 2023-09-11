@@ -10,7 +10,6 @@ const arrowLine = {
     initial: {width: 70},
     animate: {width: 70},
     hover: {width: 100},
-    exit: {width: 1050, transition: { duration: 0.6}},
 }
 
 const arrowDiv = {
@@ -21,7 +20,7 @@ const arrowDiv = {
         marginTop: -55,
         transition: { 
             duration: 3, 
-            delay: 2.25,
+            delay: 2.45,
             times: [0,0.1,1]
         }
     },
@@ -33,7 +32,7 @@ const parentVariant = {
     }
 }
 
-const SplashAnimation = () => {
+const SplashAnimation = ({children}) => {
     const [splashes, setSplashes] = useState([]);
     const {width, height} = getCurrentDimension();
     const vmax = Math.max(width, height);
@@ -75,107 +74,61 @@ const SplashAnimation = () => {
     function handleOpenClick () {
         setOpened(true);
     }
-    // return (
-    //     !opened && <motion.div  key="splash" className="absolute w-full h-full overflow-hidden " initial="initial" animate="animate" exit = {{opacity: 0, transition: {duration: 4}}} variants={parentVariant}>
-
-    //             {/* <div  className="absolute inset-0 flex items-center justify-center bg-white">
-    //                 {splashes}
-    //                 <BlackCircle delay={1.6} size={vmax} key="fill" />
-    //             </div>
-    //             <div className="absolute inset-0 flex items-center justify-center z-10">
-    //                 <WhiteCircle delay={2.15} size={1.08} />
-    //             </div>
-    //             <div  className="absolute inset-0 flex items-center justify-center">
-    //                 <WhiteSplatter delay={2.25} size={400} />
-    //             </div> */}
-
-    //             <div key="splashtext" className="absolute w-full h-full rotate-12  z-20">
-    //                 {/* <motion.div 
-    //                         key="go"
-    //                         className="absolute inset-x-1/2 inset-y-1/2 font-[Libelsuit] font-bold rotate-[330deg]"
-    //                         initial={{opacity: 0, fontSize:'90px', marginLeft: -80, marginTop:-60}}
-    //                         animate={{opacity: [0,1,1],  fontSize: ['90px','100px','100px'], marginLeft: -160, marginTop: -100, transition:{ duration: 4, delay: 2.25, times: [0,0.1,1]}}}
-    //                     >
-    //                         GO
-    //                 </motion.div> */}
-    //                 <motion.button
-    //                     key="button"
-    //                     className="text-[100px] align-middle relative font-[UniSansThin]  font-bold inline inset-x-1/2 inset-y-1/2"
-    //                     initial="initial"
-    //                     animate="animate"
-    //                     exit={{opacity: 0, transition: {duration: 5}}}
-    //                     variants={arrowDiv}
-    //                     onMouseEnter={handleMouseEnterControls}
-    //                     onMouseLeave={handleMouseLeaveControls}
-    //                     onClick={handleOpenClick}
-    //                 >
-    //                     <AnimatePresence mode="wait">
-
-    //                     <motion.span
-    //                         key="buttonline"
-    //                         className="top-[-9px] right-[-70px] relative align-middle rounded-full bg-black h-[18px] w-[70px] inline-block"
-    //                         animate={controls}
-    //                         variants={arrowLine}
-    //                         exit={{opacity: 0, transition: {duration: 5}}}
-    //                     >
-    //                     </motion.span>
-    //                     <span key="arrow" className="relative vertical-align">
-    //                     ➜
-    //                     </span>
-    //                     </AnimatePresence>
-    //                 </motion.button>
-    //             </div>
-    //     </motion.div>
-    // );
 
     return (
-        <AnimatePresence mode="wait">
-            {!opened && <div className="absolute w-full h-full overflow-hidden">
-                <div  className="absolute inset-0 flex items-center justify-center bg-white">
-                    {splashes}
-                    <BlackCircle delay={1.6} size={vmax} key="fill" />
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center z-10">
-                    <WhiteCircle delay={2.15} size={1.08} />
-                </div>
-                <div  className="absolute inset-0 flex items-center justify-center">
-                    <WhiteSplatter delay={2.25} size={400} />
-                </div>
+        <AnimatePresence>
+            {!opened ? 
+                (<div key="splashy" className="absolute w-full h-full overflow-hidden">
+                    <div  className="absolute inset-0 flex items-center justify-center bg-white">
+                        {splashes}
+                        <BlackCircle delay={1.6} size={vmax} key="fill" />
+                    </div>
+                    <div className="absolute inset-0 flex items-center justify-center z-10">
+                        <WhiteCircle delay={2.35} size={1.08} />
+                    </div>
+                    <div  className="absolute inset-0 flex items-center justify-center">
+                        <WhiteSplatter delay={2.45} size={400} vmax={vmax} />
+                    </div>
 
-                <div key="splashtext" className="absolute w-full h-full rotate-12  z-20">
-                    <motion.div 
+                    <div key="splashtext" className="absolute w-full h-full rotate-12  z-10">
+                        <motion.div 
                             key="go"
                             className="absolute inset-x-1/2 inset-y-1/2 font-[Libelsuit] font-bold rotate-[330deg]"
                             initial={{opacity: 0, fontSize:'90px', marginLeft: -80, marginTop:-60}}
-                            animate={{opacity: [0,1,1],  fontSize: ['90px','100px','100px'], marginLeft: -160, marginTop: -100, transition:{ duration: 4, delay: 2.25, times: [0,0.1,1]}}}
+                            animate={{opacity: [0,1,1],  fontSize: ['90px','100px','100px'], marginLeft: -160, marginTop: -100, transition:{ duration: 4, delay: 2.45, times: [0,0.1,1]}}}
+                            exit={{marginLeft: -width, marginTop: -width /3, transition: {duration: 0.7}}}
                         >
-                            GO
-                    </motion.div>
-                    {<motion.button
-                        key="button"
-                        className="text-[100px] align-middle relative font-[UniSansThin]  font-bold inline inset-x-1/2 inset-y-1/2"
-                        initial="initial"
-                        animate="animate"
-                        variants={arrowDiv}
-                        onMouseEnter={handleMouseEnterControls}
-                        onMouseLeave={handleMouseLeaveControls}
-                        onClick={handleOpenClick}
-                    >
+                                GO
+                        </motion.div>
+                        {<motion.button
+                            key="button"
+                            className="text-[100px] align-middle relative font-[UniSansThin]  font-bold inline inset-x-1/2 inset-y-1/2"
+                            initial="initial"
+                            animate="animate"
+                            exit={{marginLeft: width, transition: {duration: 0.7}}}
+                            variants={arrowDiv}
+                            onMouseEnter={handleMouseEnterControls}
+                            onMouseLeave={handleMouseLeaveControls}
+                            onClick={handleOpenClick}
+                        >
 
-                        <motion.span
-                            key="buttonline"
-                            className="top-[-9px] right-[-70px] relative align-middle rounded-full bg-black h-[18px] w-[70px] inline-block"
-                            animate={controls}
-                            exit="exit"
-                            variants={arrowLine}
-                        >
-                        </motion.span>
-                        <span key="arrow" className="relative vertical-align">
-                        ➜
-                        </span>
-                    </motion.button>}
-                </div>
-                </div>}
+                            <motion.span
+                                key="buttonline"
+                                className="top-[-9px] right-[-70px] relative align-middle rounded-full bg-black h-[18px] w-[70px] inline-block"
+                                animate={controls}
+                                exit="exit"
+                                variants={arrowLine}
+                            >
+                            </motion.span>
+                            <span key="arrow" className="relative vertical-align">
+                            ➜
+                            </span>
+                        </motion.button>}
+                    </div>
+                </div>) 
+                :
+                children
+            }
         </AnimatePresence>
     )
 }

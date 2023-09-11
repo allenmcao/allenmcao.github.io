@@ -2,14 +2,43 @@ import React from 'react';
 import {motion} from 'framer-motion';
 
 import 'styles/home.scss'
-import SplashAnimation from 'components/SplashAnimation';
+
+const tabAnim = {
+    initial: {
+        x: 15,
+        y: 25,
+        // opacity: 0,
+    },
+    animate: {
+        x: 0,
+        y: 0,
+        // opacity: [0,1,1],
+        transition: {
+            duration: 1,
+            // times: [0,0.5,1]
+        }
+    },
+}
 
 export default class Home extends React.Component {
 
     render () {
         return (
-            <div className='home'>
-                <SplashAnimation />
+            <motion.div className="relative">
+                <motion.div className="text-[120px] font-[UniSans]">
+                    <motion.div initial="initial" animate="animate" variants={tabAnim}>
+                        WELCOME
+                    </motion.div>
+                    <motion.div initial="initial" animate="animate" variants={tabAnim}>
+                        TO
+                    </motion.div>
+                    <motion.div className="text-[160px] font-[UniSans]" initial="initial" animate="animate" variants={tabAnim}>
+                        ME
+                    </motion.div>
+                    <motion.div initial="initial" animate="animate" variants={tabAnim}>
+                        
+                    </motion.div>
+                </motion.div>
 
                 {/* <div className='hrDiv' key="base">
                     <hr className='hr1' key="one"/>
@@ -18,8 +47,7 @@ export default class Home extends React.Component {
                 </div> */}
                 
 
-                {/* <div className="quoteWrapper"
-                >
+                {/* <div className="quoteWrapper">
                     "If debugging is the process of removing software bugs,
                     <br/>
                     then programming must be the process of putting them in.
@@ -29,7 +57,7 @@ export default class Home extends React.Component {
 
                 {/* <p className="berk">University of California, Berkeley</p> */}
                 
-            </div>
+            </motion.div>
         );
     }
 }

@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "jsx": "react",
+        "jsx": "react-jsx",
         "lib": ["dom", "es2015"],
         "outDir": "./lib/cjs/",
         "sourceMap": true,

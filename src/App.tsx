@@ -17,9 +17,10 @@ function App() {
               <Route path="/projects" element={<Projects />} />
               <Route path="*" element={<Navigate to="/" replace/>} />
           </Routes> */}
-          <AnimatedRoutes />
-          {/* <NavBar key="nav"/> */}
-          {/* <SplashAnimation key="splashy"/> */}
+          <SplashAnimation>
+            <NavBar key="nav"/>
+            <AnimatedRoutes />
+          </SplashAnimation>
     </HashRouter>
   );
 }
