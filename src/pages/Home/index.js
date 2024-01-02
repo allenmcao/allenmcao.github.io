@@ -7,15 +7,12 @@ const tabAnim = {
     initial: {
         x: 15,
         y: 25,
-        // opacity: 0,
     },
     animate: {
         x: 0,
         y: 0,
-        // opacity: [0,1,1],
         transition: {
             duration: 1,
-            // times: [0,0.5,1]
         }
     },
 }
